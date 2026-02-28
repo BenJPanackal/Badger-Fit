@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Finder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="survey.css">
+</head>
+<body>
+
+    <div class="hero">
+        <p class="hero-eyebrow">Find Your Madison Gym</p>
+        <h1>BadgerFit</h1>
+        <p class="hero-sub">Tell us what matters to you — we'll find the perfect fit.</p>
+    </div>
+
+    <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+<form class="survey-form" id="surveyForm" action="output.html"  method="GET">
+
+    <!-- Hours -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon">🕐</div>
+            <div>
+                <div class="section-title">Hours</div>
+                <div class="section-hint">When do you plan to work out?</div>
+            </div>
+        </div>
+        <div class="check-grid">
+            <label class="chip-label"><input type="checkbox" name="hours" value="early-morning"> Early Morning <small style="color:var(--muted);margin-left:auto">5–8am</small></label>
+            <label class="chip-label"><input type="checkbox" name="hours" value="morning"> Morning <small style="color:var(--muted);margin-left:auto">8–12pm</small></label>
+            <label class="chip-label"><input type="checkbox" name="hours" value="afternoon"> Afternoon <small style="color:var(--muted);margin-left:auto">12–4pm</small></label>
+            <label class="chip-label"><input type="checkbox" name="hours" value="evening"> Evening <small style="color:var(--muted);margin-left:auto">4–8pm</small></label>
+            <label class="chip-label"><input type="checkbox" name="hours" value="night"> Night <small style="color:var(--muted);margin-left:auto">8pm–12am</small></label>
+            <label class="chip-label"><input type="checkbox" name="hours" value="24/7"> 24 / 7 <small style="color:var(--muted);margin-left:auto">Any time</small></label>
+        </div>
+    </div>
+
+    <!-- Price -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon">💵</div>
+            <div>
+                <div class="section-title">Budget</div>
+                <div class="section-hint">Max monthly membership cost</div>
+            </div>
+        </div>
+        <div class="range-wrap">
+            <div class="range-value">$<span id="priceVal">60</span> / mo</div>
+            <input type="range" name="price" id="priceRange" min="10" max="300" value="60" step="5">
+            <div class="range-labels"><span>$10</span><span>$300+</span></div>
+        </div>
+        <hr class="divider">
+        <div class="two-col">
+            <label class="chip-label"><input type="radio" name="contract" value="no-contract"> No contract</label>
+            <label class="chip-label"><input type="radio" name="contract" value="monthly"> Month-to-month</label>
+            <label class="chip-label"><input type="radio" name="contract" value="annual"> Annual (save $)</label>
+            <label class="chip-label"><input type="radio" name="contract" value="any"> Any</label>
+        </div>
+    </div>
+
+    <!-- Location -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon">📍</div>
+            <div>
+                <div class="section-title">Location</div>
+                <div class="section-hint">Where should your gym be?</div>
+            </div>
+        </div>
+        <div class="field-group" style="margin-bottom:1rem">
+            <label class="field-label">Your Madison address</label>
+            <input type="text" name="location" placeholder="225 Park Street">
+        </div>
+        <div class="field-group" style="margin-bottom:1rem">
+            <label class="field-label">Max distance</label>
+            <select name="distance">
+                <option value="">— Select —</option>
+                <option value="0.5">Within 0.5 miles</option>
+                <option value="1">Within 1 mile</option>
+                <option value="2">Within 2 miles</option>
+                <option value="5">Within 5 miles</option>
+                <option value="10">Within 10 miles</option>
+                <option value="any">Any distance</option>
+            </select>
+        </div>
+        <div class="check-grid cols-2">
+            <label class="chip-label"><input type="checkbox" name="loc_pref" value="near-work"> Near work</label>
+            <label class="chip-label"><input type="checkbox" name="loc_pref" value="near-home"> Near home</label>
+            <label class="chip-label"><input type="checkbox" name="loc_pref" value="multiple-locations"> Multiple locations</label>
+            <label class="chip-label"><input type="checkbox" name="loc_pref" value="parking"> Free parking</label>
+        </div>
+    </div>
+
+    <!-- Transit -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon">🚇</div>
+            <div>
+                <div class="section-title">Transit</div>
+                <div class="section-hint">How will you get there?</div>
+            </div>
+        </div>
+        <div class="check-grid">
+            <label class="chip-label"><input type="checkbox" name="transit" value="walk"> Walking</label>
+            <label class="chip-label"><input type="checkbox" name="transit" value="bike"> Biking</label>
+            <label class="chip-label"><input type="checkbox" name="transit" value="subway"> Subway / Metro</label>
+            <label class="chip-label"><input type="checkbox" name="transit" value="bus"> Bus</label>
+            <label class="chip-label"><input type="checkbox" name="transit" value="drive"> Driving</label>
+            <label class="chip-label"><input type="checkbox" name="transit" value="rideshare"> Rideshare</label>
+        </div>
+    </div>
+
+    <!-- Amenities -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon">🏊</div>
+            <div>
+                <div class="section-title">Amenities</div>
+                <div class="section-hint">Must-have facilities and perks</div>
+            </div>
+        </div>
+        <div class="check-grid">
+            <label class="chip-label"><input type="checkbox" name="amenities" value="pool"> Pool</label>
+            <label class="chip-label"><input type="checkbox" name="amenities" value="sauna"> Sauna / Steam</label>
+            <label class="chip-label"><input type="checkbox" name="amenities" value="classes"> Group classes</label>
+            <label class="chip-label"><input type="checkbox" name="amenities" value="personal-training"> Personal training</label>
+            <label class="chip-label"><input type="checkbox" name="amenities" value="locker-room"> Locker rooms</label>
+            <label class="chip-label"><input type="checkbox" name="amenities" value="showers"> Showers</label>
+            <label class="chip-label"><input type="checkbox" name="amenities" value="childcare"> Childcare</label>
+            <label class="chip-label"><input type="checkbox" name="amenities" value="cafe"> Café / Juice bar</label>
+            <label class="chip-label"><input type="checkbox" name="amenities" value="wifi"> Free Wi-Fi</label>
+            <label class="chip-label"><input type="checkbox" name="amenities" value="towels"> Towel service</label>
+            <label class="chip-label"><input type="checkbox" name="amenities" value="basketball"> Basketball court</label>
+            <label class="chip-label"><input type="checkbox" name="amenities" value="racquet"> Racquet sports</label>
+        </div>
+    </div>
+
+    <!-- Equipment -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon">🏋️</div>
+            <div>
+                <div class="section-title">Equipment</div>
+                <div class="section-hint">What gear matters most to you?</div>
+            </div>
+        </div>
+        <div class="check-grid">
+            <label class="chip-label"><input type="checkbox" name="equipment" value="free-weights"> Free weights</label>
+            <label class="chip-label"><input type="checkbox" name="equipment" value="machines"> Cable machines</label>
+            <label class="chip-label"><input type="checkbox" name="equipment" value="cardio"> Cardio machines</label>
+            <label class="chip-label"><input type="checkbox" name="equipment" value="squat-racks"> Squat racks</label>
+            <label class="chip-label"><input type="checkbox" name="equipment" value="powerlifting"> Powerlifting platforms</label>
+            <label class="chip-label"><input type="checkbox" name="equipment" value="crossfit"> CrossFit / Rig</label>
+            <label class="chip-label"><input type="checkbox" name="equipment" value="stretching"> Stretching area</label>
+            <label class="chip-label"><input type="checkbox" name="equipment" value="turf"> Turf / Sled track</label>
+        </div>
+    </div>
+
+    <!-- Goal -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon">🎯</div>
+            <div>
+                <div class="section-title">Your Goal</div>
+                <div class="section-hint">What are you training for?</div>
+            </div>
+        </div>
+        <div class="check-grid">
+            <label class="chip-label"><input type="radio" name="goal" value="weight-loss"> Weight loss</label>
+            <label class="chip-label"><input type="radio" name="goal" value="muscle"> Build muscle</label>
+            <label class="chip-label"><input type="radio" name="goal" value="endurance"> Endurance / cardio</label>
+            <label class="chip-label"><input type="radio" name="goal" value="flexibility"> Flexibility / mobility</label>
+            <label class="chip-label"><input type="radio" name="goal" value="strength"> Strength / powerlifting</label>
+            <label class="chip-label"><input type="radio" name="goal" value="athletic"> Athletic performance</label>
+            <label class="chip-label"><input type="radio" name="goal" value="wellness"> General wellness</label>
+            <label class="chip-label"><input type="radio" name="goal" value="social"> Social / community</label>
+        </div>
+        <hr class="divider">
+        <div class="field-group">
+            <label class="field-label">Experience level</label>
+            <div class="check-grid cols-2" style="margin-top:0.25rem">
+                <label class="chip-label"><input type="radio" name="level" value="beginner"> Beginner</label>
+                <label class="chip-label"><input type="radio" name="level" value="intermediate"> Intermediate</label>
+                <label class="chip-label"><input type="radio" name="level" value="advanced"> Advanced</label>
+                <label class="chip-label"><input type="radio" name="level" value="elite"> Elite / competitive</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Button to go to output page -->
+    <button class="submit-btn">Find My Badger Gym →</button>
+</form>
+    <script src="survey.js"></script>
+</body>
+</html>
