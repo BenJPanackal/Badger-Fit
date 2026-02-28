@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Matches · BadgerFit</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="index.html" class="logo">🦡 BadgerFit</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="gyms.html">Gyms in Madison</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+</nav>
+
+<!-- RESULTS HEADER -->
+<section class="results-hero">
+  <h1>Your Gym Matches 🦡</h1>
+  <p id="results-summary">Showing gyms based on your preferences...</p>
+  <a href="survey.html" class="retake-btn">Retake Quiz</a>
+</section>
+
+<!-- RESULTS GRID -->
+<section class="gym-listings">
+  <div class="gym-grid" id="results-grid">
+    <!-- Cards injected by JavaScript -->
+  </div>
+
+  <!-- SHOWN IF NO RESULTS FOUND -->
+  <div id="no-results" style="display:none; text-align:center; padding: 3rem;">
+    <h2>No gyms found 😔</h2>
+    <p>Try adjusting your preferences.</p>
+    <a href="match.html" class="match-btn" style="margin-top:1rem; display:inline-block;">Retake Quiz</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 BadgerFit · Madison, WI · CheesHacks Hackathon</p>
+</footer>
+
+<script src="gyms-data.js"></script>
+<script src="results.js"></script>
+</body>
+</html>
