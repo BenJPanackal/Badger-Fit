@@ -1,0 +1,368 @@
+/* ===========================
+   GLOBAL RESET & VARIABLES
+=========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --red: #c1121f;
+  --dark: #1a1a1a;
+  --white: #fff;
+  --gray: #f5f5f5;
+  --radius: 10px;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  color: var(--dark);
+  background: var(--gray);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--dark);
+  color: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--red);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
+/* ===========================
+   FIND MY MATCH
+=========================== */
+.match-section {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--white);
+}
+
+.match-section h2 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.match-section p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.match-btn {
+  padding: 1rem 2.5rem;
+  background: var(--red);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.match-btn:hover {
+  background: #a00e19;
+  transform: scale(1.05);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: var(--white);
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--red);
+}
+
+/* ===========================
+   HERO WITH BACKGROUND IMAGE
+=========================== */
+.hero {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url('https://recwell.wisc.edu/wp-content/uploads/sites/1075/2023/04/MZBakkeExterior8-900x600.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+}
+
+.hero-content {
+  max-width: 700px;
+  padding: 2rem;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+/* ===========================
+   SEARCH BAR
+=========================== */
+.search-bar {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.search-bar input {
+  padding: 0.85rem 1.2rem;
+  width: 360px;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1rem;
+}
+
+.search-bar button {
+  padding: 0.85rem 1.5rem;
+  background: var(--red);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+.search-bar button:hover {
+  background: #a00e19;
+}
+
+/* ===========================
+   QUICK FILTER PILLS
+=========================== */
+.quick-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 1.5rem 2rem;
+  background: var(--white);
+  border-bottom: 1px solid #ddd;
+}
+
+.pill {
+  padding: 0.5rem 1.2rem;
+  border: 2px solid var(--dark);
+  border-radius: 999px;
+  background: transparent;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 600;
+}
+
+.pill:hover {
+  background: var(--dark);
+  color: var(--white);
+}
+
+.pill.active {
+  background: var(--red);
+  border-color: var(--red);
+  color: var(--white);
+}
+
+/* ===========================
+   GYM LISTINGS
+=========================== */
+.gym-listings {
+  padding: 2.5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gym-listings h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.gym-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ===========================
+   GYM CARD
+=========================== */
+.gym-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  border: 1px solid #ddd;
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.gym-card:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  transform: translateY(-3px);
+}
+
+.gym-info {
+  padding: 1.25rem;
+}
+
+.gym-info h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.gym-info p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.3rem;
+}
+
+.view-btn {
+  display: inline-block;
+  margin-top: 0.85rem;
+  padding: 0.5rem 1.1rem;
+  background: var(--red);
+  color: var(--white);
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.view-btn:hover {
+  background: #a00e19;
+}
+
+/* ===========================
+   ABOUT PAGE
+=========================== */
+.about-hero {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('https://www.housing.wisc.edu/wp-content/uploads/sites/168/2017/08/2016-10-13-campus-aerial-70.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+}
+
+.about-hero-content h1 {
+  font-size: 2.6rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.about-hero-content p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.about-mission {
+  max-width: 780px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+.about-mission h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--red);
+}
+
+.about-mission p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 1.25rem;
+}
+
+.about-values {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 3rem 2rem;
+  background: var(--gray);
+}
+
+.value-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 2rem;
+  text-align: center;
+  max-width: 260px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
+.value-card span {
+  font-size: 2.5rem;
+}
+
+.value-card h3 {
+  font-size: 1.2rem;
+  margin: 0.75rem 0 0.5rem;
+  color: var(--red);
+}
+
+.value-card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--dark);
+  color: #aaa;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+}
