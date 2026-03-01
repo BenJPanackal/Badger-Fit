@@ -12,7 +12,7 @@ const progressFill = document.getElementById('progressFill');
 
 allInputs.forEach(input => input.addEventListener('change', updateProgress));
 priceRange.addEventListener('input', updateProgress);
-
+// update progress bar based on the amount of user input
 function updateProgress() {
   const filled = [...sections].filter(section =>
     section.querySelector('input:checked') ||
@@ -26,6 +26,7 @@ function updateProgress() {
 
 let addressVerified = false; // tracks whether user picked from dropdown
 
+// Auto complete for search bar
 function initAutocomplete() {
     const input      = document.getElementById('locationInput');
     const latInput   = document.getElementById('latInput');

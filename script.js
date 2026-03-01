@@ -1,24 +1,24 @@
 // ── Gym data store ────────────────────────────────────────────────────────────
 let allGyms = [];
 
-// ── Fetch gyms from backend and render on page load ───────────────────────────
+// Fetch gyms from backend and render on page load
 async function loadGyms() {
-  try {
+  try { // try to get gyms list
     const res = await fetch('/api/gyms');
     if (!res.ok) throw new Error('Server error');
     allGyms = await res.json();
-    renderGyms(allGyms);
+    renderGyms(allGyms); // load gyms to screen
   } catch (err) {
     document.getElementById('gymGrid').innerHTML =
       '<p style="color:#888;">Could not load gyms. Make sure the server is running with <code>node server.js</code>.</p>';
   }
 }
 
-// ── Render a list of gyms into the grid ───────────────────────────────────────
+// Render a list of gyms into the grid
 function renderGyms(gyms) {
   const grid  = document.getElementById('gymGrid');
   const title = document.getElementById('gymListingsTitle');
-
+  // verify there aren't 0 gyms
   if (!gyms.length) {
     title.textContent = 'No gyms found';
     grid.innerHTML = '<p style="color:#888;">No gyms match your search.</p>';
@@ -30,7 +30,7 @@ function renderGyms(gyms) {
     : `${gyms.length} Gym${gyms.length !== 1 ? 's' : ''} Found`;
 
   grid.innerHTML = gyms.map(gym => {
-    // Hours — show today's hours or a fallback
+    // hours — show today's hours or a fallback
     const days = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
     const today = days[new Date().getDay()];
     const todayHours = gym.hours?.[today];
@@ -38,16 +38,16 @@ function renderGyms(gyms) {
       ? `Open today: ${todayHours.open} – ${todayHours.close}`
       : (gym.hoursText?.[0] || 'Hours not available');
 
-    // Amenities tags (show up to 4)
+    // amenities tags (show up to 4)
     const amenityTags = (gym.amenities || []).slice(0, 4)
       .map(a => `<span class="amenity-tag">${a}</span>`)
       .join('');
 
-    // Equipment tags (show up to 3)
+    // equipment tags (show up to 3)
     const equipmentTags = (gym.equipment || []).slice(0, 3)
       .map(e => `<span class="amenity-tag equipment">${e}</span>`)
       .join('');
-
+    // html to load gym to website
     return `
       <div class="gym-card">
         <div class="gym-info">
@@ -74,13 +74,15 @@ function renderGyms(gyms) {
   }).join('');
 }
 
-// ── Filter gyms by name as user types ─────────────────────────────────────────
+// filter gyms by name as user types
 function filterGyms() {
   const query = document.getElementById('gymSearch').value.trim().toLowerCase();
+  // load all gyms to website
   if (!query) {
     renderGyms(allGyms);
     return;
   }
+  // filter gyms then render
   const filtered = allGyms.filter(gym =>
     gym.name.toLowerCase().includes(query) ||
     gym.address.toLowerCase().includes(query)
@@ -88,10 +90,10 @@ function filterGyms() {
   renderGyms(filtered);
 }
 
-// ── Live search on keyup ───────────────────────────────────────────────────────
+// live search on keyup
 document.addEventListener('DOMContentLoaded', () => {
   loadGyms();
-
+  // auto fill search
   const searchInput = document.getElementById('gymSearch');
   if (searchInput) {
     searchInput.addEventListener('keyup', filterGyms);

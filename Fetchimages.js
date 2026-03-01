@@ -15,6 +15,7 @@ const key  = process.env.GOOGLE_PLACES_KEY;
 const IMAGES_DIR = path.join(__dirname, 'images');
 if (!fs.existsSync(IMAGES_DIR)) fs.mkdirSync(IMAGES_DIR);
 
+// default images if non are found with this file
 const FALLBACKS = [
   'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=700&h=400&fit=crop',
   'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=700&h=400&fit=crop',
@@ -22,7 +23,7 @@ const FALLBACKS = [
   'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&h=400&fit=crop',
   'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=700&h=400&fit=crop',
 ];
-
+// default images search
 function getFallback(address) {
   const idx = Math.abs(
     address.split('').reduce((a, c) => a + c.charCodeAt(0), 0)
@@ -35,11 +36,13 @@ function filename(gym) {
   return (gym.placeId || gym.name.replace(/[^a-z0-9]/gi, '_')) + '.jpg';
 }
 
+// download a image based on the information about the gym
 function download(url, dest) {
+  // return the image
   return new Promise((resolve, reject) => {
     const file = fs.createWriteStream(dest);
     const get  = url.startsWith('https') ? https : http;
-
+    // get image for downloading
     function request(u) {
       get.get(u, res => {
         // Follow redirects
@@ -64,9 +67,10 @@ function download(url, dest) {
     request(url);
   });
 }
-
+// check google street view to get an image of gym, using google api
 async function checkStreetView(address) {
   const url = `https://maps.googleapis.com/maps/api/streetview/metadata?location=${encodeURIComponent(address)}&key=${key}`;
+  // return the image in a safe format
   return new Promise((resolve) => {
     https.get(url, res => {
       let data = '';
@@ -81,12 +85,13 @@ async function checkStreetView(address) {
   });
 }
 
+// function to actually do the work of getting all the images needed
 async function run() {
   const SKIP = new Set(['Hilldale Shopping Center', 'Unifinium LTD']);
   const filtered = gyms.filter(g => !SKIP.has(g.name));
 
   console.log(`📸 Downloading images for ${filtered.length} gyms...\n`);
-
+  // go through every gym
   for (let i = 0; i < filtered.length; i++) {
     const gym = filtered[i];
     const fname = filename(gym);
@@ -99,7 +104,7 @@ async function run() {
     }
 
     let imageUrl;
-
+    // fetch Url
     if (key && gym.address) {
       const hasStreetView = await checkStreetView(gym.address);
       if (hasStreetView) {
@@ -113,7 +118,7 @@ async function run() {
       imageUrl = getFallback(gym.address || gym.name);
       console.log(`[${i+1}/${filtered.length}] 🖼  Fallback:    ${gym.name}`);
     }
-
+    // download
     try {
       await download(imageUrl, dest);
     } catch (err) {
