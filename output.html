@@ -6,8 +6,6 @@
   <title>Your Matches · BadgerFit</title>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="survey.css"/>
-  <link rel="stylesheet" href="styles.css"/>
-  <link rel="stylesheet" href="survey.css"/>
   <style>
     .results-wrapper {
       width: 100%;
@@ -219,156 +217,303 @@
       border-color: var(--accent);
       color: var(--accent);
     }
+
+    /* Show All Info button */
+    .show-all-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 0.85rem;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .show-all-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .show-all-btn .chevron {
+      display: inline-block;
+      transition: transform 0.25s ease;
+      font-style: normal;
+    }
+    .show-all-btn.open .chevron {
+      transform: rotate(180deg);
+    }
+
+    /* Expandable info panel */
+    .gym-full-info {
+      display: none;
+      margin-top: 1.1rem;
+      border-top: 1px solid var(--border);
+      padding-top: 1.1rem;
+      animation: fadeUp 0.25s ease;
+    }
+    .gym-full-info.visible {
+      display: block;
+    }
+
+    .info-section {
+      margin-bottom: 1rem;
+    }
+    .info-section:last-child {
+      margin-bottom: 0;
+    }
+    .info-section-label {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 0.45rem;
+      font-weight: 500;
+    }
+    .info-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+    .info-tag {
+      background: var(--off-black, #111);
+      border: 1px solid var(--border);
+      color: var(--text);
+      border-radius: 6px;
+      padding: 0.25rem 0.6rem;
+      font-size: 0.76rem;
+    }
+    .info-tag.amenity { border-color: #2a5a3a; color: #6ecb8a; background: rgba(110,203,138,0.07); }
+    .info-tag.equipment { border-color: #2a3f5a; color: #6ab0ec; background: rgba(106,176,236,0.07); }
+    .info-tag.class-tag { border-color: #4a3a5a; color: #c084fc; background: rgba(192,132,252,0.07); }
+
+    .info-row {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+      display: flex;
+      gap: 0.5rem;
+    }
+    .info-row strong {
+      color: var(--text);
+      min-width: 80px;
+    }
+
+    .hours-grid {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.2rem 0.75rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .hours-grid .day { color: var(--text); font-weight: 500; }
   </style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <a href="index.html" class="logo">🦡 BadgerFit</a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="gyms.html">Gyms in Madison</a></li>
-      <li><a href="map.html">🗺️ Map</a></li>
-      <li><a href="about.html">About</a></li>
-    </ul>
-  </nav>
-  <div class="survey-hero">
-    <p class="hero-eyebrow">Your Results</p>
-    <h1>BadgerFit</h1>
-    <p class="hero-sub" id="heroSub">Finding your best matches...</p>
-  </div>
+<div class="hero">
+  <p class="hero-eyebrow">Your Results</p>
+  <h1>BadgerFit</h1>
+  <p class="hero-sub" id="heroSub">Finding your best matches...</p>
+</div>
 
-  <div class="results-wrapper">
-    <div id="output">
-      <div class="loading">
-        <div class="loading-spinner"></div>
-        <p>Scoring gyms against your preferences...</p>
-      </div>
-    </div>
-
-    <div style="text-align:center">
-      <a href="survey.html" class="retake-btn">← Retake the survey</a>
+<div class="results-wrapper">
+  <div id="output">
+    <div class="loading">
+      <div class="loading-spinner"></div>
+      <p>Scoring gyms against your preferences...</p>
     </div>
   </div>
 
-  <script>
-    // Parse all URL query params from the survey form submission
-    function parsePreferences() {
-      const params = new URLSearchParams(window.location.search);
-      const prefs = {};
+  <div style="text-align:center">
+    <a href="survey.html" class="retake-btn">← Retake the survey</a>
+  </div>
+</div>
 
-      // Multi-value fields (checkboxes with same name)
-      prefs.hours      = params.getAll('hours');
-      prefs.amenities  = params.getAll('amenities');
-      prefs.equipment  = params.getAll('equipment');
-      prefs.transit    = params.getAll('transit');
-      prefs.loc_pref   = params.getAll('loc_pref');
+<script>
+  // Parse all URL query params from the survey form submission
+  function parsePreferences() {
+    const params = new URLSearchParams(window.location.search);
+    const prefs = {};
 
-      // Single-value fields
-      prefs.price    = params.get('price');
-      prefs.contract = params.get('contract');
-      prefs.location = params.get('location');
-      prefs.distance = params.get('distance');
-      prefs.goal     = params.get('goal');
-      prefs.level    = params.get('level');
+    // Multi-value fields (checkboxes with same name)
+    prefs.hours      = params.getAll('hours');
+    prefs.amenities  = params.getAll('amenities');
+    prefs.equipment  = params.getAll('equipment');
+    prefs.transit    = params.getAll('transit');
+    prefs.loc_pref   = params.getAll('loc_pref');
 
-      return prefs;
-    }
+    // Single-value fields
+    prefs.price    = params.get('price');
+    prefs.contract = params.get('contract');
+    prefs.location = params.get('location');
+    prefs.distance = params.get('distance');
+    prefs.goal     = params.get('goal');
+    prefs.level    = params.get('level');
 
-    async function loadResults() {
-      const preferences = parsePreferences();
-      const output = document.getElementById('output');
-      const heroSub = document.getElementById('heroSub');
+    return prefs;
+  }
 
-      try {
-        const response = await fetch('http://localhost:3000/api/match', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ preferences })
-        });
+  async function loadResults() {
+    const preferences = parsePreferences();
+    const output = document.getElementById('output');
+    const heroSub = document.getElementById('heroSub');
 
-        if (!response.ok) throw new Error('Server error');
+    try {
+      const response = await fetch('http://localhost:3000/api/match', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ preferences })
+      });
 
-        const matches = await response.json();
+      if (!response.ok) throw new Error('Server error');
 
-        if (!matches.length) {
-          heroSub.textContent = "No gyms matched your preferences.";
-          output.innerHTML = `
-            <div class="error-box">
-              <p>We couldn't find any gyms that matched. Try loosening your filters.</p>
-              <a href="survey.html" class="retake-btn">← Retake the survey</a>
-            </div>`;
-          return;
-        }
+      const matches = await response.json();
 
-        heroSub.textContent = `We found ${matches.length} gym${matches.length > 1 ? 's' : ''} for you.`;
-        output.innerHTML = renderMatches(matches);
-
-        // Animate score bars after render
-        setTimeout(() => {
-          matches.forEach((_, i) => {
-            const fill = document.getElementById(`fill-${i}`);
-            if (fill) fill.style.width = fill.dataset.pct + '%';
-          });
-        }, 100);
-
-      } catch (err) {
-        heroSub.textContent = "Something went wrong.";
+      if (!matches.length) {
+        heroSub.textContent = "No gyms matched your preferences.";
         output.innerHTML = `
           <div class="error-box">
-            <p>Could not reach the server. Make sure it's running with <code>node server.js</code></p>
-            <br/>
-            <a href="survey.html" class="retake-btn">← Go back</a>
+            <p>We couldn't find any gyms that matched. Try loosening your filters.</p>
+            <a href="survey.html" class="retake-btn">← Retake the survey</a>
           </div>`;
-        console.error(err);
+        return;
       }
+
+      heroSub.textContent = `We found ${matches.length} gym${matches.length > 1 ? 's' : ''} for you.`;
+      output.innerHTML = renderMatches(matches);
+
+      // Animate score bars after render
+      setTimeout(() => {
+        matches.forEach((_, i) => {
+          const fill = document.getElementById(`fill-${i}`);
+          if (fill) fill.style.width = fill.dataset.pct + '%';
+        });
+      }, 100);
+
+    } catch (err) {
+      heroSub.textContent = "Something went wrong.";
+      output.innerHTML = `
+        <div class="error-box">
+          <p>Could not reach the server. Make sure it's running with <code>node server.js</code></p>
+          <br/>
+          <a href="survey.html" class="retake-btn">← Go back</a>
+        </div>`;
+      console.error(err);
     }
+  }
 
-    function renderMatches(matches) {
-      return matches.map((result, i) => {
-        const gym = result.gym;
-        const pct = result.percentage;
+  function formatHours(hoursText) {
+    if (!hoursText || !hoursText.length) return '<span style="color:var(--muted)">Hours not available</span>';
+    return `<div class="hours-grid">${hoursText.map(line => {
+      const colon = line.indexOf(':');
+      const day = line.slice(0, colon);
+      const time = line.slice(colon + 1).trim();
+      return `<span class="day">${day}</span><span>${time}</span>`;
+    }).join('')}</div>`;
+  }
 
-        return `
-          <div class="gym-card">
-            <div class="gym-card-top">
-              <div class="gym-rank ${i === 0 ? 'first' : ''}">0${i + 1}</div>
-              <div style="flex:1">
-                <div class="gym-name">${gym.name}</div>
-                <div class="gym-address">📍 ${gym.address}</div>
-              </div>
-              <div class="match-score-wrap">
-                <div class="match-pct">${pct}%</div>
-                <div class="match-label">Match</div>
-              </div>
+  function formatTags(arr, cls) {
+    if (!arr || !arr.length) return '<span style="color:var(--muted);font-size:0.78rem">None listed</span>';
+    return arr.map(item => {
+      const label = item.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+      return `<span class="info-tag ${cls}">${label}</span>`;
+    }).join('');
+  }
+
+  function renderMatches(matches) {
+    return matches.map((result, i) => {
+      const gym = result.gym;
+      const pct = result.percentage;
+
+      return `
+        <div class="gym-card">
+          <div class="gym-card-top">
+            <div class="gym-rank ${i === 0 ? 'first' : ''}">0${i + 1}</div>
+            <div style="flex:1">
+              <div class="gym-name">${gym.name}</div>
+              <div class="gym-address">📍 ${gym.address}</div>
             </div>
-
-            <div class="score-bar">
-              <div class="score-fill" id="fill-${i}" data-pct="${pct}" style="width:0%"></div>
+            <div class="match-score-wrap">
+              <div class="match-pct">${pct}%</div>
+              <div class="match-label">Match</div>
             </div>
+          </div>
 
-            <div class="criteria-list">
-              ${result.matchedCriteria.map(c => `<span class="criteria-tag">✓ ${c}</span>`).join('')}
-            </div>
+          <div class="score-bar">
+            <div class="score-fill" id="fill-${i}" data-pct="${pct}" style="width:0%"></div>
+          </div>
 
-            <div class="gym-meta">
-              ${gym.rating ? `<span>⭐ ${gym.rating} (${gym.totalRatings} reviews)</span>` : ''}
-              ${gym.monthlyPrice ? `<span>💵 $${gym.monthlyPrice}/mo</span>` : ''}
-              ${gym.phone ? `<span>📞 ${gym.phone}</span>` : ''}
-            </div>
+          <div class="criteria-list">
+            ${result.matchedCriteria.map(c => `<span class="criteria-tag">✓ ${c}</span>`).join('')}
+          </div>
 
+          <div class="gym-meta">
+            ${gym.rating ? `<span>⭐ ${gym.rating} (${gym.totalRatings} reviews)</span>` : ''}
+            ${gym.monthlyPrice ? `<span>💵 $${gym.monthlyPrice}/mo</span>` : ''}
+            ${gym.phone ? `<span>📞 ${gym.phone}</span>` : ''}
+          </div>
+
+          <div style="display:flex;gap:0.75rem;align-items:center;flex-wrap:wrap;">
             ${gym.website
               ? `<a href="${gym.website}" target="_blank" class="visit-btn">Visit Website →</a>`
               : `<span class="no-website">No website available</span>`
             }
-          </div>`;
-      }).join('');
-    }
+            <button class="show-all-btn" onclick="toggleInfo(this, 'gym-info-${i}')">
+              Show All Info <i class="chevron">⌄</i>
+            </button>
+          </div>
 
-    // Run on page load
-    loadResults();
-  </script>
+          <!-- Expandable full info panel -->
+          <div class="gym-full-info" id="gym-info-${i}">
+
+            <div class="info-section">
+              <div class="info-section-label">📍 Contact & Location</div>
+              <div class="info-row"><strong>Address</strong>${gym.address}</div>
+              ${gym.phone ? `<div class="info-row"><strong>Phone</strong>${gym.phone}</div>` : ''}
+              ${gym.monthlyPrice ? `<div class="info-row"><strong>Price</strong>$${gym.monthlyPrice} / month</div>` : '<div class="info-row"><strong>Price</strong>Contact for pricing</div>'}
+              ${gym.rating ? `<div class="info-row"><strong>Rating</strong>⭐ ${gym.rating} (${gym.totalRatings} reviews)</div>` : ''}
+            </div>
+
+            <div class="info-section">
+              <div class="info-section-label">🏊 Amenities</div>
+              <div class="info-tags">${formatTags(gym.amenities, 'amenity')}</div>
+            </div>
+
+            <div class="info-section">
+              <div class="info-section-label">🏋️ Equipment</div>
+              <div class="info-tags">${formatTags(gym.equipment, 'equipment')}</div>
+            </div>
+
+            <div class="info-section">
+              <div class="info-section-label">🧘 Classes</div>
+              <div class="info-tags">${formatTags(gym.classes, 'class-tag')}</div>
+            </div>
+
+            <div class="info-section">
+              <div class="info-section-label">🕐 Hours</div>
+              ${formatHours(gym.hoursText)}
+            </div>
+
+          </div>
+        </div>`;
+    }).join('');
+  }
+
+  function toggleInfo(btn, panelId) {
+    const panel = document.getElementById(panelId);
+    const isOpen = panel.classList.contains('visible');
+    panel.classList.toggle('visible', !isOpen);
+    btn.classList.toggle('open', !isOpen);
+    btn.childNodes[0].textContent = isOpen ? 'Show All Info ' : 'Hide Info ';
+  }
+
+  // Run on page load
+  loadResults();
+</script>
 
 </body>
 </html>
