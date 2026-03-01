@@ -20,13 +20,17 @@ router.post('/', async (req, res) => {
       return res.status(400).json({ error: 'No preferences provided' });
     }
 
-    // If user entered an address, convert it to lat/lng for distance scoring
-    if (preferences.location && preferences.location.trim() !== '') {
+    // Use coordinates from autocomplete if available, otherwise fall back to geocoding
+    if (preferences.lat && preferences.lng) {
+      preferences.coords = {
+        lat: parseFloat(preferences.lat),
+        lng: parseFloat(preferences.lng)
+      };
+    } else if (preferences.location && preferences.location.trim() !== '') {
       try {
         preferences.coords = await getCoordinates(preferences.location + ', Madison, WI');
       } catch (e) {
         console.warn('Geocoding failed:', e.message);
-        // Not a fatal error — just skip distance scoring
       }
     }
 

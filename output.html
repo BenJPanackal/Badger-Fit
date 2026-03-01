@@ -339,20 +339,23 @@
     const params = new URLSearchParams(window.location.search);
     const prefs = {};
 
-    // Multi-value fields (checkboxes with same name)
-    prefs.hours      = params.getAll('hours');
-    prefs.amenities  = params.getAll('amenities');
-    prefs.equipment  = params.getAll('equipment');
-    prefs.transit    = params.getAll('transit');
-    prefs.loc_pref   = params.getAll('loc_pref');
+      // Multi-value fields (checkboxes with same name)
+      prefs.hours      = params.getAll('hours');
+      prefs.amenities  = params.getAll('amenities');
+      prefs.equipment  = params.getAll('equipment');
+      prefs.transit    = params.getAll('transit');
+      prefs.loc_pref   = params.getAll('loc_pref');
 
-    // Single-value fields
-    prefs.price    = params.get('price');
-    prefs.contract = params.get('contract');
-    prefs.location = params.get('location');
-    prefs.distance = params.get('distance');
-    prefs.goal     = params.get('goal');
-    prefs.level    = params.get('level');
+        // Single-value fields
+        prefs.price             = params.get('price');
+        prefs.contract          = params.get('contract');
+        prefs.location          = params.get('location');
+        prefs.distance          = params.get('distance');
+        prefs.goal              = params.get('goal');
+        prefs.level             = params.get('level');
+        prefs.lat               = params.get('lat');
+        prefs.lng               = params.get('lng');
+        prefs.formatted_address = params.get('formatted_address');
 
     return prefs;
   }
