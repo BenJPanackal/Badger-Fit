@@ -4,26 +4,54 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gym Map · BadgerFit</title>
-  <link rel="stylesheet" href="styles.css" />
-
-  <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
+    body { font-family: 'Segoe UI', sans-serif; background: #1a1a1a; }
+
+    /* ---- NAVBAR ---- */
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 60px;
+      background: #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      z-index: 2000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+    .logo {
+      color: white;
+      font-size: 1.3rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+    .nav-links a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    .nav-links a:hover { color: white; }
+
+    /* ---- MAP ---- */
     #map {
-      width: 100%;
-      height: calc(100vh - 60px);
+      position: fixed;
+      top: 60px; left: 0; right: 0; bottom: 0;
     }
 
-    /* Search bar on map */
+    /* ---- SEARCH BAR ---- */
     .map-search {
-      position: absolute;
-      top: 80px;
+      position: fixed;
+      top: 75px;
       left: 50%;
       transform: translateX(-50%);
       z-index: 1000;
@@ -32,20 +60,17 @@
       background: white;
       padding: 0.5rem 0.75rem;
       border-radius: 999px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-      width: 380px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+      width: 360px;
       max-width: 90vw;
     }
-
     .map-search input {
       flex: 1;
       border: none;
       outline: none;
       font-size: 0.9rem;
-      font-family: 'Segoe UI', sans-serif;
       background: transparent;
     }
-
     .map-search button {
       background: #c1121f;
       color: white;
@@ -53,18 +78,15 @@
       border-radius: 999px;
       padding: 0.4rem 1rem;
       font-size: 0.85rem;
-      font-weight: 600;
+      font-weight: 700;
       cursor: pointer;
     }
+    .map-search button:hover { background: #a00e19; }
 
-    .map-search button:hover {
-      background: #a00e19;
-    }
-
-    /* Filter pills below search */
+    /* ---- FILTER PILLS ---- */
     .map-filters {
-      position: absolute;
-      top: 140px;
+      position: fixed;
+      top: 130px;
       left: 50%;
       transform: translateX(-50%);
       z-index: 1000;
@@ -72,105 +94,64 @@
       gap: 0.5rem;
       flex-wrap: wrap;
       justify-content: center;
+      max-width: 700px;
       padding: 0.5rem;
     }
-
     .map-pill {
-      padding: 0.4rem 1rem;
+      padding: 0.35rem 0.9rem;
       border: 2px solid #1a1a1a;
       border-radius: 999px;
       background: white;
-      font-size: 0.85rem;
-      font-weight: 600;
+      font-size: 0.82rem;
+      font-weight: 700;
       cursor: pointer;
       transition: all 0.2s;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
-
     .map-pill:hover, .map-pill.active {
       background: #c1121f;
       border-color: #c1121f;
       color: white;
     }
 
-    /* My location button */
+    /* ---- LOCATE BUTTON ---- */
     .locate-btn {
-      position: absolute;
+      position: fixed;
       bottom: 40px;
       right: 20px;
       z-index: 1000;
       background: white;
       border: none;
       border-radius: 50%;
-      width: 44px;
-      height: 44px;
+      width: 46px;
+      height: 46px;
       font-size: 1.3rem;
       cursor: pointer;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
     }
+    .locate-btn:hover { background: #f0f0f0; }
 
-    .locate-btn:hover {
-      background: #f0f0f0;
-    }
-
-    /* Popup styling */
-    .gym-popup {
-      font-family: 'Segoe UI', sans-serif;
-      min-width: 220px;
-      max-width: 260px;
-    }
-
-    .gym-popup img {
-      width: 100%;
-      height: 130px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 0.5rem;
-    }
-
-    .gym-popup h3 {
-      font-size: 1rem;
-      font-weight: bold;
-      margin-bottom: 0.25rem;
-      color: #1a1a1a;
-    }
-
-    .gym-popup p {
-      font-size: 0.82rem;
-      color: #555;
-      margin-bottom: 0.2rem;
-    }
-
-    .popup-amenities {
-      font-size: 0.78rem;
-      color: #777;
-      margin-bottom: 0.75rem !important;
-    }
-
-    .popup-buttons {
-      display: flex;
-      gap: 0.4rem;
-      flex-wrap: wrap;
-    }
-
+    /* ---- POPUP ---- */
+    .gym-popup { font-family: 'Segoe UI', sans-serif; min-width: 220px; max-width: 260px; }
+    .gym-popup h3 { font-size: 0.95rem; font-weight: 800; margin-bottom: 0.25rem; color: #1a1a1a; }
+    .gym-popup p { font-size: 0.8rem; color: #555; margin-bottom: 0.2rem; line-height: 1.4; }
+    .popup-meta { color: #c1121f !important; font-weight: 700 !important; }
+    .popup-amenities { color: #777 !important; margin-bottom: 0.6rem !important; }
+    .popup-buttons { display: flex; gap: 0.35rem; flex-wrap: wrap; margin-top: 0.5rem; }
     .popup-btn {
       display: inline-block;
-      padding: 0.4rem 0.75rem;
+      padding: 0.35rem 0.7rem;
       border-radius: 6px;
-      font-size: 0.8rem;
-      font-weight: 600;
+      font-size: 0.78rem;
+      font-weight: 700;
       text-decoration: none;
-      cursor: pointer;
       border: none;
+      cursor: pointer;
     }
-
-    .btn-directions { background: #c1121f; color: white; }
-    .btn-walk { background: #f0f0f0; color: #333; }
-    .btn-bike { background: #f0f0f0; color: #333; }
+    .btn-drive { background: #c1121f; color: white; }
+    .btn-walk  { background: #eee; color: #333; }
+    .btn-bike  { background: #eee; color: #333; }
+    .btn-web   { background: #1a1a1a; color: white; }
   </style>
 </head>
 <body>
@@ -180,327 +161,212 @@
   <a href="index.html" class="logo">🦡 BadgerFit</a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
-    <li><a href="gyms.html">Gyms in Madison</a></li>
+    <li><a href="gyms.html">Gyms</a></li>
     <li><a href="map.html">🗺️ Map</a></li>
     <li><a href="about.html">About</a></li>
   </ul>
 </nav>
 
-<!-- ADDRESS SEARCH BAR -->
+<!-- SEARCH -->
 <div class="map-search">
-  <input type="text" id="addressInput" placeholder="Enter your address..." autocomplete="off"/>
+  <input type="text" id="addressInput" placeholder="Search by address..." autocomplete="off"/>
   <button onclick="searchAddress()">Go</button>
 </div>
 
-<!-- FILTER PILLS -->
+<!-- FILTERS -->
 <div class="map-filters">
-  <button class="map-pill active" onclick="filterMap('all', this)">All Gyms</button>
-  <button class="map-pill" onclick="filterMap('campus', this)">Near Campus</button>
-  <button class="map-pill" onclick="filterMap('cheap', this)">Under $20</button>
-  <button class="map-pill" onclick="filterMap('classes', this)">Has Classes</button>
-  <button class="map-pill" onclick="filterMap('open247', this)">24/7</button>
+  <button class="map-pill active" onclick="filterMap('all',this)">All Gyms</button>
+  <button class="map-pill" onclick="filterMap('free',this)">Free / Student</button>
+  <button class="map-pill" onclick="filterMap('cheap',this)">Under $30</button>
+  <button class="map-pill" onclick="filterMap('open247',this)">24/7</button>
+  <button class="map-pill" onclick="filterMap('classes',this)">Has Classes</button>
+  <button class="map-pill" onclick="filterMap('yoga',this)">Yoga</button>
+  <button class="map-pill" onclick="filterMap('pilates',this)">Pilates</button>
+  <button class="map-pill" onclick="filterMap('crossfit',this)">CrossFit</button>
+  <button class="map-pill" onclick="filterMap('pool',this)">Pool</button>
 </div>
 
-<!-- MY LOCATION BUTTON -->
+<!-- LOCATE -->
 <button class="locate-btn" onclick="locateMe()" title="My location">📍</button>
 
 <!-- MAP -->
 <div id="map"></div>
 
-<!-- Leaflet JS -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
 <script>
-  // ===========================
-  //  Gym Data with unique images
-  // ===========================
-  const gyms = [
-    {
-      name: "Nick Recreation Center",
-      lat: 43.0756, lng: -89.4070,
-      location: "campus", price: 0,
-      priceLabel: "Free with student ID",
-      hours: "Mon–Fri 6am–11pm · Sat–Sun 8am–10pm",
-      classes: true, open247: false,
-      amenities: ["🏊 Pool", "🚿 Showers", "♿ Accessible"],
-      image: "https://recwell.wisc.edu/wp-content/uploads/sites/1075/2022/10/Nick_Exterior_Fall_2022-scaled.jpg",
-      address: "1440 Monroe St, Madison, WI 53711",
-      website: "https://recwell.wisc.edu/locations/nick/"
-    },
-    {
-      name: "Bakke Recreation Center",
-      lat: 43.0731, lng: -89.4134,
-      location: "campus", price: 0,
-      priceLabel: "Free with student ID",
-      hours: "Mon–Fri 6am–11pm · Sat–Sun 8am–10pm",
-      classes: true, open247: false,
-      amenities: ["🏊 Pool", "🚿 Showers", "🧗 Climbing Wall"],
-      image: "https://recwell.wisc.edu/wp-content/uploads/sites/1075/2023/04/MZBakkeExterior8-900x600.jpg",
-      address: "621 W Dayton St, Madison, WI 53706",
-      website: "https://recwell.wisc.edu/locations/bakke/"
-    },
-    {
-      name: "Planet Fitness",
-      lat: 43.0642, lng: -89.3852,
-      location: "eastside", price: 10,
-      priceLabel: "$10/mo",
-      hours: "Mon–Fri 5am–12am · Sat–Sun 7am–10pm",
-      classes: false, open247: false,
-      amenities: ["🚿 Showers", "🅿️ Parking"],
-      image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=200&fit=crop",
-      address: "2244 E Springs Dr, Madison, WI 53704",
-      website: "https://www.planetfitness.com"
-    },
-    {
-      name: "Anytime Fitness",
-      lat: 43.0731, lng: -89.4890,
-      location: "westside", price: 35,
-      priceLabel: "$35/mo",
-      hours: "Open 24/7",
-      classes: false, open247: true,
-      amenities: ["🚿 Showers", "🅿️ Parking", "🕐 24/7"],
-      image: "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=400&h=200&fit=crop",
-      address: "7609 Donna Dr, Madison, WI 53719",
-      website: "https://www.anytimefitness.com"
-    },
-    {
-      name: "YMCA of Madison",
-      lat: 43.0731, lng: -89.3900,
-      location: "downtown", price: 40,
-      priceLabel: "$40/mo",
-      hours: "Mon–Fri 5am–10pm · Sat–Sun 7am–8pm",
-      classes: true, open247: false,
-      amenities: ["🏊 Pool", "🚿 Showers", "🅿️ Parking"],
-      image: "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?w=400&h=200&fit=crop",
-      address: "357 W Main St, Madison, WI 53703",
-      website: "https://www.ymcadane.org"
-    },
-    {
-      name: "Goodman Community Center",
-      lat: 43.0820, lng: -89.3650,
-      location: "eastside", price: 15,
-      priceLabel: "$15/mo",
-      hours: "Mon–Fri 6am–9pm · Sat 8am–6pm",
-      classes: true, open247: false,
-      amenities: ["🚿 Showers", "♿ Accessible"],
-      image: "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=400&h=200&fit=crop",
-      address: "149 Waubesa St, Madison, WI 53704",
-      website: "https://goodmancenter.org"
-    },
-    {
-      name: "LA Fitness",
-      lat: 43.0550, lng: -89.4950,
-      location: "westside", price: 30,
-      priceLabel: "$30/mo",
-      hours: "Mon–Fri 5am–11pm · Sat–Sun 7am–8pm",
-      classes: true, open247: false,
-      amenities: ["🏊 Pool", "🚿 Showers", "🅿️ Parking"],
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=200&fit=crop",
-      address: "7007 W Towne Way, Madison, WI 53719",
-      website: "https://www.lafitness.com"
-    },
-    {
-      name: "EōS Fitness",
-      lat: 43.0600, lng: -89.5000,
-      location: "westside", price: 20,
-      priceLabel: "$20/mo",
-      hours: "Open 24/7",
-      classes: true, open247: true,
-      amenities: ["🚿 Showers", "🅿️ Parking", "🕐 24/7", "🧖 Sauna"],
-      image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&h=200&fit=crop",
-      address: "West Towne Mall Area, Madison, WI 53719",
-      website: "#"
-    },
-    {
-      name: "CrossFit Madison",
-      lat: 43.0890, lng: -89.3750,
-      location: "downtown", price: 120,
-      priceLabel: "$120/mo",
-      hours: "Mon–Fri 5:30am–7pm · Sat 8am–12pm",
-      classes: true, open247: false,
-      amenities: ["🏋️ CrossFit Rig", "🚿 Showers"],
-      image: "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=400&h=200&fit=crop",
-      address: "Madison, WI 53703",
-      website: "#"
-    },
-    {
-      name: "Madison Strength & Conditioning",
-      lat: 43.0750, lng: -89.3600,
-      location: "eastside", price: 55,
-      priceLabel: "$55/mo",
-      hours: "Mon–Fri 5am–9pm · Sat 8am–2pm",
-      classes: true, open247: false,
-      amenities: ["🏋️ Squat Racks", "🚿 Showers", "🅿️ Parking"],
-      image: "https://images.unsplash.com/photo-1567013127542-490d757e51cd?w=400&h=200&fit=crop",
-      address: "East Madison, WI 53704",
-      website: "#"
-    }
+  // ============================================================
+  //  GYM DATA — sourced directly from gyms.json
+  // ============================================================
+  const gymData = [
+    { name:"Capital Fitness", lat:43.0771, lng:-89.3814, address:"15 N Butler St, Madison, WI 53703", hours:"Mon–Thu 5am–10pm · Fri–Sat 6am–9pm · Sun 6am–9pm", price:50, priceLabel:"$50/mo", open247:false, amenities:["Sauna","Showers","Parking","Cafe","Massage"], classes:["yoga","cycling","group-fitness","TRX","Zumba"], pool:false, yoga:true, crossfit:false, pilates:false, rating:4.5, website:"http://www.capitalfitness.net/" },
+    { name:"Anytime Fitness (Campus Mall)", lat:43.0723, lng:-89.3986, address:"301 E Campus Mall, Madison, WI 53715", hours:"Open 24/7", price:45, priceLabel:"$45/mo", open247:true, amenities:["Showers"], classes:["personal-training"], pool:false, yoga:false, crossfit:false, pilates:false, rating:4.6, website:"https://www.anytimefitness.com" },
+    { name:"Anytime Fitness (Middleton)", lat:43.0842, lng:-89.5014, address:"1011 N Gammon Rd, Middleton, WI 53562", hours:"Open 24/7", price:45, priceLabel:"$45/mo", open247:true, amenities:["Showers"], classes:["personal-training"], pool:false, yoga:false, crossfit:false, pilates:false, rating:4.8, website:"https://www.anytimefitness.com" },
+    { name:"Perennial Yoga", lat:43.0054, lng:-89.4227, address:"5500 E Cheryl Pkwy Ste 101, Fitchburg, WI 53711", hours:"See website", price:80, priceLabel:"$80/mo", open247:false, amenities:["Showers"], classes:["yoga"], pool:false, yoga:true, crossfit:false, pilates:false, rating:4.8, website:"http://perennial-yoga.com/" },
+    { name:"Princeton Club West", lat:43.0553, lng:-89.5195, address:"8080 Watts Rd, Madison, WI 53719", hours:"Open 24/7", price:70, priceLabel:"$70/mo", open247:true, amenities:["Pool","Sauna","Basketball","Tennis","Cafe","Childcare"], classes:["yoga","cycling","group-fitness","water-aerobics","pilates"], pool:true, yoga:true, crossfit:false, pilates:true, rating:4.1, website:"http://www.princetonclub.net/" },
+    { name:"CORE Health & Fitness", lat:43.1001, lng:-89.5205, address:"2248 Deming Way #100, Middleton, WI 53562", hours:"Mon–Thu 6am–5:45pm · Fri 6am–4:30pm · Sat 8–10am", price:null, priceLabel:"Call for pricing", open247:false, amenities:["Showers","Personal Training"], classes:["group-fitness"], pool:false, yoga:false, crossfit:false, pilates:false, rating:5.0, website:"http://www.corehealthandfit.com/" },
+    { name:"Princeton Club East", lat:43.1218, lng:-89.3093, address:"1726 Eagan Rd, Madison, WI 53704", hours:"Open 24/7", price:70, priceLabel:"$70/mo", open247:true, amenities:["Pool","Sauna","Basketball","Cafe","Childcare"], classes:["yoga","cycling","group-fitness","pilates","Zumba"], pool:true, yoga:true, crossfit:false, pilates:true, rating:4.5, website:"http://www.princetonclub.net/" },
+    { name:"Pinnacle Health + Fitness (Downtown)", lat:43.0763, lng:-89.3844, address:"44 E Mifflin St, Madison, WI 53703", hours:"Mon–Fri 5am–11pm · Sat–Sun 5am–8pm", price:55, priceLabel:"$55/mo", open247:false, amenities:["Sauna","Showers","Hot Tub"], classes:["yoga","cycling","group-fitness","Zumba"], pool:false, yoga:true, crossfit:false, pilates:false, rating:4.5, website:"https://www.phfitness.com/" },
+    { name:"H. Douglas Redsten Gymnasium", lat:43.1212, lng:-89.3292, address:"1701 Wright St, Madison, WI 53704", hours:"See website", price:null, priceLabel:"Call for pricing", open247:false, amenities:["Locker Room"], classes:[], pool:false, yoga:false, crossfit:false, pilates:false, rating:5.0, website:"http://madisoncollegeathletics.com/" },
+    { name:"Anytime Fitness (Cottage Grove Rd)", lat:43.0853, lng:-89.2675, address:"6420 Cottage Grove Rd, Madison, WI 53718", hours:"Open 24/7", price:45, priceLabel:"$45/mo", open247:true, amenities:["Showers"], classes:["personal-training"], pool:false, yoga:false, crossfit:false, pilates:false, rating:4.7, website:"https://www.anytimefitness.com" },
+    { name:"Harbor Wellness Studios", lat:43.1044, lng:-89.4860, address:"2711 Allen Blvd, Middleton, WI 53562", hours:"Mon–Thu 5am–11pm · Fri 5am–10pm · Sat–Sun 5am–9pm", price:null, priceLabel:"Call for pricing", open247:false, amenities:["Showers","Personal Training"], classes:["group-fitness"], pool:false, yoga:false, crossfit:false, pilates:false, rating:4.8, website:"http://www.harborathletic.com/" },
+    { name:"Twisted Fitness Gym", lat:43.1082, lng:-89.3352, address:"711 Rethke Ave Suite 1, Madison, WI 53714", hours:"Mon–Fri 5:30am–9:30pm · Sat 7am–6pm · Sun 9am–5pm", price:60, priceLabel:"$60/mo", open247:false, amenities:["Showers","Personal Training"], classes:["group-fitness","CrossFit"], pool:false, yoga:false, crossfit:true, pilates:false, rating:4.8, website:"https://twistedfitnessgym.com/" },
+    { name:"Ford's Gym", lat:43.0944, lng:-89.3536, address:"2114 Winnebago St, Madison, WI 53704", hours:"Mon–Fri 5:30am–9:30pm · Sat 8am–6pm · Sun 10am–6pm", price:40, priceLabel:"$40/mo", open247:false, amenities:["Showers","Powerlifting","Chalk OK"], classes:["personal-training","boxing"], pool:false, yoga:false, crossfit:false, pilates:false, rating:4.9, website:"http://www.fordsgym.com/" },
+    { name:"Anytime Fitness (Nesbitt Rd)", lat:43.0110, lng:-89.4783, address:"6250 Nesbitt Rd, Madison, WI 53719", hours:"Open 24/7", price:45, priceLabel:"$45/mo", open247:true, amenities:["Showers"], classes:["personal-training"], pool:false, yoga:false, crossfit:false, pilates:false, rating:4.7, website:"https://www.anytimefitness.com" },
+    { name:"CrossFit Sanctify", lat:43.0666, lng:-89.3057, address:"4535 Helgesen Dr, Madison, WI 53718", hours:"Mon–Thu 5am–7pm · Fri 5am–6pm · Sat 8–10am", price:150, priceLabel:"$150/mo", open247:false, amenities:["Personal Training"], classes:["CrossFit","group-fitness"], pool:false, yoga:false, crossfit:true, pilates:false, rating:5.0, website:"http://crossfitsanctify.com/" },
+    { name:"Boys & Girls Club of Dane County", lat:43.0441, lng:-89.3928, address:"2001 Taft St, Madison, WI 53713", hours:"Mon–Fri 9am–5pm", price:null, priceLabel:"Free / membership", open247:false, amenities:["Locker Room","Childcare"], classes:[], pool:false, yoga:false, crossfit:false, pilates:false, rating:4.1, website:"http://www.bgcdc.org/" },
+    { name:"Planet Fitness (Monona)", lat:43.0448, lng:-89.3506, address:"2311 W Broadway, Monona, WI 53713", hours:"Mon–Thu 24hrs · Fri closes 10pm · Sat 7am–7pm · Sun 7am–midnight", price:15, priceLabel:"$15/mo", open247:false, amenities:["Showers","Tanning"], classes:["group-fitness"], pool:false, yoga:false, crossfit:false, pilates:false, rating:4.6, website:"https://www.planetfitness.com" },
+    { name:"Anytime Fitness (McFarland)", lat:43.0150, lng:-89.3028, address:"5802 US-51, McFarland, WI 53558", hours:"Open 24/7", price:45, priceLabel:"$45/mo", open247:true, amenities:["Showers"], classes:["personal-training"], pool:false, yoga:false, crossfit:false, pilates:false, rating:4.8, website:"https://www.anytimefitness.com" },
+    { name:"Madison Turners", lat:43.0545, lng:-89.3074, address:"3001 S Stoughton Rd, Madison, WI 53716", hours:"See website", price:40, priceLabel:"$40/mo", open247:false, amenities:["Showers","Bar"], classes:["fitness"], pool:false, yoga:false, crossfit:false, pilates:false, rating:4.5, website:"http://www.madisonturners.com/" },
+    { name:"Anytime Fitness (Verona)", lat:42.9737, lng:-89.5270, address:"411 Prairie Heights Dr, Verona, WI 53593", hours:"Open 24/7", price:45, priceLabel:"$45/mo", open247:true, amenities:["Showers"], classes:["personal-training"], pool:false, yoga:false, crossfit:false, pilates:false, rating:4.2, website:"https://www.anytimefitness.com" },
+    { name:"Inner Fire Yoga", lat:43.0754, lng:-89.4664, address:"5003 University Ave Ste 195, Madison, WI 53705", hours:"Multiple sessions daily — see website", price:90, priceLabel:"$90/mo", open247:false, amenities:["Showers","Heated Studio"], classes:["yoga","hot-yoga","vinyasa"], pool:false, yoga:true, crossfit:false, pilates:false, rating:4.8, website:"http://www.innerfireyoga.com/" },
+    { name:"Anytime Fitness (N Sherman Ave)", lat:43.1124, lng:-89.3619, address:"1193 N Sherman Ave, Madison, WI 53704", hours:"Open 24/7", price:45, priceLabel:"$45/mo", open247:true, amenities:["Showers"], classes:["personal-training"], pool:false, yoga:false, crossfit:false, pilates:false, rating:4.6, website:"https://www.anytimefitness.com" },
+    { name:"Orange Shoe Personal Fitness", lat:43.0736, lng:-89.3825, address:"1 E Main St, Madison, WI 53703", hours:"Mon–Fri 5am–10pm · Sat 6am–3pm", price:200, priceLabel:"$200/mo", open247:false, amenities:["Showers","Personal Training"], classes:["personal-training"], pool:false, yoga:false, crossfit:false, pilates:false, rating:5.0, website:"https://www.orangeshoe.com/MadisonDowntown" },
+    { name:"Supreme Health & Fitness", lat:43.0493, lng:-89.4756, address:"5555 Odana Rd, Madison, WI 53719", hours:"Mon–Thu 5am–9pm · Fri 5am–7pm · Sat–Sun 6:30am–7pm", price:45, priceLabel:"$45/mo", open247:false, amenities:["Showers","Sauna","Personal Training"], classes:["group-fitness"], pool:false, yoga:false, crossfit:false, pilates:false, rating:4.9, website:"http://www.supremehealthfitness.com/" },
+    { name:"Studio Melt", lat:43.0371, lng:-89.3872, address:"301 W Beltline Hwy Ste 103, Madison, WI 53713", hours:"Mon–Fri 5:30am–8:30pm · Sat 7am–2pm · Sun 8:30am–1:30pm", price:85, priceLabel:"$85/mo", open247:false, amenities:["Showers"], classes:["yoga","barre","pilates","group-fitness"], pool:false, yoga:true, crossfit:false, pilates:true, rating:5.0, website:"http://www.studiomelt.com/" },
+    { name:"Pinnacle Health + Fitness (Fitchburg)", lat:43.0112, lng:-89.4591, address:"5973 Executive Dr, Fitchburg, WI 53719", hours:"Mon–Fri 5am–11pm · Sat–Sun 5am–8pm", price:55, priceLabel:"$55/mo", open247:false, amenities:["Pool","Sauna","Hot Tub","Showers"], classes:["yoga","cycling","group-fitness","water-aerobics"], pool:true, yoga:true, crossfit:false, pilates:false, rating:4.3, website:"https://www.phfitness.com/" },
+    { name:"Dragonfly Hot Yoga", lat:43.0148, lng:-89.4766, address:"6227 McKee Rd, Fitchburg, WI 53719", hours:"Multiple sessions daily — see website", price:90, priceLabel:"$90/mo", open247:false, amenities:["Showers","Heated Studio"], classes:["hot-yoga","yoga","vinyasa"], pool:false, yoga:true, crossfit:false, pilates:false, rating:4.9, website:"http://www.dragonflyhotyoga.com/" },
+    { name:"Anytime Fitness (Monona Dr)", lat:43.0537, lng:-89.3247, address:"6000 Monona Dr, Monona, WI 53716", hours:"Open 24/7", price:45, priceLabel:"$45/mo", open247:true, amenities:["Showers"], classes:["personal-training"], pool:false, yoga:false, crossfit:false, pilates:false, rating:4.8, website:"https://www.anytimefitness.com" },
+    { name:"Yoga Co-op of Madison", lat:43.0831, lng:-89.3768, address:"812 E Dayton St #200, Madison, WI 53703", hours:"See website", price:60, priceLabel:"$60/mo", open247:false, amenities:[], classes:["yoga"], pool:false, yoga:true, crossfit:false, pilates:false, rating:5.0, website:"http://www.yogacoop.com/" },
+    { name:"Sun Prairie YMCA", lat:43.1610, lng:-89.2630, address:"1470 Don Simon Dr, Sun Prairie, WI 53590", hours:"Mon–Fri 5am–9pm · Sat 6am–5pm · Sun 9am–5pm", price:50, priceLabel:"$50/mo", open247:false, amenities:["Pool","Showers","Childcare"], classes:["yoga","group-fitness","water-aerobics","pilates"], pool:true, yoga:true, crossfit:false, pilates:true, rating:4.5, website:"https://www.ymcadane.org/locations/sun-prairie" },
+    { name:"Miss Pole - Madison", lat:43.0579, lng:-89.5129, address:"7475 Mineral Point Rd, Madison, WI 53717", hours:"Mon–Thu 4:30–9pm · Fri–Sun 9am–5pm", price:90, priceLabel:"$90/mo", open247:false, amenities:["Locker Room"], classes:["pole-fitness","aerial","dance"], pool:false, yoga:false, crossfit:false, pilates:false, rating:4.8, website:"http://www.misspole.com/" },
+    { name:"Fitness Solutions", lat:43.0728, lng:-89.4341, address:"2701 University Ave A, Madison, WI 53705", hours:"See website", price:null, priceLabel:"Call for pricing", open247:false, amenities:["Personal Training"], classes:["personal-training"], pool:false, yoga:false, crossfit:false, pilates:false, rating:5.0, website:"http://madisonfitnesssolutions.com/" },
+    { name:"Princeton Club Xpress McFarland", lat:43.0155, lng:-89.3024, address:"5720 US-51, McFarland, WI 53558", hours:"Open 24/7", price:47, priceLabel:"$47/mo", open247:true, amenities:["Showers","Hydromassage"], classes:["group-fitness"], pool:false, yoga:false, crossfit:false, pilates:false, rating:4.8, website:"https://www.princetonclub.net/" },
+    { name:"Princeton Club Xpress Monona", lat:43.0605, lng:-89.3265, address:"5413 Monona Dr, Monona, WI 53716", hours:"Open 24/7", price:47, priceLabel:"$47/mo", open247:true, amenities:["Showers","Hydromassage"], classes:["group-fitness"], pool:false, yoga:false, crossfit:false, pilates:false, rating:4.3, website:"https://www.princetonclub.net/xpress-monona/" },
+    { name:"Phitness Plus", lat:43.0379, lng:-89.3775, address:"501 E Badger Rd, Madison, WI 53713", hours:"Daily 9am–10pm", price:35, priceLabel:"$35/mo", open247:false, amenities:["Showers"], classes:["group-fitness"], pool:false, yoga:false, crossfit:false, pilates:false, rating:3.0, website:"http://www.phitnessplus.com/" },
+    { name:"Anytime Fitness (Waunakee)", lat:43.1913, lng:-89.4461, address:"604 E Main St, Waunakee, WI 53597", hours:"Open 24/7", price:45, priceLabel:"$45/mo", open247:true, amenities:["Showers"], classes:["personal-training"], pool:false, yoga:false, crossfit:false, pilates:false, rating:4.7, website:"https://www.anytimefitness.com" },
+    { name:"The Combine", lat:43.0954, lng:-89.5124, address:"7551 Hubbard Ave, Middleton, WI 53562", hours:"Mon–Fri 5:30am–7:30pm · Sat 7am–1pm", price:150, priceLabel:"$150/mo", open247:false, amenities:["Personal Training"], classes:["strength-training","group-training"], pool:false, yoga:false, crossfit:false, pilates:false, rating:5.0, website:"http://www.combinestrength.com/" },
+    { name:"Forest Coaching and Studios", lat:43.0688, lng:-89.3919, address:"555 W Washington Ave, Madison, WI 53703", hours:"Tue–Fri 7am–7:30pm · Sat 8am–1pm", price:null, priceLabel:"Call for pricing", open247:false, amenities:["Showers","Personal Training"], classes:["personal-training","yoga"], pool:false, yoga:true, crossfit:false, pilates:false, rating:5.0, website:"http://www.forestcoachingandstudios.com/" },
+    { name:"Capital Fitness (Washington Ave)", lat:43.0705, lng:-89.3896, address:"425 W Washington Ave #2703, Madison, WI 53703", hours:"Mon–Fri 6am–9pm · Sat–Sun 9am–9pm", price:45, priceLabel:"$45/mo", open247:false, amenities:["Sauna","Showers","Tanning"], classes:["yoga","group-fitness","cycling"], pool:false, yoga:true, crossfit:false, pilates:false, rating:4.1, website:"http://www.capitalfitness.net/" },
+    { name:"Pilates Central", lat:43.0739, lng:-89.3827, address:"1 E Main St, Madison, WI 53703", hours:"Tue–Thu 9am–6:30pm · Sat–Sun 9:30am–3:30pm", price:120, priceLabel:"$120/mo", open247:false, amenities:[], classes:["pilates"], pool:false, yoga:false, crossfit:false, pilates:true, rating:5.0, website:"http://pilatescentralmadison.com/" },
+    { name:"SPRING - Pilates for Life", lat:43.0648, lng:-89.4180, address:"710 Harrison St, Madison, WI 53711", hours:"Mon–Thu 7:30am–6:30pm · Fri 7:30am–4pm · Sat 9am–12pm", price:100, priceLabel:"$100/mo", open247:false, amenities:[], classes:["pilates"], pool:false, yoga:false, crossfit:false, pilates:true, rating:5.0, website:"http://springpilates.life/" },
+    { name:"The Yoga Sangha", lat:43.0772, lng:-89.3815, address:"15 N Butler St, Madison, WI 53703", hours:"Daily 6am–9pm", price:50, priceLabel:"$50/mo", open247:false, amenities:["Showers"], classes:["yoga"], pool:false, yoga:true, crossfit:false, pilates:false, rating:5.0, website:"https://www.capitalfitness.net/yoga-sangha" },
+    { name:"Purple Door Pilates", lat:43.0833, lng:-89.3773, address:"807 E Johnson St, Madison, WI 53703", hours:"Mon–Fri 8am–7:30pm · Sat–Sun limited", price:110, priceLabel:"$110/mo", open247:false, amenities:[], classes:["pilates"], pool:false, yoga:false, crossfit:false, pilates:true, rating:4.9, website:"http://www.purpledoorpilatesmadison.com/" },
+    { name:"barre3 Madison", lat:43.0726, lng:-89.4301, address:"2560 University Ave, Madison, WI 53705", hours:"Daily 6am–8:30pm", price:99, priceLabel:"$99/mo", open247:false, amenities:["Showers"], classes:["barre","yoga","cardio"], pool:false, yoga:true, crossfit:false, pilates:false, rating:5.0, website:"https://online.barre3.com/studio-locations/madison" },
+    { name:"Anytime Fitness (Atwood Ave)", lat:43.0921, lng:-89.3539, address:"2045 Atwood Ave, Madison, WI 53704", hours:"Open 24/7", price:45, priceLabel:"$45/mo", open247:true, amenities:["Showers"], classes:["personal-training"], pool:false, yoga:false, crossfit:false, pilates:false, rating:4.7, website:"https://www.anytimefitness.com" },
+    { name:"Anytime Fitness (S Midvale Blvd)", lat:43.0547, lng:-89.4502, address:"515 S Midvale Blvd, Madison, WI 53711", hours:"Open 24/7", price:45, priceLabel:"$45/mo", open247:true, amenities:["Showers"], classes:["personal-training"], pool:false, yoga:false, crossfit:false, pilates:false, rating:4.6, website:"https://www.anytimefitness.com" },
+    { name:"Great State Fitness", lat:43.0354, lng:-89.3804, address:"2500 Rimrock Rd #104, Fitchburg, WI 53713", hours:"Open 24/7", price:null, priceLabel:"Call for pricing", open247:true, amenities:["Showers"], classes:["CrossFit","group-fitness"], pool:false, yoga:false, crossfit:true, pilates:false, rating:5.0, website:null },
+    { name:"Orangetheory Fitness", lat:43.0345, lng:-89.4211, address:"2501 W Beltline Hwy #105, Madison, WI 53713", hours:"Mon–Thu 5am–7:30pm · Fri 5am–6:30pm · Sat 7–11:30am · Sun 8am–12:30pm", price:59, priceLabel:"$59/mo", open247:false, amenities:["Showers","Personal Training"], classes:["HIIT","group-fitness","strength-training"], pool:false, yoga:false, crossfit:false, pilates:false, rating:4.8, website:"https://www.orangetheory.com" },
+    { name:"Get Fit in 30! Boot Camp", lat:43.1077, lng:-89.3637, address:"607 N Sherman Ave, Madison, WI 53704", hours:"See website", price:null, priceLabel:"Call for pricing", open247:false, amenities:[], classes:["boot-camp","group-fitness"], pool:false, yoga:false, crossfit:false, pilates:false, rating:null, website:null },
+    { name:"Carbon World Health", lat:43.0614, lng:-89.4729, address:"340 S Whitney Way #100, Madison, WI 53705", hours:"Mon–Thu 6am–8pm · Fri 6am–6pm · Sat 7am–1pm", price:60, priceLabel:"$60/mo", open247:false, amenities:["Showers","Sauna","Infrared Sauna"], classes:["personal-training","group-fitness"], pool:false, yoga:false, crossfit:false, pilates:false, rating:4.8, website:"https://www.carbonworldhealth.com/" },
+    { name:"Sanctuary Jiu-Jitsu", lat:43.1010, lng:-89.3344, address:"46 N Bryan St, Madison, WI 53714", hours:"Mon/Wed/Fri 6:30am–8pm · Tue/Thu 10am–7:30pm · Sat 9am–12pm", price:125, priceLabel:"$125/mo", open247:false, amenities:["Showers","Mats"], classes:["Brazilian-jiu-jitsu","gi","no-gi"], pool:false, yoga:false, crossfit:false, pilates:false, rating:5.0, website:"https://bjjmadison.com/" },
+    { name:"Jules Pilates Studio", lat:43.0833, lng:-89.3238, address:"5419 Monona Dr, Monona, WI 53714", hours:"Mon–Fri 7am–8pm", price:100, priceLabel:"$100/mo", open247:false, amenities:[], classes:["pilates"], pool:false, yoga:false, crossfit:false, pilates:true, rating:5.0, website:"https://www.julespilates.com/" },
+    { name:"Anytime Fitness (Cahill Main)", lat:43.0179, lng:-89.4232, address:"2980 Cahill Main, Fitchburg, WI 53711", hours:"Open 24/7", price:45, priceLabel:"$45/mo", open247:true, amenities:["Showers"], classes:["personal-training"], pool:false, yoga:false, crossfit:false, pilates:false, rating:4.7, website:"https://www.anytimefitness.com" },
+    { name:"Nicholas Recreation Center (The Nick)", lat:43.0721, lng:-89.4042, address:"797 W Dayton St, Madison, WI 53715", hours:"Mon–Thu 5:45am–11pm · Fri 5:45am–10pm · Sat 8am–9pm · Sun 10am–9pm", price:0, priceLabel:"Free w/ student ID", open247:false, amenities:["Pool","Showers","Basketball","Personal Training"], classes:["group-fitness","yoga","pilates","HIIT"], pool:true, yoga:true, crossfit:false, pilates:true, rating:4.7, website:"https://recwell.wisc.edu/locations/nick/" },
+    { name:"Bakke Recreation & Wellbeing Center", lat:43.0774, lng:-89.4144, address:"1976 Observatory Dr, Madison, WI 53706", hours:"Mon–Thu 5:45am–11pm · Fri 5:45am–10pm · Sat 8am–9pm · Sun 10am–9pm", price:0, priceLabel:"Free w/ student ID", open247:false, amenities:["Pool","Climbing Wall","Ice Rink","Sauna","Showers"], classes:["group-fitness","yoga","climbing","HIIT"], pool:true, yoga:true, crossfit:false, pilates:false, rating:4.8, website:"https://recwell.wisc.edu/locations/bakke/" }
   ];
 
-  // ===========================
-  //  Initialize Map
-  // ===========================
-  const map = L.map('map').setView([43.0731, -89.4012], 13);
+  // ============================================================
+  //  MAP INIT
+  // ============================================================
+  const map = L.map('map', { zoomControl: true }).setView([43.073, -89.401], 12);
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors'
   }).addTo(map);
 
-  // Red gym marker
   const redIcon = L.divIcon({
     className: '',
-    html: `<div style="
-      width: 16px; height: 16px;
-      background: #c1121f;
-      border: 3px solid white;
-      border-radius: 50%;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
-    "></div>`,
-    iconSize: [16, 16],
-    iconAnchor: [8, 8],
-    popupAnchor: [0, -12]
+    html: '<div style="width:13px;height:13px;background:#c1121f;border:2.5px solid white;border-radius:50%;box-shadow:0 1px 4px rgba(0,0,0,0.5)"></div>',
+    iconSize:[13,13], iconAnchor:[6,6], popupAnchor:[0,-10]
   });
-
-  // Blue user location marker
   const blueIcon = L.divIcon({
     className: '',
-    html: `<div style="
-      width: 16px; height: 16px;
-      background: #4285F4;
-      border: 3px solid white;
-      border-radius: 50%;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
-    "></div>`,
-    iconSize: [16, 16],
-    iconAnchor: [8, 8],
-    popupAnchor: [0, -12]
+    html: '<div style="width:14px;height:14px;background:#2563EB;border:2.5px solid white;border-radius:50%;box-shadow:0 1px 4px rgba(0,0,0,0.5)"></div>',
+    iconSize:[14,14], iconAnchor:[7,7], popupAnchor:[0,-10]
   });
 
   let markers = [];
   let userMarker = null;
 
-  // Directions URL builder
-  function directionsUrl(address, mode) {
-    const modes = { drive: 'driving', walk: 'walking', bike: 'bicycling' };
-    return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address)}&travelmode=${modes[mode]}`;
+  function dirUrl(addr, mode) {
+    return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(addr)}&travelmode=${mode}`;
   }
 
-  // Add gym markers
-  gyms.forEach(gym => {
-    const marker = L.marker([gym.lat, gym.lng], { icon: redIcon });
-
-    const popupContent = `
+  gymData.forEach(g => {
+    const marker = L.marker([g.lat, g.lng], { icon: redIcon });
+    const amenStr = g.amenities.length ? g.amenities.join(' · ') : '—';
+    const webBtn = g.website ? `<a href="${g.website}" target="_blank" class="popup-btn btn-web">🌐 Site</a>` : '';
+    marker.bindPopup(`
       <div class="gym-popup">
-        <img src="${gym.image}" alt="${gym.name}" onerror="this.src='https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=200&fit=crop'"/>
-        <h3>${gym.name}</h3>
-        <p>💰 ${gym.priceLabel}</p>
-        <p>🕐 ${gym.hours}</p>
-        <p class="popup-amenities">${gym.amenities.join(' · ')}</p>
+        <h3>${g.name}</h3>
+        <p class="popup-meta">${g.rating ? '⭐ ' + g.rating + ' &nbsp;' : ''}💰 ${g.priceLabel}</p>
+        <p>🕐 ${g.hours}</p>
+        <p class="popup-amenities">${amenStr}</p>
         <div class="popup-buttons">
-          <a href="${directionsUrl(gym.address, 'drive')}" target="_blank" class="popup-btn btn-directions">🚗 Drive</a>
-          <a href="${directionsUrl(gym.address, 'walk')}" target="_blank" class="popup-btn btn-walk">🚶 Walk</a>
-          <a href="${directionsUrl(gym.address, 'bike')}" target="_blank" class="popup-btn btn-bike">🚲 Bike</a>
+          <a href="${dirUrl(g.address,'driving')}" target="_blank" class="popup-btn btn-drive">🚗 Drive</a>
+          <a href="${dirUrl(g.address,'walking')}" target="_blank" class="popup-btn btn-walk">🚶 Walk</a>
+          <a href="${dirUrl(g.address,'bicycling')}" target="_blank" class="popup-btn btn-bike">🚲 Bike</a>
+          ${webBtn}
         </div>
-      </div>
-    `;
-
-    marker.bindPopup(popupContent, { maxWidth: 260 });
-    marker.gymData = gym;
+      </div>`, { maxWidth:270 });
+    marker.gymData = g;
     marker.addTo(map);
     markers.push(marker);
   });
 
-  // ===========================
-  //  My Location button
-  // ===========================
+  // ============================================================
+  //  LOCATE ME
+  // ============================================================
   function locateMe() {
-    if (!navigator.geolocation) {
-      alert('Geolocation is not supported by your browser.');
-      return;
-    }
-    navigator.geolocation.getCurrentPosition(position => {
-      const lat = position.coords.latitude;
-      const lng = position.coords.longitude;
-
+    if (!navigator.geolocation) { alert('Geolocation not supported by your browser.'); return; }
+    navigator.geolocation.getCurrentPosition(pos => {
       if (userMarker) userMarker.remove();
-
-      userMarker = L.marker([lat, lng], { icon: blueIcon })
-        .bindPopup('<strong>📍 You are here</strong>')
-        .addTo(map);
-
-      map.setView([lat, lng], 14);
+      userMarker = L.marker([pos.coords.latitude, pos.coords.longitude], { icon: blueIcon })
+        .bindPopup('<strong>📍 You are here</strong>').addTo(map);
+      map.setView([pos.coords.latitude, pos.coords.longitude], 14);
       userMarker.openPopup();
-    }, () => {
-      alert('Could not get your location. Make sure location access is allowed.');
-    });
+    }, () => alert('Could not get your location.'));
   }
-
-  // Ask for location automatically on load
   locateMe();
 
-  // ===========================
-  //  Address search using
-  //  Google Geocoding API
-  // ===========================
+  // ============================================================
+  //  ADDRESS SEARCH (requires server running for API key)
+  // ============================================================
   function searchAddress() {
     const input = document.getElementById('addressInput').value.trim();
     if (!input) return;
-
-    // Fetch maps key from server then geocode
     fetch('/api/maps-key')
-      .then(res => res.json())
-      .then(data => {
-        return fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(input)}&key=${data.key}`);
-      })
-      .then(res => res.json())
-      .then(data => {
-        if (data.results && data.results.length > 0) {
-          const loc = data.results[0].geometry.location;
-
+      .then(r => r.json())
+      .then(d => fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(input + ', Madison WI')}&key=${d.key}`))
+      .then(r => r.json())
+      .then(d => {
+        if (d.results && d.results.length > 0) {
+          const loc = d.results[0].geometry.location;
           if (userMarker) userMarker.remove();
-
           userMarker = L.marker([loc.lat, loc.lng], { icon: blueIcon })
-            .bindPopup(`<strong>📍 ${data.results[0].formatted_address}</strong>`)
-            .addTo(map);
-
+            .bindPopup(`<strong>📍 ${d.results[0].formatted_address}</strong>`).addTo(map);
           map.setView([loc.lat, loc.lng], 14);
           userMarker.openPopup();
-        } else {
-          alert('Address not found. Try a more specific address.');
-        }
+        } else { alert('Address not found. Try being more specific.'); }
       })
-      .catch(() => {
-        alert('Could not search address. Make sure the server is running.');
-      });
+      .catch(() => alert('Address search requires the server to be running (node server.js).'));
   }
 
-  // Allow pressing Enter to search
   document.getElementById('addressInput').addEventListener('keypress', e => {
     if (e.key === 'Enter') searchAddress();
   });
 
-  // ===========================
-  //  Filter markers
-  // ===========================
+  // ============================================================
+  //  FILTER
+  // ============================================================
   function filterMap(filter, btn) {
     document.querySelectorAll('.map-pill').forEach(p => p.classList.remove('active'));
     btn.classList.add('active');
-
     markers.forEach(marker => {
-      const gym = marker.gymData;
-      let show = false;
-
-      if (filter === 'all') show = true;
-      else if (filter === 'campus') show = gym.location === 'campus';
-      else if (filter === 'cheap') show = gym.price <= 20;
-      else if (filter === 'classes') show = gym.classes;
-      else if (filter === 'open247') show = gym.open247;
-
-      if (show) marker.addTo(map);
-      else marker.remove();
+      const g = marker.gymData;
+      let show =
+        filter === 'all'      ? true :
+        filter === 'free'     ? g.price === 0 :
+        filter === 'cheap'    ? (g.price !== null && g.price > 0 && g.price <= 30) :
+        filter === 'open247'  ? g.open247 :
+        filter === 'classes'  ? g.classes.length > 0 :
+        filter === 'yoga'     ? g.yoga :
+        filter === 'pilates'  ? g.pilates :
+        filter === 'crossfit' ? g.crossfit :
+        filter === 'pool'     ? g.pool : false;
+      if (show) marker.addTo(map); else marker.remove();
     });
   }
 </script>
-
 </body>
 </html>
