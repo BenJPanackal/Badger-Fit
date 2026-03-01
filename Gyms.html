@@ -4,20 +4,1221 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gyms in Madison · BadgerFit</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="survey.css" />
+  <style>
+    /* Override survey.css body for navbar layout */
+    body {
+      display: block;
+      padding: 0;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: #111;
+      border-bottom: 1px solid #2a2a2a;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      color: var(--accent);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+    .nav-links a {
+      color: #f0f0f0;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* PAGE HERO */
+    .page-hero {
+      text-align: center;
+      padding: 4rem 2rem 2.5rem;
+    }
+    .page-hero .eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #666;
+      margin-bottom: 0.75rem;
+    }
+    .page-hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 10vw, 7rem);
+      line-height: 0.9;
+      letter-spacing: 0.02em;
+      color: var(--accent);
+    }
+    .page-hero .sub {
+      margin-top: 1rem;
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    /* GRID WRAPPER */
+    .gyms-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 2rem 5rem;
+    }
+
+    .gym-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    @media (max-width: 900px) {
+      .gym-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .gym-grid { grid-template-columns: 1fr; }
+    }
+
+    /* GYM CARD */
+    .gym-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      transition: border-color 0.2s, transform 0.15s;
+    }
+    .gym-card:hover {
+      border-color: rgba(255,46,46,0.35);
+      transform: translateY(-3px);
+    }
+
+    .gym-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.04em;
+      color: #f0f0f0;
+      line-height: 1.1;
+    }
+
+    .gym-address {
+      font-size: 0.78rem;
+      color: #666;
+    }
+
+    .gym-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+      font-size: 0.8rem;
+      color: #666;
+    }
+
+    .gym-hours {
+      font-size: 0.76rem;
+      color: #555;
+      border-top: 1px solid var(--border);
+      padding-top: 0.6rem;
+      margin-top: auto;
+    }
+    .gym-hours summary {
+      cursor: pointer;
+      color: #666;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      user-select: none;
+    }
+    .gym-hours summary::after {
+      content: '▸';
+      font-size: 0.7rem;
+      transition: transform 0.2s;
+    }
+    .gym-hours[open] summary::after {
+      transform: rotate(90deg);
+    }
+    .gym-hours ul {
+      list-style: none;
+      margin-top: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .gym-hours ul li {
+      color: #555;
+    }
+
+    .visit-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      padding: 0.5rem 1.1rem;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: transform 0.12s, box-shadow 0.12s;
+      align-self: flex-start;
+      margin-top: 0.25rem;
+    }
+    .visit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255,46,46,0.3);
+    }
+    .no-website {
+      font-size: 0.78rem;
+      color: #555;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: #111;
+      border-top: 1px solid #2a2a2a;
+      color: #444;
+      font-size: 0.85rem;
+    }
+  </style>
 </head>
 <body>
 
+<!-- NAVBAR -->
 <nav class="navbar">
   <a href="index.html" class="logo">🦡 BadgerFit</a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
-    <li><a href="gyms.html">Gyms in Madison</a></li>
+    <li><a href="Gyms.html">Gyms in Madison</a></li>
     <li><a href="about.html">About</a></li>
   </ul>
 </nav>
 
-<!-- GYMS IN MADISON GO HERE -->
+<!-- HERO -->
+<div class="page-hero">
+  <p class="eyebrow">Madison, WI</p>
+  <h1>All Gyms</h1>
+  <p class="sub">Every fitness spot in the Madison area — find your fit.</p>
+</div>
+
+<!-- GYM GRID -->
+<section class="gyms-section">
+  <div class="gym-grid">
+
+    <!-- Hilldale Shopping Center -->
+    <div class="gym-card">
+      <div class="gym-name">Hilldale Shopping Center</div>
+      <div class="gym-address">📍 726 N Midvale Blvd, Madison, WI 53705</div>
+      <div class="gym-meta">
+        <span>⭐ 4.4 (3,977 reviews)</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul>
+          <li>Mon–Fri: 10:00 AM – 8:00 PM</li>
+          <li>Saturday: 10:00 AM – 8:00 PM</li>
+          <li>Sunday: 11:00 AM – 6:00 PM</li>
+        </ul>
+      </details>
+      <a href="https://hilldale.com/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Capital Fitness (Butler St) -->
+    <div class="gym-card">
+      <div class="gym-name">Capital Fitness</div>
+      <div class="gym-address">📍 15 N Butler St, Madison, WI 53703</div>
+      <div class="gym-meta">
+        <span>⭐ 4.5 (189 reviews)</span>
+        <span>📞 (608) 251-1245</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul>
+          <li>Mon–Thu: 5:00 AM – 10:00 PM</li>
+          <li>Friday: 5:00 AM – 9:00 PM</li>
+          <li>Sat–Sun: 6:00 AM – 9:00 PM</li>
+        </ul>
+      </details>
+      <a href="http://www.capitalfitness.net/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Anytime Fitness – Campus Mall -->
+    <div class="gym-card">
+      <div class="gym-name">Anytime Fitness</div>
+      <div class="gym-address">📍 301 E Campus Mall, Madison, WI 53715</div>
+      <div class="gym-meta">
+        <span>⭐ 4.6 (344 reviews)</span>
+        <span>📞 (608) 237-2717</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul><li>Open 24 Hours / 7 Days</li></ul>
+      </details>
+      <a href="https://www.anytimefitness.com/locations/madison-wisconsin-2104/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Anytime Fitness – Middleton -->
+    <div class="gym-card">
+      <div class="gym-name">Anytime Fitness</div>
+      <div class="gym-address">📍 1011 N Gammon Rd, Middleton, WI 53562</div>
+      <div class="gym-meta">
+        <span>⭐ 4.8 (213 reviews)</span>
+        <span>📞 (608) 836-3131</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul><li>Open 24 Hours / 7 Days</li></ul>
+      </details>
+      <a href="https://www.anytimefitness.com/locations/middleton-wisconsin-595/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Perennial Yoga -->
+    <div class="gym-card">
+      <div class="gym-name">Perennial Yoga</div>
+      <div class="gym-address">📍 5500 E Cheryl Pkwy Suite 101, Fitchburg, WI 53711</div>
+      <div class="gym-meta">
+        <span>⭐ 4.8 (48 reviews)</span>
+        <span>📞 (608) 288-8448</span>
+      </div>
+      <a href="http://perennial-yoga.com/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Princeton Club – West -->
+    <div class="gym-card">
+      <div class="gym-name">Princeton Club – West</div>
+      <div class="gym-address">📍 8080 Watts Rd, Madison, WI 53719</div>
+      <div class="gym-meta">
+        <span>⭐ 4.1 (687 reviews)</span>
+        <span>📞 (608) 833-2639</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul><li>Open 24 Hours / 7 Days</li></ul>
+      </details>
+      <a href="http://www.princetonclub.net/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- CORE Health & Fitness -->
+    <div class="gym-card">
+      <div class="gym-name">CORE Health &amp; Fitness</div>
+      <div class="gym-address">📍 2248 Deming Way #100, Middleton, WI 53562</div>
+      <div class="gym-meta">
+        <span>⭐ 5.0 (32 reviews)</span>
+        <span>📞 (608) 831-2673</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul>
+          <li>Mon–Thu: 6:00 AM – 5:45 PM</li>
+          <li>Friday: 6:00 AM – 4:30 PM</li>
+          <li>Saturday: 8:00 – 10:00 AM</li>
+          <li>Sunday: Closed</li>
+        </ul>
+      </details>
+      <a href="http://www.corehealthandfit.com/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Princeton Club – East -->
+    <div class="gym-card">
+      <div class="gym-name">Princeton Club – East</div>
+      <div class="gym-address">📍 1726 Eagan Rd, Madison, WI 53704</div>
+      <div class="gym-meta">
+        <span>⭐ 4.5 (960 reviews)</span>
+        <span>📞 (608) 241-2639</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul><li>Open 24 Hours / 7 Days</li></ul>
+      </details>
+      <a href="http://www.princetonclub.net/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Pinnacle Health + Fitness – Madison -->
+    <div class="gym-card">
+      <div class="gym-name">Pinnacle Health + Fitness</div>
+      <div class="gym-address">📍 44 E Mifflin St, Madison, WI 53703</div>
+      <div class="gym-meta">
+        <span>⭐ 4.5 (63 reviews)</span>
+        <span>📞 (608) 442-8118</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul>
+          <li>Mon–Fri: 5:00 AM – 11:00 PM</li>
+          <li>Sat–Sun: 5:00 AM – 8:00 PM</li>
+        </ul>
+      </details>
+      <a href="https://www.phfitness.com/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- H. Douglas Redsten Gymnasium -->
+    <div class="gym-card">
+      <div class="gym-name">H. Douglas Redsten Gymnasium</div>
+      <div class="gym-address">📍 1701 Wright St, Madison, WI 53704</div>
+      <div class="gym-meta">
+        <span>⭐ 5.0 (2 reviews)</span>
+        <span>📞 (608) 245-2100</span>
+      </div>
+      <a href="http://madisoncollegeathletics.com/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Anytime Fitness – Cottage Grove -->
+    <div class="gym-card">
+      <div class="gym-name">Anytime Fitness</div>
+      <div class="gym-address">📍 6420 Cottage Grove Rd, Madison, WI 53718</div>
+      <div class="gym-meta">
+        <span>⭐ 4.7 (190 reviews)</span>
+        <span>📞 (608) 221-1222</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul><li>Open 24 Hours / 7 Days</li></ul>
+      </details>
+      <a href="https://www.anytimefitness.com/locations/madison-wisconsin-332/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Harbor Wellness Studios -->
+    <div class="gym-card">
+      <div class="gym-name">Harbor Wellness Studios</div>
+      <div class="gym-address">📍 2711 Allen Blvd, Middleton, WI 53562</div>
+      <div class="gym-meta">
+        <span>⭐ 4.8 (11 reviews)</span>
+        <span>📞 (608) 821-6501</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul>
+          <li>Mon–Thu: 5:00 AM – 11:00 PM</li>
+          <li>Friday: 5:00 AM – 10:00 PM</li>
+          <li>Sat–Sun: 5:00 AM – 9:00 PM</li>
+        </ul>
+      </details>
+      <a href="http://www.harborathletic.com/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Twisted Fitness Gym -->
+    <div class="gym-card">
+      <div class="gym-name">Twisted Fitness Gym</div>
+      <div class="gym-address">📍 711 Rethke Ave Suite 1, Madison, WI 53714</div>
+      <div class="gym-meta">
+        <span>⭐ 4.8 (119 reviews)</span>
+        <span>📞 (608) 241-9007</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul>
+          <li>Mon–Fri: 5:30 AM – 9:30 PM</li>
+          <li>Saturday: 7:00 AM – 6:00 PM</li>
+          <li>Sunday: 9:00 AM – 5:00 PM</li>
+        </ul>
+      </details>
+      <a href="https://twistedfitnessgym.com/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Ford's Gym -->
+    <div class="gym-card">
+      <div class="gym-name">Ford's Gym</div>
+      <div class="gym-address">📍 2114 Winnebago St, Madison, WI 53704</div>
+      <div class="gym-meta">
+        <span>⭐ 4.9 (164 reviews)</span>
+        <span>📞 (608) 249-4227</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul>
+          <li>Mon–Fri: 5:30 AM – 9:30 PM</li>
+          <li>Saturday: 8:00 AM – 6:00 PM</li>
+          <li>Sunday: 10:00 AM – 6:00 PM</li>
+        </ul>
+      </details>
+      <a href="http://www.fordsgym.com/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Anytime Fitness – Nesbitt Rd -->
+    <div class="gym-card">
+      <div class="gym-name">Anytime Fitness</div>
+      <div class="gym-address">📍 6250 Nesbitt Rd, Madison, WI 53719</div>
+      <div class="gym-meta">
+        <span>⭐ 4.7 (205 reviews)</span>
+        <span>📞 (608) 270-9500</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul><li>Open 24 Hours / 7 Days</li></ul>
+      </details>
+      <a href="https://www.anytimefitness.com/locations/fitchburg-wisconsin-690" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- CrossFit Sanctify -->
+    <div class="gym-card">
+      <div class="gym-name">CrossFit Sanctify</div>
+      <div class="gym-address">📍 4535 Helgesen Dr, Madison, WI 53718</div>
+      <div class="gym-meta">
+        <span>⭐ 5.0 (32 reviews)</span>
+        <span>📞 (608) 441-0888</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul>
+          <li>Mon–Thu: 5:00 AM – 7:00 PM</li>
+          <li>Friday: 5:00 AM – 6:00 PM</li>
+          <li>Saturday: 8:00 – 10:00 AM</li>
+          <li>Sunday: Closed</li>
+        </ul>
+      </details>
+      <a href="http://crossfitsanctify.com/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Boys and Girls Club -->
+    <div class="gym-card">
+      <div class="gym-name">Boys and Girls Club of Dane County</div>
+      <div class="gym-address">📍 2001 Taft St, Madison, WI 53713</div>
+      <div class="gym-meta">
+        <span>⭐ 4.1 (10 reviews)</span>
+        <span>📞 (608) 257-2606</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul>
+          <li>Mon–Fri: 9:00 AM – 5:00 PM</li>
+          <li>Sat–Sun: Closed</li>
+        </ul>
+      </details>
+      <a href="http://www.bgcdc.org/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Planet Fitness -->
+    <div class="gym-card">
+      <div class="gym-name">Planet Fitness</div>
+      <div class="gym-address">📍 2311 W Broadway, Monona, WI 53713</div>
+      <div class="gym-meta">
+        <span>⭐ 4.6 (926 reviews)</span>
+        <span>📞 (608) 223-9075</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul>
+          <li>Mon–Thu: Open 24 Hours</li>
+          <li>Friday: 12:00 AM – 10:00 PM</li>
+          <li>Saturday: 7:00 AM – 7:00 PM</li>
+          <li>Sunday: 7:00 AM – 12:00 AM</li>
+        </ul>
+      </details>
+      <a href="https://www.planetfitness.com/gyms/madison-west-broadway-wi" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Gymfinity Gymnastics -->
+    <div class="gym-card">
+      <div class="gym-name">Gymfinity Gymnastics</div>
+      <div class="gym-address">📍 6300 Nesbitt Rd, Madison, WI 53719</div>
+      <div class="gym-meta">
+        <span>⭐ 4.6 (76 reviews)</span>
+        <span>📞 (608) 848-3547</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul>
+          <li>Mon–Fri: 9:00 AM – 7:00/8:00 PM</li>
+          <li>Saturday: 8:30 AM – 2:00 PM</li>
+          <li>Sunday: Closed</li>
+        </ul>
+      </details>
+      <a href="http://www.gymfinity.com/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Anytime Fitness – McFarland -->
+    <div class="gym-card">
+      <div class="gym-name">Anytime Fitness</div>
+      <div class="gym-address">📍 5802 US-51, McFarland, WI 53558</div>
+      <div class="gym-meta">
+        <span>⭐ 4.8 (139 reviews)</span>
+        <span>📞 (608) 838-8111</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul><li>Open 24 Hours / 7 Days</li></ul>
+      </details>
+      <a href="https://www.anytimefitness.com/locations/mcfarland-wisconsin-594/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Madison Turners -->
+    <div class="gym-card">
+      <div class="gym-name">Madison Turners</div>
+      <div class="gym-address">📍 3001 S Stoughton Rd, Madison, WI 53716</div>
+      <div class="gym-meta">
+        <span>⭐ 4.5 (26 reviews)</span>
+        <span>📞 (608) 222-4922</span>
+      </div>
+      <a href="http://www.madisonturners.com/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Anytime Fitness – Verona -->
+    <div class="gym-card">
+      <div class="gym-name">Anytime Fitness</div>
+      <div class="gym-address">📍 411 Prairie Heights Dr, Verona, WI 53593</div>
+      <div class="gym-meta">
+        <span>⭐ 4.2 (123 reviews)</span>
+        <span>📞 (608) 497-1266</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul><li>Open 24 Hours / 7 Days</li></ul>
+      </details>
+      <a href="https://www.anytimefitness.com/locations/verona-wisconsin-781/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Madison Ballet -->
+    <div class="gym-card">
+      <div class="gym-name">Madison Ballet</div>
+      <div class="gym-address">📍 6734 Odana Rd, Madison, WI 53719</div>
+      <div class="gym-meta">
+        <span>⭐ 5.0 (22 reviews)</span>
+        <span>📞 (608) 278-7990</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul>
+          <li>Mon–Fri: 9:00 AM – 8:00 PM</li>
+          <li>Saturday: 9:00 AM – 1:00 PM</li>
+          <li>Sunday: Closed</li>
+        </ul>
+      </details>
+      <a href="http://www.madisonballet.org/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Dance Life Studio -->
+    <div class="gym-card">
+      <div class="gym-name">Dance Life Studio and Fitness</div>
+      <div class="gym-address">📍 6725 Seybold Rd, Madison, WI 53719</div>
+      <div class="gym-meta">
+        <span>⭐ 5.0 (31 reviews)</span>
+        <span>📞 (608) 616-9440</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul>
+          <li>Mon–Thu: 5:30 – 8:00 PM</li>
+          <li>Friday: Closed</li>
+          <li>Saturday: 8:30 – 11:00 AM</li>
+          <li>Sunday: 9:30 AM – 12:00 PM</li>
+        </ul>
+      </details>
+      <a href="http://www.madisondancelife.com/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Inner Fire Yoga -->
+    <div class="gym-card">
+      <div class="gym-name">Inner Fire Yoga</div>
+      <div class="gym-address">📍 5003 University Ave Suite 195, Madison, WI 53705</div>
+      <div class="gym-meta">
+        <span>⭐ 4.8 (318 reviews)</span>
+        <span>📞 (608) 661-0167</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul>
+          <li>Mon–Fri: Early AM, Morning &amp; Evening sessions</li>
+          <li>Saturday: 6:30 AM – 4:00 PM</li>
+          <li>Sunday: 8:00 AM – 7:30 PM</li>
+        </ul>
+      </details>
+      <a href="http://www.innerfireyoga.com/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Anytime Fitness – N Sherman Ave -->
+    <div class="gym-card">
+      <div class="gym-name">Anytime Fitness</div>
+      <div class="gym-address">📍 1193 N Sherman Ave, Madison, WI 53704</div>
+      <div class="gym-meta">
+        <span>⭐ 4.6 (315 reviews)</span>
+        <span>📞 (608) 245-1616</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul><li>Open 24 Hours / 7 Days</li></ul>
+      </details>
+      <a href="https://www.anytimefitness.com/locations/madison-wisconsin-693/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Orange Shoe Personal Fitness -->
+    <div class="gym-card">
+      <div class="gym-name">Orange Shoe Personal Fitness</div>
+      <div class="gym-address">📍 1 E Main St, Madison, WI 53703</div>
+      <div class="gym-meta">
+        <span>⭐ 5.0 (71 reviews)</span>
+        <span>📞 (608) 255-0525</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul>
+          <li>Mon–Fri: 5:00 AM – 10:00 PM</li>
+          <li>Saturday: 6:00 AM – 3:00 PM</li>
+          <li>Sunday: Closed</li>
+        </ul>
+      </details>
+      <a href="https://www.orangeshoe.com/MadisonDowntown" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Supreme Health & Fitness -->
+    <div class="gym-card">
+      <div class="gym-name">Supreme Health &amp; Fitness</div>
+      <div class="gym-address">📍 5555 Odana Rd, Madison, WI 53719</div>
+      <div class="gym-meta">
+        <span>⭐ 4.9 (167 reviews)</span>
+        <span>📞 (608) 274-5080</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul>
+          <li>Mon–Thu: 5:00 AM – 9:00 PM</li>
+          <li>Friday: 5:00 AM – 7:00 PM</li>
+          <li>Sat–Sun: 6:30 AM – 7:00 PM</li>
+        </ul>
+      </details>
+      <a href="http://www.supremehealthfitness.com/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Studio Melt -->
+    <div class="gym-card">
+      <div class="gym-name">Studio Melt</div>
+      <div class="gym-address">📍 301 W Beltline Hwy Suite 103, Madison, WI 53713</div>
+      <div class="gym-meta">
+        <span>⭐ 5.0 (3 reviews)</span>
+        <span>📞 (608) 663-6358</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul>
+          <li>Mon–Fri: 5:30 AM – 8:30 PM</li>
+          <li>Saturday: 7:00 AM – 2:00 PM</li>
+          <li>Sunday: 8:30 AM – 1:30 PM</li>
+        </ul>
+      </details>
+      <a href="http://www.studiomelt.com/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Pinnacle Health + Fitness – Fitchburg -->
+    <div class="gym-card">
+      <div class="gym-name">Pinnacle Health + Fitness – Fitchburg</div>
+      <div class="gym-address">📍 5973 Executive Dr, Fitchburg, WI 53719</div>
+      <div class="gym-meta">
+        <span>⭐ 4.3 (154 reviews)</span>
+        <span>📞 (608) 278-8118</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul>
+          <li>Mon–Fri: 5:00 AM – 11:00 PM</li>
+          <li>Sat–Sun: 5:00 AM – 8:00 PM</li>
+        </ul>
+      </details>
+      <a href="https://www.phfitness.com/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Dragonfly Hot Yoga -->
+    <div class="gym-card">
+      <div class="gym-name">Dragonfly Hot Yoga</div>
+      <div class="gym-address">📍 6227 McKee Rd, Fitchburg, WI 53719</div>
+      <div class="gym-meta">
+        <span>⭐ 4.9 (198 reviews)</span>
+        <span>📞 (608) 203-9000</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul>
+          <li>Mon &amp; Tue: AM + Evening sessions</li>
+          <li>Wednesday: 5:30 – 8:00 PM</li>
+          <li>Saturday: 8:00 AM – 12:00 PM</li>
+          <li>Sunday: 8:30 AM – 8:00 PM</li>
+        </ul>
+      </details>
+      <a href="http://www.dragonflyhotyoga.com/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Anytime Fitness – Monona Dr -->
+    <div class="gym-card">
+      <div class="gym-name">Anytime Fitness</div>
+      <div class="gym-address">📍 6000 Monona Dr, Monona, WI 53716</div>
+      <div class="gym-meta">
+        <span>⭐ 4.8 (237 reviews)</span>
+        <span>📞 (608) 222-9699</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul><li>Open 24 Hours / 7 Days</li></ul>
+      </details>
+      <a href="https://www.anytimefitness.com/locations/monona-wisconsin-689/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Yoga Co-op of Madison -->
+    <div class="gym-card">
+      <div class="gym-name">Yoga Co-op of Madison</div>
+      <div class="gym-address">📍 812 E Dayton St #200, Madison, WI 53703</div>
+      <div class="gym-meta">
+        <span>⭐ 5.0 (2 reviews)</span>
+      </div>
+      <a href="http://www.yogacoop.com/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Madtown Twisters Gymnastics – West -->
+    <div class="gym-card">
+      <div class="gym-name">Madtown Twisters Gymnastics – West</div>
+      <div class="gym-address">📍 7035 Old Sauk Rd, Madison, WI 53717</div>
+      <div class="gym-meta">
+        <span>⭐ 4.1 (61 reviews)</span>
+        <span>📞 (608) 829-2922</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul>
+          <li>Mon–Thu: 8:00 AM – 8:30 PM</li>
+          <li>Friday: 8:00 AM – 10:00 PM</li>
+          <li>Sat–Sun: 1:15 – 7:00 PM</li>
+        </ul>
+      </details>
+      <a href="http://www.madtowntwisters.com/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Sun Prairie YMCA -->
+    <div class="gym-card">
+      <div class="gym-name">Sun Prairie YMCA</div>
+      <div class="gym-address">📍 1470 Don Simon Dr, Sun Prairie, WI 53590</div>
+      <div class="gym-meta">
+        <span>⭐ 4.5 (124 reviews)</span>
+        <span>📞 (608) 837-8221</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul>
+          <li>Mon–Fri: 5:00 AM – 9:00 PM</li>
+          <li>Saturday: 6:00 AM – 5:00 PM</li>
+          <li>Sunday: 9:00 AM – 5:00 PM</li>
+        </ul>
+      </details>
+      <a href="https://www.ymcadane.org/locations/sun-prairie" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Miss Pole Madison -->
+    <div class="gym-card">
+      <div class="gym-name">Miss Pole – Madison</div>
+      <div class="gym-address">📍 7475 Mineral Point Rd, Madison, WI 53717</div>
+      <div class="gym-meta">
+        <span>⭐ 4.8 (33 reviews)</span>
+        <span>📞 (608) 836-7653</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul>
+          <li>Mon–Thu: 4:30 – 9:00 PM</li>
+          <li>Fri–Sun: 9:00 AM – 5:00 PM</li>
+        </ul>
+      </details>
+      <a href="http://www.misspole.com/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Fitness Solutions -->
+    <div class="gym-card">
+      <div class="gym-name">Fitness Solutions</div>
+      <div class="gym-address">📍 2701 University Ave A, Madison, WI 53705</div>
+      <div class="gym-meta">
+        <span>⭐ 5.0 (13 reviews)</span>
+        <span>📞 (608) 561-1372</span>
+      </div>
+      <a href="http://madisonfitnesssolutions.com/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Princeton Club Xpress McFarland -->
+    <div class="gym-card">
+      <div class="gym-name">Princeton Club Xpress McFarland</div>
+      <div class="gym-address">📍 5720 US-51, McFarland, WI 53558</div>
+      <div class="gym-meta">
+        <span>⭐ 4.8 (39 reviews)</span>
+        <span>📞 (608) 838-1072</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul><li>Open 24 Hours / 7 Days</li></ul>
+      </details>
+      <a href="https://www.princetonclub.net/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Badger Gymnastics Academy -->
+    <div class="gym-card">
+      <div class="gym-name">Badger Gymnastics Academy</div>
+      <div class="gym-address">📍 6901 Schroeder Rd, Madison, WI 53711</div>
+      <div class="gym-meta">
+        <span>⭐ 4.5 (31 reviews)</span>
+        <span>📞 (608) 271-1885</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul>
+          <li>Mon–Thu: 9:00 AM – 7:00 PM</li>
+          <li>Friday: 9:00 AM – 9:00 PM</li>
+          <li>Saturday: 8:30 AM – 12:30 PM</li>
+          <li>Sunday: Closed</li>
+        </ul>
+      </details>
+      <a href="http://www.badgergymnastics.com/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Princeton Club Xpress Monona -->
+    <div class="gym-card">
+      <div class="gym-name">Princeton Club Xpress Monona</div>
+      <div class="gym-address">📍 5413 Monona Dr, Monona, WI 53716</div>
+      <div class="gym-meta">
+        <span>⭐ 4.3 (52 reviews)</span>
+        <span>📞 (608) 663-2639</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul><li>Open 24 Hours / 7 Days</li></ul>
+      </details>
+      <a href="https://www.princetonclub.net/xpress-monona/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Phitness Plus -->
+    <div class="gym-card">
+      <div class="gym-name">Phitness Plus</div>
+      <div class="gym-address">📍 501 E Badger Rd, Madison, WI 53713</div>
+      <div class="gym-meta">
+        <span>⭐ 3.0 (2 reviews)</span>
+        <span>📞 (608) 957-4153</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul><li>Daily: 9:00 AM – 10:00 PM</li></ul>
+      </details>
+      <a href="http://www.phitnessplus.com/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Anytime Fitness – Waunakee -->
+    <div class="gym-card">
+      <div class="gym-name">Anytime Fitness</div>
+      <div class="gym-address">📍 604 E Main St, Waunakee, WI 53597</div>
+      <div class="gym-meta">
+        <span>⭐ 4.7 (202 reviews)</span>
+        <span>📞 (608) 849-8998</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul><li>Open 24 Hours / 7 Days</li></ul>
+      </details>
+      <a href="https://www.anytimefitness.com/locations/waunakee-wisconsin-691/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- The Combine -->
+    <div class="gym-card">
+      <div class="gym-name">The Combine</div>
+      <div class="gym-address">📍 7551 Hubbard Ave, Middleton, WI 53562</div>
+      <div class="gym-meta">
+        <span>⭐ 5.0 (6 reviews)</span>
+        <span>📞 (773) 368-0677</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul>
+          <li>Mon–Fri: 5:30 AM – 7:30 PM</li>
+          <li>Saturday: 7:00 AM – 1:00 PM</li>
+          <li>Sunday: Closed</li>
+        </ul>
+      </details>
+      <a href="http://www.combinestrength.com/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Forest Coaching and Studios -->
+    <div class="gym-card">
+      <div class="gym-name">Forest Coaching and Studios</div>
+      <div class="gym-address">📍 555 W Washington Ave, Madison, WI 53703</div>
+      <div class="gym-meta">
+        <span>⭐ 5.0 (49 reviews)</span>
+        <span>📞 (608) 301-5506</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul>
+          <li>Mon: 1:00 – 7:30 PM</li>
+          <li>Tue–Fri: 7:00 AM – 7:30 PM</li>
+          <li>Saturday: 8:00 AM – 1:00 PM</li>
+          <li>Sunday: 1:00 – 5:00 PM</li>
+        </ul>
+      </details>
+      <a href="http://www.forestcoachingandstudios.com/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Capital Fitness – W Washington -->
+    <div class="gym-card">
+      <div class="gym-name">Capital Fitness</div>
+      <div class="gym-address">📍 425 W Washington Ave #2703, Madison, WI 53703</div>
+      <div class="gym-meta">
+        <span>⭐ 4.1 (32 reviews)</span>
+        <span>📞 (608) 251-1245</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul>
+          <li>Mon–Fri: 6:00 AM – 9:00 PM</li>
+          <li>Sat–Sun: 9:00 AM – 9:00 PM</li>
+        </ul>
+      </details>
+      <a href="http://www.capitalfitness.net/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Pilates Central -->
+    <div class="gym-card">
+      <div class="gym-name">Pilates Central</div>
+      <div class="gym-address">📍 1 E Main St, Madison, WI 53703</div>
+      <div class="gym-meta">
+        <span>⭐ 5.0 (8 reviews)</span>
+        <span>📞 (608) 285-2890</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul>
+          <li>Tuesday: 9:00 AM – 5:00 PM</li>
+          <li>Wed–Thu: 9:00 AM – 6:30 PM</li>
+          <li>Sat–Sun: 9:30 AM – 3:30 PM</li>
+          <li>Mon &amp; Fri: Closed</li>
+        </ul>
+      </details>
+      <a href="http://pilatescentralmadison.com/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- SPRING – Pilates for Life -->
+    <div class="gym-card">
+      <div class="gym-name">SPRING – Pilates for Life</div>
+      <div class="gym-address">📍 710 Harrison St, Madison, WI 53711</div>
+      <div class="gym-meta">
+        <span>⭐ 5.0 (24 reviews)</span>
+        <span>📞 (608) 709-1775</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul>
+          <li>Mon–Thu: 7:30 AM – 6:30 PM</li>
+          <li>Friday: 7:30 AM – 4:00 PM</li>
+          <li>Saturday: 9:00 AM – 12:00 PM</li>
+          <li>Sunday: 12:00 – 5:00 PM</li>
+        </ul>
+      </details>
+      <a href="http://springpilates.life/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- The Yoga Sangha -->
+    <div class="gym-card">
+      <div class="gym-name">The Yoga Sangha</div>
+      <div class="gym-address">📍 15 N Butler St, Madison, WI 53703</div>
+      <div class="gym-meta">
+        <span>⭐ 5.0 (2 reviews)</span>
+        <span>📞 (608) 251-1245</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul><li>Daily: 6:00 AM – 9:00 PM</li></ul>
+      </details>
+      <a href="https://www.capitalfitness.net/yoga-sangha" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Purple Door Pilates -->
+    <div class="gym-card">
+      <div class="gym-name">Purple Door Pilates</div>
+      <div class="gym-address">📍 807 E Johnson St, Madison, WI 53703</div>
+      <div class="gym-meta">
+        <span>⭐ 4.9 (42 reviews)</span>
+        <span>📞 (608) 571-4741</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul>
+          <li>Mon: 9:15 AM – 7:00 PM</li>
+          <li>Tue: 7:45 AM – 7:00 PM</li>
+          <li>Wed–Thu: 8:45 AM – 7:30 PM</li>
+          <li>Friday: 8:00 AM – 4:30 PM</li>
+          <li>Sat–Sun: Limited AM hours</li>
+        </ul>
+      </details>
+      <a href="http://www.purpledoorpilatesmadison.com/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- barre3 -->
+    <div class="gym-card">
+      <div class="gym-name">barre3</div>
+      <div class="gym-address">📍 2560 University Ave, Madison, WI 53705</div>
+      <div class="gym-meta">
+        <span>⭐ 5.0 (179 reviews)</span>
+        <span>📞 (608) 467-9788</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul><li>Daily: 6:00 AM – 8:30 PM</li></ul>
+      </details>
+      <a href="https://online.barre3.com/studio-locations/madison" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Anytime Fitness – Atwood Ave -->
+    <div class="gym-card">
+      <div class="gym-name">Anytime Fitness</div>
+      <div class="gym-address">📍 2045 Atwood Ave, Madison, WI 53704</div>
+      <div class="gym-meta">
+        <span>⭐ 4.7 (241 reviews)</span>
+        <span>📞 (608) 286-1050</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul><li>Open 24 Hours / 7 Days</li></ul>
+      </details>
+      <a href="https://www.anytimefitness.com/locations/madison-wisconsin-4442/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Anytime Fitness – S Midvale Blvd -->
+    <div class="gym-card">
+      <div class="gym-name">Anytime Fitness</div>
+      <div class="gym-address">📍 515 S Midvale Blvd, Madison, WI 53711</div>
+      <div class="gym-meta">
+        <span>⭐ 4.6 (215 reviews)</span>
+        <span>📞 (608) 231-4447</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul><li>Open 24 Hours / 7 Days</li></ul>
+      </details>
+      <a href="https://www.anytimefitness.com/locations/madison-wisconsin-2425/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Great State Fitness -->
+    <div class="gym-card">
+      <div class="gym-name">Great State Fitness</div>
+      <div class="gym-address">📍 2500 Rimrock Rd #104, Fitchburg, WI 53713</div>
+      <div class="gym-meta">
+        <span>⭐ 5.0 (13 reviews)</span>
+        <span>📞 (608) 338-8016</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul><li>Open 24 Hours / 7 Days</li></ul>
+      </details>
+      <span class="no-website">No website available</span>
+    </div>
+
+    <!-- Orangetheory Fitness -->
+    <div class="gym-card">
+      <div class="gym-name">Orangetheory Fitness</div>
+      <div class="gym-address">📍 2501 W Beltline Hwy #105, Madison, WI 53713</div>
+      <div class="gym-meta">
+        <span>⭐ 4.8 (165 reviews)</span>
+        <span>📞 (608) 709-8099</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul>
+          <li>Mon–Thu: 5:00 AM – 7:30 PM</li>
+          <li>Friday: 5:00 AM – 6:30 PM</li>
+          <li>Saturday: 7:00 – 11:30 AM</li>
+          <li>Sunday: 8:00 AM – 12:30 PM</li>
+        </ul>
+      </details>
+      <a href="https://www.orangetheory.com/en-us/locations/madison-wisconsin-0341" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Get Fit in 30! Fitness Boot Camp -->
+    <div class="gym-card">
+      <div class="gym-name">Get Fit in 30! Fitness Boot Camp</div>
+      <div class="gym-address">📍 607 N Sherman Ave, Madison, WI 53704</div>
+      <div class="gym-meta">
+        <span>📞 (920) 723-7839</span>
+      </div>
+      <span class="no-website">No website available</span>
+    </div>
+
+    <!-- Carbon World Health -->
+    <div class="gym-card">
+      <div class="gym-name">Carbon World Health</div>
+      <div class="gym-address">📍 340 S Whitney Way #100, Madison, WI 53705</div>
+      <div class="gym-meta">
+        <span>⭐ 4.8 (76 reviews)</span>
+        <span>📞 (608) 709-8089</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul>
+          <li>Mon–Thu: 6:00 AM – 8:00 PM</li>
+          <li>Friday: 6:00 AM – 6:00 PM</li>
+          <li>Saturday: 7:00 AM – 1:00 PM</li>
+          <li>Sunday: Closed</li>
+        </ul>
+      </details>
+      <a href="https://www.carbonworldhealth.com/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Sanctuary Jiu-Jitsu -->
+    <div class="gym-card">
+      <div class="gym-name">Sanctuary Jiu-Jitsu</div>
+      <div class="gym-address">📍 46 N Bryan St, Madison, WI 53714</div>
+      <div class="gym-meta">
+        <span>⭐ 5.0 (119 reviews)</span>
+        <span>📞 (608) 852-7405</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul>
+          <li>Mon/Wed/Fri: AM, Noon &amp; Evening classes</li>
+          <li>Tue/Thu: AM &amp; Afternoon classes</li>
+          <li>Saturday: 9:00 AM – 12:00 PM</li>
+          <li>Sunday: 10:30 AM – 12:00 PM</li>
+        </ul>
+      </details>
+      <a href="https://bjjmadison.com/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Jules Pilates Studio -->
+    <div class="gym-card">
+      <div class="gym-name">Jules Pilates Studio</div>
+      <div class="gym-address">📍 5419 Monona Dr, Monona, WI 53714</div>
+      <div class="gym-meta">
+        <span>⭐ 5.0 (7 reviews)</span>
+        <span>📞 (608) 239-5989</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul>
+          <li>Mon–Fri: 7:00 AM – 8:00 PM</li>
+          <li>Sat–Sun: Closed</li>
+        </ul>
+      </details>
+      <a href="https://www.julespilates.com/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+    <!-- Anytime Fitness – Cahill Main, Fitchburg -->
+    <div class="gym-card">
+      <div class="gym-name">Anytime Fitness</div>
+      <div class="gym-address">📍 2980 Cahill Main, Fitchburg, WI 53711</div>
+      <div class="gym-meta">
+        <span>⭐ 4.7 (180 reviews)</span>
+        <span>📞 (608) 298-9898</span>
+      </div>
+      <details class="gym-hours">
+        <summary>Hours</summary>
+        <ul><li>Open 24 Hours / 7 Days</li></ul>
+      </details>
+      <a href="https://www.anytimefitness.com/locations/fitchburg-wisconsin-3025/" target="_blank" class="visit-btn">Visit Website →</a>
+    </div>
+
+  </div>
+</section>
 
 <footer>
   <p>© 2025 BadgerFit · Madison, WI · CheesHacks Hackathon</p>
