@@ -27,24 +27,23 @@ function updateProgress() {
 let addressVerified = false; // tracks whether user picked from dropdown
 
 function initAutocomplete() {
-  const input      = document.getElementById('locationInput');
-  const latInput   = document.getElementById('latInput');
-  const lngInput   = document.getElementById('lngInput');
-  const fmtInput   = document.getElementById('formattedInput');
-  const errorMsg   = document.getElementById('addressError');
+    const input      = document.getElementById('locationInput');
+    const latInput   = document.getElementById('latInput');
+    const lngInput   = document.getElementById('lngInput');
+    const fmtInput   = document.getElementById('formattedInput');
+    const errorMsg   = document.getElementById('addressError');
 
-  // Restrict suggestions to Madison WI area
   const madisonBounds = new google.maps.LatLngBounds(
-    new google.maps.LatLng(42.9, -89.6),  // SW corner
-    new google.maps.LatLng(43.2, -89.1)   // NE corner
+    new google.maps.LatLng(42.9, -89.6),
+    new google.maps.LatLng(43.2, -89.1)
   );
 
   const autocomplete = new google.maps.places.Autocomplete(input, {
     bounds:                madisonBounds,
-    strictBounds:          false,        // still shows outside results if nothing local matches
+    strictBounds:          false,
     componentRestrictions: { country: 'us' },
-    types:                 ['address'],  // addresses only, no businesses
-    fields:                ['formatted_address', 'geometry'] // only fetch what we need
+    types:                 ['address'],
+    fields:                ['formatted_address', 'geometry']
   });
 
   // When user picks a suggestion from the dropdown
@@ -52,7 +51,6 @@ function initAutocomplete() {
     const place = autocomplete.getPlace();
 
     if (!place.geometry) {
-      // User typed something but didn't pick from dropdown
       addressVerified = false;
       latInput.value  = '';
       lngInput.value  = '';
@@ -60,17 +58,15 @@ function initAutocomplete() {
       return;
     }
 
-    // Store everything
     addressVerified  = true;
     latInput.value   = place.geometry.location.lat();
     lngInput.value   = place.geometry.location.lng();
     fmtInput.value   = place.formatted_address;
-
-    // Update the visible input to the clean formatted address
     input.value      = place.formatted_address;
 
-    // Hide any error
-    errorMsg.style.display = 'none';
+    // Clear error state and show green confirmation
+    errorMsg.style.display  = 'none';
+    input.style.borderColor = '#4ade80';
     updateProgress();
   });
 
@@ -80,8 +76,41 @@ function initAutocomplete() {
     latInput.value  = '';
     lngInput.value  = '';
     fmtInput.value  = '';
+    input.style.borderColor = '';
   });
 }
+
+// Form validation on submit
+document.getElementById('surveyForm').addEventListener('submit', (e) => {
+  const input    = document.getElementById('locationInput');
+  const errorMsg = document.getElementById('addressError');
+
+  if (input.value.trim() === '') {
+    e.preventDefault();
+    errorMsg.textContent = '⚠️ Please enter and select your address from the dropdown.';
+    errorMsg.style.display = 'block';
+    input.style.borderColor = 'var(--accent)';
+    input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    input.focus();
+    return;
+  }
+
+  if (!addressVerified) {
+    e.preventDefault();
+    errorMsg.textContent = '⚠️ Please select an address from the dropdown suggestions.';
+    errorMsg.style.display = 'block';
+    input.style.borderColor = 'var(--accent)';
+    input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    input.focus();
+    return;
+  }
+
+  errorMsg.style.display  = 'none';
+  input.style.borderColor = '';
+});
+
+window.initAutocomplete = initAutocomplete;
+
 
 // ── Form validation on submit ─────────────────────────────────────────────────
 
@@ -89,16 +118,28 @@ document.getElementById('surveyForm').addEventListener('submit', (e) => {
   const input    = document.getElementById('locationInput');
   const errorMsg = document.getElementById('addressError');
 
-  // Only validate if the user typed something in the address field
-  if (input.value.trim() !== '' && !addressVerified) {
+  // Block submission if address field is empty
+  if (input.value.trim() === '') {
     e.preventDefault();
+    errorMsg.textContent = '⚠️ Please enter and select your address from the dropdown.';
     errorMsg.style.display = 'block';
+    input.style.borderColor = 'var(--accent)';
     input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    input.focus();
+    return;
+  }
+
+  // Block submission if user typed but didn't pick from dropdown
+  if (!addressVerified) {
+    e.preventDefault();
+    errorMsg.textContent = '⚠️ Please select an address from the dropdown suggestions.';
+    errorMsg.style.display = 'block';
+    input.style.borderColor = 'var(--accent)';
+    input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    input.focus();
     return;
   }
 
   errorMsg.style.display = 'none';
+  input.style.borderColor = '';
 });
-
-// Called by the Maps API script once it finishes loading
-window.initAutocomplete = initAutocomplete;
