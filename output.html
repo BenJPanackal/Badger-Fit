@@ -218,6 +218,25 @@
       color: var(--accent);
     }
 
+    /* Show More Results button */
+    .show-more-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.88rem;
+      padding: 0.7rem 2rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: border-color 0.15s, color 0.15s, background 0.15s;
+      letter-spacing: 0.02em;
+    }
+    .show-more-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(255,46,46,0.05);
+    }
+
     /* Show All Info button */
     .show-all-btn {
       display: inline-flex;
@@ -339,23 +358,20 @@
     const params = new URLSearchParams(window.location.search);
     const prefs = {};
 
-      // Multi-value fields (checkboxes with same name)
-      prefs.hours      = params.getAll('hours');
-      prefs.amenities  = params.getAll('amenities');
-      prefs.equipment  = params.getAll('equipment');
-      prefs.transit    = params.getAll('transit');
-      prefs.loc_pref   = params.getAll('loc_pref');
+    // Multi-value fields (checkboxes with same name)
+    prefs.hours      = params.getAll('hours');
+    prefs.amenities  = params.getAll('amenities');
+    prefs.equipment  = params.getAll('equipment');
+    prefs.transit    = params.getAll('transit');
+    prefs.loc_pref   = params.getAll('loc_pref');
 
-        // Single-value fields
-        prefs.price             = params.get('price');
-        prefs.contract          = params.get('contract');
-        prefs.location          = params.get('location');
-        prefs.distance          = params.get('distance');
-        prefs.goal              = params.get('goal');
-        prefs.level             = params.get('level');
-        prefs.lat               = params.get('lat');
-        prefs.lng               = params.get('lng');
-        prefs.formatted_address = params.get('formatted_address');
+    // Single-value fields
+    prefs.price    = params.get('price');
+    prefs.contract = params.get('contract');
+    prefs.location = params.get('location');
+    prefs.distance = params.get('distance');
+    prefs.goal     = params.get('goal');
+    prefs.level    = params.get('level');
 
     return prefs;
   }
@@ -386,23 +402,13 @@
         return;
       }
 
-      heroSub.textContent = `We found ${matches.length} gym${matches.length > 1 ? 's' : ''} for you.`;
-
       // Apply boost if top match is low (under 55%)
-      const boostedMatches = applyBoost(matches);
+      allMatches = applyBoost(matches);
+      shownCount = 3;
 
-      output.innerHTML = renderMatches(boostedMatches);
+      heroSub.textContent = `We found ${allMatches.length} gym${allMatches.length > 1 ? 's' : ''} for you.`;
 
-      // Animate score bars after render
-      setTimeout(() => {
-        boostedMatches.forEach((_, i) => {
-          const fill = document.getElementById(`fill-${i}`);
-          if (fill) {
-            fill.style.width = fill.dataset.pct + '%';
-            fill.style.background = scoreColor(Number(fill.dataset.pct));
-          }
-        });
-      }, 100);
+      renderVisible();
 
     } catch (err) {
       heroSub.textContent = "Something went wrong.";
@@ -432,6 +438,40 @@
       const label = item.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
       return `<span class="info-tag ${cls}">${label}</span>`;
     }).join('');
+  }
+
+  // Global state for pagination
+  let allMatches = [];
+  let shownCount = 3;
+
+  function renderVisible() {
+    const output = document.getElementById('output');
+    const visible = allMatches.slice(0, shownCount);
+    const hasMore = shownCount < allMatches.length;
+
+    output.innerHTML = renderMatches(visible) + (hasMore ? `
+      <div style="text-align:center;margin-top:0.5rem">
+        <button class="show-more-btn" onclick="showMore()">Show 3 More Results ↓</button>
+      </div>` : '');
+
+    // Animate bars for newly added cards
+    setTimeout(() => {
+      visible.forEach((_, i) => {
+        const fill = document.getElementById(`fill-${i}`);
+        if (fill) {
+          fill.style.width = fill.dataset.pct + '%';
+          fill.style.background = scoreColor(Number(fill.dataset.pct));
+        }
+      });
+    }, 100);
+  }
+
+  function showMore() {
+    shownCount = Math.min(shownCount + 3, allMatches.length);
+    renderVisible();
+    // Scroll to the first new card smoothly
+    const newCard = document.getElementById(`fill-${shownCount - 3}`);
+    if (newCard) newCard.closest('.gym-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   function scoreColor(pct) {
