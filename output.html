@@ -1,8 +1,371 @@
-<html>
-    <head>
-        <title>BadgerFit</title>
-    </head>
-    <body>
-        <h1>Output page</h1>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Matches · BadgerFit</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="survey.css"/>
+  <style>
+    .results-wrapper {
+      width: 100%;
+      max-width: 680px;
+    }
+
+    .results-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .results-header h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      color: var(--accent);
+      letter-spacing: 0.05em;
+    }
+
+    .results-header p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 0.4rem;
+    }
+
+    .gym-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.75rem;
+      margin-bottom: 1.25rem;
+      transition: border-color 0.2s;
+    }
+
+    .gym-card:hover {
+      border-color: rgba(255,46,46,0.35);
+    }
+
+    .gym-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .gym-rank {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
+      color: var(--border);
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .gym-rank.first { color: var(--accent); }
+
+    .gym-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      letter-spacing: 0.04em;
+      color: var(--text);
+      line-height: 1.1;
+    }
+
+    .gym-address {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.3rem;
+    }
+
+    .match-score-wrap {
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .match-pct {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.2rem;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+    }
+
+    .match-label {
+      font-size: 0.7rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .score-bar {
+      height: 4px;
+      background: var(--border);
+      border-radius: 2px;
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+
+    .score-fill {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 2px;
+      transition: width 1s ease;
+    }
+
+    .criteria-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .criteria-tag {
+      background: rgba(255,46,46,0.1);
+      color: var(--accent);
+      border: 1px solid rgba(255,46,46,0.25);
+      border-radius: 6px;
+      padding: 0.3rem 0.65rem;
+      font-size: 0.78rem;
+      font-weight: 500;
+    }
+
+    .gym-meta {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .visit-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      padding: 0.6rem 1.4rem;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: transform 0.12s, box-shadow 0.12s;
+    }
+
+    .visit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255,46,46,0.3);
+    }
+
+    .no-website {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    /* Loading state */
+    .loading {
+      text-align: center;
+      padding: 4rem 0;
+    }
+
+    .loading-spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 1rem;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .loading p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* Error state */
+    .error-box {
+      background: var(--card);
+      border: 1px solid rgba(255,46,46,0.3);
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    .error-box a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .retake-btn {
+      display: inline-block;
+      margin-top: 2rem;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      padding: 0.6rem 1.2rem;
+      border-radius: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .retake-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <p class="hero-eyebrow">Your Results</p>
+    <h1>BadgerFit</h1>
+    <p class="hero-sub" id="heroSub">Finding your best matches...</p>
+  </div>
+
+  <div class="results-wrapper">
+    <div id="output">
+      <div class="loading">
+        <div class="loading-spinner"></div>
+        <p>Scoring gyms against your preferences...</p>
+      </div>
+    </div>
+
+    <div style="text-align:center">
+      <a href="survey.html" class="retake-btn">← Retake the survey</a>
+    </div>
+  </div>
+
+  <script>
+    // Parse all URL query params from the survey form submission
+    function parsePreferences() {
+      const params = new URLSearchParams(window.location.search);
+      const prefs = {};
+
+      // Multi-value fields (checkboxes with same name)
+      prefs.hours      = params.getAll('hours');
+      prefs.amenities  = params.getAll('amenities');
+      prefs.equipment  = params.getAll('equipment');
+      prefs.transit    = params.getAll('transit');
+      prefs.loc_pref   = params.getAll('loc_pref');
+
+      // Single-value fields
+      prefs.price    = params.get('price');
+      prefs.contract = params.get('contract');
+      prefs.location = params.get('location');
+      prefs.distance = params.get('distance');
+      prefs.goal     = params.get('goal');
+      prefs.level    = params.get('level');
+
+      return prefs;
+    }
+
+    async function loadResults() {
+      const preferences = parsePreferences();
+      const output = document.getElementById('output');
+      const heroSub = document.getElementById('heroSub');
+
+      try {
+        const response = await fetch('http://localhost:3000/api/match', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ preferences })
+        });
+
+        if (!response.ok) throw new Error('Server error');
+
+        const matches = await response.json();
+
+        if (!matches.length) {
+          heroSub.textContent = "No gyms matched your preferences.";
+          output.innerHTML = `
+            <div class="error-box">
+              <p>We couldn't find any gyms that matched. Try loosening your filters.</p>
+              <a href="survey.html" class="retake-btn">← Retake the survey</a>
+            </div>`;
+          return;
+        }
+
+        heroSub.textContent = `We found ${matches.length} gym${matches.length > 1 ? 's' : ''} for you.`;
+        output.innerHTML = renderMatches(matches);
+
+        // Animate score bars after render
+        setTimeout(() => {
+          matches.forEach((_, i) => {
+            const fill = document.getElementById(`fill-${i}`);
+            if (fill) fill.style.width = fill.dataset.pct + '%';
+          });
+        }, 100);
+
+      } catch (err) {
+        heroSub.textContent = "Something went wrong.";
+        output.innerHTML = `
+          <div class="error-box">
+            <p>Could not reach the server. Make sure it's running with <code>node server.js</code></p>
+            <br/>
+            <a href="survey.html" class="retake-btn">← Go back</a>
+          </div>`;
+        console.error(err);
+      }
+    }
+
+    function renderMatches(matches) {
+      return matches.map((result, i) => {
+        const gym = result.gym;
+        const pct = result.percentage;
+
+        return `
+          <div class="gym-card">
+            <div class="gym-card-top">
+              <div class="gym-rank ${i === 0 ? 'first' : ''}">0${i + 1}</div>
+              <div style="flex:1">
+                <div class="gym-name">${gym.name}</div>
+                <div class="gym-address">📍 ${gym.address}</div>
+              </div>
+              <div class="match-score-wrap">
+                <div class="match-pct">${pct}%</div>
+                <div class="match-label">Match</div>
+              </div>
+            </div>
+
+            <div class="score-bar">
+              <div class="score-fill" id="fill-${i}" data-pct="${pct}" style="width:0%"></div>
+            </div>
+
+            <div class="criteria-list">
+              ${result.matchedCriteria.map(c => `<span class="criteria-tag">✓ ${c}</span>`).join('')}
+            </div>
+
+            <div class="gym-meta">
+              ${gym.rating ? `<span>⭐ ${gym.rating} (${gym.totalRatings} reviews)</span>` : ''}
+              ${gym.monthlyPrice ? `<span>💵 $${gym.monthlyPrice}/mo</span>` : ''}
+              ${gym.phone ? `<span>📞 ${gym.phone}</span>` : ''}
+            </div>
+
+            ${gym.website
+              ? `<a href="${gym.website}" target="_blank" class="visit-btn">Visit Website →</a>`
+              : `<span class="no-website">No website available</span>`
+            }
+          </div>`;
+      }).join('');
+    }
+
+    // Run on page load
+    loadResults();
+  </script>
+
+</body>
 </html>
+```
+
+---
+
+## What this does end to end
+
+When the user hits submit on `survey.html`, the browser naturally navigates to:
+```
+output.html?hours=morning&hours=evening&price=60&amenities=pool...

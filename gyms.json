@@ -1,0 +1,2675 @@
+[
+  {
+    "name": "Hilldale Shopping Center",
+    "placeId": "ChIJG-nB4kCsB4gRPEsWPdbnrVk",
+    "address": "726 N Midvale Blvd, Madison, WI 53705, USA",
+    "phone": "(608) 284-8162",
+    "website": "https://hilldale.com/",
+    "coordinates": {
+      "lat": 43.073325,
+      "lng": -89.453172
+    },
+    "rating": 4.4,
+    "totalRatings": 3977,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "11:00",
+        "close": "18:00"
+      },
+      "monday": {
+        "open": "10:00",
+        "close": "20:00"
+      },
+      "tuesday": {
+        "open": "10:00",
+        "close": "20:00"
+      },
+      "wednesday": {
+        "open": "10:00",
+        "close": "20:00"
+      },
+      "thursday": {
+        "open": "10:00",
+        "close": "20:00"
+      },
+      "friday": {
+        "open": "10:00",
+        "close": "20:00"
+      },
+      "saturday": {
+        "open": "10:00",
+        "close": "20:00"
+      }
+    },
+    "hoursText": [
+      "Monday: 10:00 AM – 8:00 PM",
+      "Tuesday: 10:00 AM – 8:00 PM",
+      "Wednesday: 10:00 AM – 8:00 PM",
+      "Thursday: 10:00 AM – 8:00 PM",
+      "Friday: 10:00 AM – 8:00 PM",
+      "Saturday: 10:00 AM – 8:00 PM",
+      "Sunday: 11:00 AM – 6:00 PM"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Capital Fitness",
+    "placeId": "ChIJZRWWXUBTBogRW5XyCJyAYgo",
+    "address": "15 N Butler St, Madison, WI 53703, USA",
+    "phone": "(608) 251-1245",
+    "website": "http://www.capitalfitness.net/",
+    "coordinates": {
+      "lat": 43.0771181,
+      "lng": -89.38135899999999
+    },
+    "rating": 4.5,
+    "totalRatings": 189,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "06:00",
+        "close": "21:00"
+      },
+      "monday": {
+        "open": "05:00",
+        "close": "22:00"
+      },
+      "tuesday": {
+        "open": "05:00",
+        "close": "22:00"
+      },
+      "wednesday": {
+        "open": "05:00",
+        "close": "22:00"
+      },
+      "thursday": {
+        "open": "05:00",
+        "close": "22:00"
+      },
+      "friday": {
+        "open": "05:00",
+        "close": "21:00"
+      },
+      "saturday": {
+        "open": "06:00",
+        "close": "21:00"
+      }
+    },
+    "hoursText": [
+      "Monday: 5:00 AM – 10:00 PM",
+      "Tuesday: 5:00 AM – 10:00 PM",
+      "Wednesday: 5:00 AM – 10:00 PM",
+      "Thursday: 5:00 AM – 10:00 PM",
+      "Friday: 5:00 AM – 9:00 PM",
+      "Saturday: 6:00 AM – 9:00 PM",
+      "Sunday: 6:00 AM – 9:00 PM"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Anytime Fitness",
+    "placeId": "ChIJdUysTMusB4gR3g-yCPe9MQo",
+    "address": "301 E Campus Mall, Madison, WI 53715, USA",
+    "phone": "(608) 237-2717",
+    "website": "https://www.anytimefitness.com/locations/madison-wisconsin-2104/?utm_source=google&utm_medium=organic-businesslisting&utm_campaign=gbp-listing&utm_content=2104",
+    "coordinates": {
+      "lat": 43.07230500000001,
+      "lng": -89.39859949999999
+    },
+    "rating": 4.6,
+    "totalRatings": 344,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    },
+    "hoursText": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Anytime Fitness",
+    "placeId": "ChIJRwQPKMWuB4gRFuyFyMGQGAE",
+    "address": "1011 N Gammon Rd, Middleton, WI 53562, USA",
+    "phone": "(608) 836-3131",
+    "website": "https://www.anytimefitness.com/locations/middleton-wisconsin-595/?utm_source=google&utm_medium=organic-businesslisting&utm_campaign=gbp-listing&utm_content=595",
+    "coordinates": {
+      "lat": 43.0841972,
+      "lng": -89.50139159999999
+    },
+    "rating": 4.8,
+    "totalRatings": 213,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    },
+    "hoursText": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Perennial Yoga",
+    "placeId": "ChIJJx0nM5GyB4gR_wlbhrdCcpA",
+    "address": "5500 E Cheryl Pkwy Suite 101, Fitchburg, WI 53711, USA",
+    "phone": "(608) 288-8448",
+    "website": "http://perennial-yoga.com/",
+    "coordinates": {
+      "lat": 43.0053908,
+      "lng": -89.4227018
+    },
+    "rating": 4.8,
+    "totalRatings": 48,
+    "businessStatus": "OPERATIONAL",
+    "hours": null,
+    "hoursText": null,
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Princeton Club - West",
+    "placeId": "ChIJ036jVqivB4gRo6LCTU8tcTU",
+    "address": "8080 Watts Rd, Madison, WI 53719, USA",
+    "phone": "(608) 833-2639",
+    "website": "http://www.princetonclub.net/",
+    "coordinates": {
+      "lat": 43.0552745,
+      "lng": -89.51948019999999
+    },
+    "rating": 4.1,
+    "totalRatings": 687,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    },
+    "hoursText": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "CORE Health & Fitness",
+    "placeId": "ChIJixnDsdOoB4gRkHnOHeghSIs",
+    "address": "2248 Deming Way #100, Middleton, WI 53562, USA",
+    "phone": "(608) 831-2673",
+    "website": "http://www.corehealthandfit.com/",
+    "coordinates": {
+      "lat": 43.1000773,
+      "lng": -89.52046639999999
+    },
+    "rating": 5,
+    "totalRatings": 32,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "monday": {
+        "open": "06:00",
+        "close": "17:45"
+      },
+      "tuesday": {
+        "open": "06:00",
+        "close": "17:45"
+      },
+      "wednesday": {
+        "open": "06:00",
+        "close": "17:45"
+      },
+      "thursday": {
+        "open": "06:00",
+        "close": "17:45"
+      },
+      "friday": {
+        "open": "06:00",
+        "close": "16:30"
+      },
+      "saturday": {
+        "open": "08:00",
+        "close": "10:00"
+      }
+    },
+    "hoursText": [
+      "Monday: 6:00 AM – 5:45 PM",
+      "Tuesday: 6:00 AM – 5:45 PM",
+      "Wednesday: 6:00 AM – 5:45 PM",
+      "Thursday: 6:00 AM – 5:45 PM",
+      "Friday: 6:00 AM – 4:30 PM",
+      "Saturday: 8:00 – 10:00 AM",
+      "Sunday: Closed"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Princeton Club - East",
+    "placeId": "ChIJvwO895FWBogRWk-JXvj9vC0",
+    "address": "1726 Eagan Rd, Madison, WI 53704, USA",
+    "phone": "(608) 241-2639",
+    "website": "http://www.princetonclub.net/",
+    "coordinates": {
+      "lat": 43.1217996,
+      "lng": -89.30928689999999
+    },
+    "rating": 4.5,
+    "totalRatings": 960,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    },
+    "hoursText": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Pinnacle Health + Fitness - Madison",
+    "placeId": "ChIJAeX0U0dTBogRLt5zc8Be_pI",
+    "address": "44 E Mifflin St, Madison, WI 53703, USA",
+    "phone": "(608) 442-8118",
+    "website": "https://www.phfitness.com/?utm_source=google&utm_medium=organic&utm_campaign=madison",
+    "coordinates": {
+      "lat": 43.07629060000001,
+      "lng": -89.3844481
+    },
+    "rating": 4.5,
+    "totalRatings": 63,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "05:00",
+        "close": "20:00"
+      },
+      "monday": {
+        "open": "05:00",
+        "close": "23:00"
+      },
+      "tuesday": {
+        "open": "05:00",
+        "close": "23:00"
+      },
+      "wednesday": {
+        "open": "05:00",
+        "close": "23:00"
+      },
+      "thursday": {
+        "open": "05:00",
+        "close": "23:00"
+      },
+      "friday": {
+        "open": "05:00",
+        "close": "23:00"
+      },
+      "saturday": {
+        "open": "05:00",
+        "close": "20:00"
+      }
+    },
+    "hoursText": [
+      "Monday: 5:00 AM – 11:00 PM",
+      "Tuesday: 5:00 AM – 11:00 PM",
+      "Wednesday: 5:00 AM – 11:00 PM",
+      "Thursday: 5:00 AM – 11:00 PM",
+      "Friday: 5:00 AM – 11:00 PM",
+      "Saturday: 5:00 AM – 8:00 PM",
+      "Sunday: 5:00 AM – 8:00 PM"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "H. Douglas Redsten Gymnasium",
+    "placeId": "ChIJ20MlLSRUBogRPDe2_xK8eJs",
+    "address": "1701 Wright St, Madison, WI 53704, USA",
+    "phone": "(608) 245-2100",
+    "website": "http://madisoncollegeathletics.com/",
+    "coordinates": {
+      "lat": 43.1211658,
+      "lng": -89.3292402
+    },
+    "rating": 5,
+    "totalRatings": 2,
+    "businessStatus": "OPERATIONAL",
+    "hours": null,
+    "hoursText": null,
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Anytime Fitness",
+    "placeId": "ChIJ2zKdechQBogR7fIKr3CEs3s",
+    "address": "6420 Cottage Grove Rd, Madison, WI 53718, USA",
+    "phone": "(608) 221-1222",
+    "website": "https://www.anytimefitness.com/locations/madison-wisconsin-332/?utm_source=google&utm_medium=organic-businesslisting&utm_campaign=gbp-listing&utm_content=332",
+    "coordinates": {
+      "lat": 43.0853208,
+      "lng": -89.2674756
+    },
+    "rating": 4.7,
+    "totalRatings": 190,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    },
+    "hoursText": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Harbor Wellness Studios",
+    "placeId": "ChIJPamxUU6pB4gReWSFP6TBALk",
+    "address": "2711 Allen Blvd, Middleton, WI 53562, USA",
+    "phone": "(608) 821-6501",
+    "website": "http://www.harborathletic.com/",
+    "coordinates": {
+      "lat": 43.1044497,
+      "lng": -89.4859706
+    },
+    "rating": 4.8,
+    "totalRatings": 11,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "05:00",
+        "close": "21:00"
+      },
+      "monday": {
+        "open": "05:00",
+        "close": "23:00"
+      },
+      "tuesday": {
+        "open": "05:00",
+        "close": "23:00"
+      },
+      "wednesday": {
+        "open": "05:00",
+        "close": "23:00"
+      },
+      "thursday": {
+        "open": "05:00",
+        "close": "23:00"
+      },
+      "friday": {
+        "open": "05:00",
+        "close": "22:00"
+      },
+      "saturday": {
+        "open": "05:00",
+        "close": "21:00"
+      }
+    },
+    "hoursText": [
+      "Monday: 5:00 AM – 11:00 PM",
+      "Tuesday: 5:00 AM – 11:00 PM",
+      "Wednesday: 5:00 AM – 11:00 PM",
+      "Thursday: 5:00 AM – 11:00 PM",
+      "Friday: 5:00 AM – 10:00 PM",
+      "Saturday: 5:00 AM – 9:00 PM",
+      "Sunday: 5:00 AM – 9:00 PM"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Twisted Fitness Gym",
+    "placeId": "ChIJQdwrdIdTBogRNGUSjjaH1t0",
+    "address": "711 Rethke Ave Suite 1, Madison, WI 53714, USA",
+    "phone": "(608) 241-9007",
+    "website": "https://twistedfitnessgym.com/",
+    "coordinates": {
+      "lat": 43.1081776,
+      "lng": -89.3351536
+    },
+    "rating": 4.8,
+    "totalRatings": 119,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "09:00",
+        "close": "17:00"
+      },
+      "monday": {
+        "open": "05:30",
+        "close": "21:30"
+      },
+      "tuesday": {
+        "open": "05:30",
+        "close": "21:30"
+      },
+      "wednesday": {
+        "open": "05:30",
+        "close": "21:30"
+      },
+      "thursday": {
+        "open": "05:30",
+        "close": "21:30"
+      },
+      "friday": {
+        "open": "05:30",
+        "close": "21:30"
+      },
+      "saturday": {
+        "open": "07:00",
+        "close": "18:00"
+      }
+    },
+    "hoursText": [
+      "Monday: 5:30 AM – 9:30 PM",
+      "Tuesday: 5:30 AM – 9:30 PM",
+      "Wednesday: 5:30 AM – 9:30 PM",
+      "Thursday: 5:30 AM – 9:30 PM",
+      "Friday: 5:30 AM – 9:30 PM",
+      "Saturday: 7:00 AM – 6:00 PM",
+      "Sunday: 9:00 AM – 5:00 PM"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Ford's Gym",
+    "placeId": "ChIJQdwrdIdTBogRMJDcBOM90FI",
+    "address": "2114 Winnebago St, Madison, WI 53704, USA",
+    "phone": "(608) 249-4227",
+    "website": "http://www.fordsgym.com/",
+    "coordinates": {
+      "lat": 43.094386,
+      "lng": -89.35358
+    },
+    "rating": 4.9,
+    "totalRatings": 164,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "10:00",
+        "close": "18:00"
+      },
+      "monday": {
+        "open": "05:30",
+        "close": "21:30"
+      },
+      "tuesday": {
+        "open": "05:30",
+        "close": "21:30"
+      },
+      "wednesday": {
+        "open": "05:30",
+        "close": "21:30"
+      },
+      "thursday": {
+        "open": "05:30",
+        "close": "21:30"
+      },
+      "friday": {
+        "open": "05:30",
+        "close": "21:30"
+      },
+      "saturday": {
+        "open": "08:00",
+        "close": "18:00"
+      }
+    },
+    "hoursText": [
+      "Monday: 5:30 AM – 9:30 PM",
+      "Tuesday: 5:30 AM – 9:30 PM",
+      "Wednesday: 5:30 AM – 9:30 PM",
+      "Thursday: 5:30 AM – 9:30 PM",
+      "Friday: 5:30 AM – 9:30 PM",
+      "Saturday: 8:00 AM – 6:00 PM",
+      "Sunday: 10:00 AM – 6:00 PM"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Anytime Fitness",
+    "placeId": "ChIJScsKcPqxB4gRBf62NHEciqM",
+    "address": "6250 Nesbitt Rd, Madison, WI 53719, USA",
+    "phone": "(608) 270-9500",
+    "website": "https://www.anytimefitness.com/locations/fitchburg-wisconsin-690",
+    "coordinates": {
+      "lat": 43.01095900000001,
+      "lng": -89.4783344
+    },
+    "rating": 4.7,
+    "totalRatings": 205,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    },
+    "hoursText": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "CrossFit Sanctify",
+    "placeId": "ChIJ5z9smVpRBogRdxrtgxiycas",
+    "address": "4535 Helgesen Dr, Madison, WI 53718, USA",
+    "phone": "(608) 441-0888",
+    "website": "http://crossfitsanctify.com/",
+    "coordinates": {
+      "lat": 43.0665516,
+      "lng": -89.3056665
+    },
+    "rating": 5,
+    "totalRatings": 32,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "monday": {
+        "open": "05:00",
+        "close": "19:00"
+      },
+      "tuesday": {
+        "open": "05:00",
+        "close": "19:00"
+      },
+      "wednesday": {
+        "open": "05:00",
+        "close": "19:00"
+      },
+      "thursday": {
+        "open": "05:00",
+        "close": "19:00"
+      },
+      "friday": {
+        "open": "05:00",
+        "close": "18:00"
+      },
+      "saturday": {
+        "open": "08:00",
+        "close": "10:00"
+      }
+    },
+    "hoursText": [
+      "Monday: 5:00 AM – 7:00 PM",
+      "Tuesday: 5:00 AM – 7:00 PM",
+      "Wednesday: 5:00 AM – 7:00 PM",
+      "Thursday: 5:00 AM – 7:00 PM",
+      "Friday: 5:00 AM – 6:00 PM",
+      "Saturday: 8:00 – 10:00 AM",
+      "Sunday: Closed"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Boys and Girls Club of Dane County",
+    "placeId": "ChIJ_ZOjjc5SBogRK7GNluSr7K8",
+    "address": "2001 Taft St, Madison, WI 53713, USA",
+    "phone": "(608) 257-2606",
+    "website": "http://www.bgcdc.org/",
+    "coordinates": {
+      "lat": 43.0440744,
+      "lng": -89.3928129
+    },
+    "rating": 4.1,
+    "totalRatings": 10,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "monday": {
+        "open": "09:00",
+        "close": "17:00"
+      },
+      "tuesday": {
+        "open": "09:00",
+        "close": "17:00"
+      },
+      "wednesday": {
+        "open": "09:00",
+        "close": "17:00"
+      },
+      "thursday": {
+        "open": "09:00",
+        "close": "17:00"
+      },
+      "friday": {
+        "open": "09:00",
+        "close": "17:00"
+      }
+    },
+    "hoursText": [
+      "Monday: 9:00 AM – 5:00 PM",
+      "Tuesday: 9:00 AM – 5:00 PM",
+      "Wednesday: 9:00 AM – 5:00 PM",
+      "Thursday: 9:00 AM – 5:00 PM",
+      "Friday: 9:00 AM – 5:00 PM",
+      "Saturday: Closed",
+      "Sunday: Closed"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Planet Fitness",
+    "placeId": "ChIJhR6TLUVSBogRqNiAQgCYSYA",
+    "address": "2311 W Broadway, Monona, WI 53713, USA",
+    "phone": "(608) 223-9075",
+    "website": "https://www.planetfitness.com/gyms/madison-west-broadway-wi?utm_medium=organic&utm_source=extnet",
+    "coordinates": {
+      "lat": 43.0447752,
+      "lng": -89.350579
+    },
+    "rating": 4.6,
+    "totalRatings": 926,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "07:00",
+        "close": "22:00"
+      },
+      "saturday": {
+        "open": "07:00",
+        "close": "19:00"
+      }
+    },
+    "hoursText": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: 12:00 AM – 10:00 PM",
+      "Saturday: 7:00 AM – 7:00 PM",
+      "Sunday: 7:00 AM – 12:00 AM"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Gymfinity Gymnastics",
+    "placeId": "ChIJ7996G_CxB4gRXvQO-3lFj34",
+    "address": "6300 Nesbitt Rd, Madison, WI 53719, USA",
+    "phone": "(608) 848-3547",
+    "website": "http://www.gymfinity.com/",
+    "coordinates": {
+      "lat": 43.0086102,
+      "lng": -89.4831609
+    },
+    "rating": 4.6,
+    "totalRatings": 76,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "monday": {
+        "open": "09:00",
+        "close": "20:00"
+      },
+      "tuesday": {
+        "open": "09:00",
+        "close": "20:00"
+      },
+      "wednesday": {
+        "open": "08:30",
+        "close": "20:00"
+      },
+      "thursday": {
+        "open": "09:00",
+        "close": "20:00"
+      },
+      "friday": {
+        "open": "09:00",
+        "close": "19:00"
+      },
+      "saturday": {
+        "open": "08:30",
+        "close": "14:00"
+      }
+    },
+    "hoursText": [
+      "Monday: 9:00 AM – 8:00 PM",
+      "Tuesday: 9:00 AM – 8:00 PM",
+      "Wednesday: 8:30 AM – 8:00 PM",
+      "Thursday: 9:00 AM – 8:00 PM",
+      "Friday: 9:00 AM – 7:00 PM",
+      "Saturday: 8:30 AM – 2:00 PM",
+      "Sunday: Closed"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Anytime Fitness",
+    "placeId": "ChIJkXFRTCBOBogRPSS6B-S9nSw",
+    "address": "5802 US-51, McFarland, WI 53558, USA",
+    "phone": "(608) 838-8111",
+    "website": "https://www.anytimefitness.com/locations/mcfarland-wisconsin-594/?utm_source=google&utm_medium=organic-businesslisting&utm_campaign=gbp-listing&utm_content=594",
+    "coordinates": {
+      "lat": 43.0149596,
+      "lng": -89.3027759
+    },
+    "rating": 4.8,
+    "totalRatings": 139,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    },
+    "hoursText": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Madison Turners",
+    "placeId": "ChIJLS61DJ5RBogRYCJ84RSwOGQ",
+    "address": "3001 S Stoughton Rd, Madison, WI 53716, USA",
+    "phone": "(608) 222-4922",
+    "website": "http://www.madisonturners.com/",
+    "coordinates": {
+      "lat": 43.0545237,
+      "lng": -89.3074111
+    },
+    "rating": 4.5,
+    "totalRatings": 26,
+    "businessStatus": "OPERATIONAL",
+    "hours": null,
+    "hoursText": null,
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Anytime Fitness",
+    "placeId": "ChIJqTON6_OwB4gRKbcZHzf1yrw",
+    "address": "411 Prairie Heights Dr, Verona, WI 53593, USA",
+    "phone": "(608) 497-1266",
+    "website": "https://www.anytimefitness.com/locations/verona-wisconsin-781/?utm_source=google&utm_medium=organic-businesslisting&utm_campaign=gbp-listing&utm_content=781",
+    "coordinates": {
+      "lat": 42.9737051,
+      "lng": -89.5269826
+    },
+    "rating": 4.2,
+    "totalRatings": 123,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    },
+    "hoursText": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Madison Ballet",
+    "placeId": "ChIJUR-I0dWtB4gRIsfLWaKHwO8",
+    "address": "6734 Odana Rd, Madison, WI 53719, USA",
+    "phone": "(608) 278-7990",
+    "website": "http://www.madisonballet.org/",
+    "coordinates": {
+      "lat": 43.0572103,
+      "lng": -89.49898499999999
+    },
+    "rating": 5,
+    "totalRatings": 22,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "monday": {
+        "open": "09:00",
+        "close": "20:00"
+      },
+      "tuesday": {
+        "open": "09:00",
+        "close": "20:00"
+      },
+      "wednesday": {
+        "open": "09:00",
+        "close": "20:00"
+      },
+      "thursday": {
+        "open": "09:00",
+        "close": "20:00"
+      },
+      "friday": {
+        "open": "09:00",
+        "close": "20:00"
+      },
+      "saturday": {
+        "open": "09:00",
+        "close": "13:00"
+      }
+    },
+    "hoursText": [
+      "Monday: 9:00 AM – 8:00 PM",
+      "Tuesday: 9:00 AM – 8:00 PM",
+      "Wednesday: 9:00 AM – 8:00 PM",
+      "Thursday: 9:00 AM – 8:00 PM",
+      "Friday: 9:00 AM – 8:00 PM",
+      "Saturday: 9:00 AM – 1:00 PM",
+      "Sunday: Closed"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Dance Life Studio and Fitness",
+    "placeId": "ChIJmfKrx1uuB4gRNAoZGOGrPwc",
+    "address": "6725 Seybold Rd, Madison, WI 53719, USA",
+    "phone": "(608) 616-9440",
+    "website": "http://www.madisondancelife.com/",
+    "coordinates": {
+      "lat": 43.0514561,
+      "lng": -89.4998428
+    },
+    "rating": 5,
+    "totalRatings": 31,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "09:30",
+        "close": "12:00"
+      },
+      "monday": {
+        "open": "17:30",
+        "close": "20:00"
+      },
+      "tuesday": {
+        "open": "17:30",
+        "close": "20:00"
+      },
+      "wednesday": {
+        "open": "17:30",
+        "close": "20:00"
+      },
+      "thursday": {
+        "open": "17:30",
+        "close": "20:00"
+      },
+      "saturday": {
+        "open": "08:30",
+        "close": "11:00"
+      }
+    },
+    "hoursText": [
+      "Monday: 5:30 – 8:00 PM",
+      "Tuesday: 5:30 – 8:00 PM",
+      "Wednesday: 5:30 – 8:00 PM",
+      "Thursday: 5:30 – 8:00 PM",
+      "Friday: Closed",
+      "Saturday: 8:30 – 11:00 AM",
+      "Sunday: 9:30 AM – 12:00 PM"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Inner Fire Yoga",
+    "placeId": "ChIJSW247SKsB4gRyZovptHVGhw",
+    "address": "5003 University Ave Suite 195, Madison, WI 53705, USA",
+    "phone": "(608) 661-0167",
+    "website": "http://www.innerfireyoga.com/",
+    "coordinates": {
+      "lat": 43.075438,
+      "lng": -89.4663872
+    },
+    "rating": 4.8,
+    "totalRatings": 318,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "16:00",
+        "close": "19:30"
+      },
+      "monday": {
+        "open": "16:00",
+        "close": "19:15"
+      },
+      "tuesday": {
+        "open": "16:00",
+        "close": "19:00"
+      },
+      "wednesday": {
+        "open": "16:00",
+        "close": "19:45"
+      },
+      "thursday": {
+        "open": "16:00",
+        "close": "19:00"
+      },
+      "friday": {
+        "open": "16:00",
+        "close": "17:30"
+      },
+      "saturday": {
+        "open": "15:00",
+        "close": "16:00"
+      }
+    },
+    "hoursText": [
+      "Monday: 5:30 – 6:00 AM, 8:00 – 10:30 AM, 4:00 – 7:15 PM",
+      "Tuesday: 5:30 – 6:00 AM, 8:00 – 10:30 AM, 4:00 – 7:00 PM",
+      "Wednesday: 5:30 – 6:00 AM, 8:00 – 10:30 AM, 4:00 – 7:45 PM",
+      "Thursday: 5:30 – 6:00 AM, 8:00 – 10:30 AM, 4:00 – 7:00 PM",
+      "Friday: 5:30 – 6:00 AM, 8:00 AM – 12:00 PM, 4:00 – 5:30 PM",
+      "Saturday: 6:30 – 10:30 AM, 3:00 – 4:00 PM",
+      "Sunday: 8:00 – 11:00 AM, 4:00 – 7:30 PM"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Anytime Fitness",
+    "placeId": "ChIJLzrqqotUBogRLlnQE_afW1k",
+    "address": "1193 N Sherman Ave, Madison, WI 53704, USA",
+    "phone": "(608) 245-1616",
+    "website": "https://www.anytimefitness.com/locations/madison-wisconsin-693/?utm_source=google&utm_medium=organic-businesslisting&utm_campaign=gbp-listing&utm_content=693",
+    "coordinates": {
+      "lat": 43.11241649999999,
+      "lng": -89.3619262
+    },
+    "rating": 4.6,
+    "totalRatings": 315,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    },
+    "hoursText": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Orange Shoe Personal Fitness Trainers - Madison Downtown",
+    "placeId": "ChIJHUu-IT9TBogRs0YrufU-yeY",
+    "address": "1 E Main St, Madison, WI 53703, USA",
+    "phone": "(608) 255-0525",
+    "website": "https://www.orangeshoe.com/MadisonDowntown?=GMB",
+    "coordinates": {
+      "lat": 43.073644,
+      "lng": -89.3824544
+    },
+    "rating": 5,
+    "totalRatings": 71,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "monday": {
+        "open": "05:00",
+        "close": "22:00"
+      },
+      "tuesday": {
+        "open": "05:00",
+        "close": "22:00"
+      },
+      "wednesday": {
+        "open": "05:00",
+        "close": "22:00"
+      },
+      "thursday": {
+        "open": "05:00",
+        "close": "22:00"
+      },
+      "friday": {
+        "open": "05:00",
+        "close": "22:00"
+      },
+      "saturday": {
+        "open": "06:00",
+        "close": "15:00"
+      }
+    },
+    "hoursText": [
+      "Monday: 5:00 AM – 10:00 PM",
+      "Tuesday: 5:00 AM – 10:00 PM",
+      "Wednesday: 5:00 AM – 10:00 PM",
+      "Thursday: 5:00 AM – 10:00 PM",
+      "Friday: 5:00 AM – 10:00 PM",
+      "Saturday: 6:00 AM – 3:00 PM",
+      "Sunday: Closed"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Supreme Health & Fitness",
+    "placeId": "ChIJi-cDXXiuB4gRYc7R26ZTI1I",
+    "address": "5555 Odana Rd, Madison, WI 53719, USA",
+    "phone": "(608) 274-5080",
+    "website": "http://www.supremehealthfitness.com/",
+    "coordinates": {
+      "lat": 43.0492828,
+      "lng": -89.4755655
+    },
+    "rating": 4.9,
+    "totalRatings": 167,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "06:30",
+        "close": "19:00"
+      },
+      "monday": {
+        "open": "05:00",
+        "close": "21:00"
+      },
+      "tuesday": {
+        "open": "05:00",
+        "close": "21:00"
+      },
+      "wednesday": {
+        "open": "05:00",
+        "close": "21:00"
+      },
+      "thursday": {
+        "open": "05:00",
+        "close": "21:00"
+      },
+      "friday": {
+        "open": "05:00",
+        "close": "19:00"
+      },
+      "saturday": {
+        "open": "06:30",
+        "close": "19:00"
+      }
+    },
+    "hoursText": [
+      "Monday: 5:00 AM – 9:00 PM",
+      "Tuesday: 5:00 AM – 9:00 PM",
+      "Wednesday: 5:00 AM – 9:00 PM",
+      "Thursday: 5:00 AM – 9:00 PM",
+      "Friday: 5:00 AM – 7:00 PM",
+      "Saturday: 6:30 AM – 7:00 PM",
+      "Sunday: 6:30 AM – 7:00 PM"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Studio Melt",
+    "placeId": "ChIJF6kpPDhTBogRhdkVNrgBNYg",
+    "address": "301 W Beltline Hwy Suite 103, Madison, WI 53713, USA",
+    "phone": "(608) 663-6358",
+    "website": "http://www.studiomelt.com/",
+    "coordinates": {
+      "lat": 43.03709449999999,
+      "lng": -89.38716989999999
+    },
+    "rating": 5,
+    "totalRatings": 3,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "08:30",
+        "close": "13:30"
+      },
+      "monday": {
+        "open": "05:30",
+        "close": "20:30"
+      },
+      "tuesday": {
+        "open": "05:30",
+        "close": "20:30"
+      },
+      "wednesday": {
+        "open": "05:30",
+        "close": "20:30"
+      },
+      "thursday": {
+        "open": "05:30",
+        "close": "20:30"
+      },
+      "friday": {
+        "open": "05:30",
+        "close": "20:30"
+      },
+      "saturday": {
+        "open": "07:00",
+        "close": "14:00"
+      }
+    },
+    "hoursText": [
+      "Monday: 5:30 AM – 8:30 PM",
+      "Tuesday: 5:30 AM – 8:30 PM",
+      "Wednesday: 5:30 AM – 8:30 PM",
+      "Thursday: 5:30 AM – 8:30 PM",
+      "Friday: 5:30 AM – 8:30 PM",
+      "Saturday: 7:00 AM – 2:00 PM",
+      "Sunday: 8:30 AM – 1:30 PM"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Pinnacle Health + Fitness - Fitchburg",
+    "placeId": "ChIJKd04NAyyB4gRlqiVeNtu8lI",
+    "address": "5973 Executive Dr, Fitchburg, WI 53719, USA",
+    "phone": "(608) 278-8118",
+    "website": "https://www.phfitness.com/?utm_source=google&utm_medium=organic&utm_campaign=fitchburg",
+    "coordinates": {
+      "lat": 43.0111676,
+      "lng": -89.45907030000001
+    },
+    "rating": 4.3,
+    "totalRatings": 154,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "05:00",
+        "close": "20:00"
+      },
+      "monday": {
+        "open": "05:00",
+        "close": "23:00"
+      },
+      "tuesday": {
+        "open": "05:00",
+        "close": "23:00"
+      },
+      "wednesday": {
+        "open": "05:00",
+        "close": "23:00"
+      },
+      "thursday": {
+        "open": "05:00",
+        "close": "23:00"
+      },
+      "friday": {
+        "open": "05:00",
+        "close": "23:00"
+      },
+      "saturday": {
+        "open": "05:00",
+        "close": "20:00"
+      }
+    },
+    "hoursText": [
+      "Monday: 5:00 AM – 11:00 PM",
+      "Tuesday: 5:00 AM – 11:00 PM",
+      "Wednesday: 5:00 AM – 11:00 PM",
+      "Thursday: 5:00 AM – 11:00 PM",
+      "Friday: 5:00 AM – 11:00 PM",
+      "Saturday: 5:00 AM – 8:00 PM",
+      "Sunday: 5:00 AM – 8:00 PM"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Dragonfly Hot Yoga",
+    "placeId": "ChIJVVVVVUBTBogRx-jyN7xZvoM",
+    "address": "6227 McKee Rd, Fitchburg, WI 53719, USA",
+    "phone": "(608) 203-9000",
+    "website": "http://www.dragonflyhotyoga.com/",
+    "coordinates": {
+      "lat": 43.014751,
+      "lng": -89.476615
+    },
+    "rating": 4.9,
+    "totalRatings": 198,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "16:00",
+        "close": "20:00"
+      },
+      "monday": {
+        "open": "16:15",
+        "close": "21:00"
+      },
+      "tuesday": {
+        "open": "16:15",
+        "close": "21:00"
+      },
+      "wednesday": {
+        "open": "17:30",
+        "close": "20:00"
+      },
+      "thursday": {
+        "open": "16:15",
+        "close": "20:00"
+      },
+      "friday": {
+        "open": "16:00",
+        "close": "18:30"
+      },
+      "saturday": {
+        "open": "08:00",
+        "close": "12:00"
+      }
+    },
+    "hoursText": [
+      "Monday: 9:30 AM – 12:00 PM, 4:15 – 9:00 PM",
+      "Tuesday: 9:00 – 10:00 AM, 4:15 – 9:00 PM",
+      "Wednesday: 5:30 – 8:00 PM",
+      "Thursday: 9:00 – 10:00 AM, 4:15 – 8:00 PM",
+      "Friday: 9:30 – 10:30 AM, 12:00 – 1:30 PM, 4:00 – 6:30 PM",
+      "Saturday: 8:00 AM – 12:00 PM",
+      "Sunday: 8:30 – 11:15 AM, 4:00 – 8:00 PM"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Anytime Fitness",
+    "placeId": "ChIJEau5rStSBogRhX9iR0gEKKU",
+    "address": "6000 Monona Dr, Monona, WI 53716, USA",
+    "phone": "(608) 222-9699",
+    "website": "https://www.anytimefitness.com/locations/monona-wisconsin-689/?utm_source=google&utm_medium=organic-businesslisting&utm_campaign=gbp-listing&utm_content=689",
+    "coordinates": {
+      "lat": 43.0536751,
+      "lng": -89.3246951
+    },
+    "rating": 4.8,
+    "totalRatings": 237,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    },
+    "hoursText": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Yoga Co-op of Madison",
+    "placeId": "ChIJPb4IBWlTBogRFYnhcK8H_OA",
+    "address": "812 E Dayton St #200, Madison, WI 53703, USA",
+    "phone": null,
+    "website": "http://www.yogacoop.com/",
+    "coordinates": {
+      "lat": 43.0830737,
+      "lng": -89.3767853
+    },
+    "rating": 5,
+    "totalRatings": 2,
+    "businessStatus": "OPERATIONAL",
+    "hours": null,
+    "hoursText": null,
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Madtown Twisters Gymnastics - West",
+    "placeId": "ChIJwQEzyeeuB4gRC-pGXiz2xAw",
+    "address": "7035 Old Sauk Rd, Madison, WI 53717, USA",
+    "phone": "(608) 829-2922",
+    "website": "http://www.madtowntwisters.com/",
+    "coordinates": {
+      "lat": 43.0748668,
+      "lng": -89.5030549
+    },
+    "rating": 4.1,
+    "totalRatings": 61,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "13:15",
+        "close": "19:00"
+      },
+      "monday": {
+        "open": "08:00",
+        "close": "20:30"
+      },
+      "tuesday": {
+        "open": "08:00",
+        "close": "20:30"
+      },
+      "wednesday": {
+        "open": "08:00",
+        "close": "20:30"
+      },
+      "thursday": {
+        "open": "08:00",
+        "close": "20:30"
+      },
+      "friday": {
+        "open": "08:00",
+        "close": "22:00"
+      },
+      "saturday": {
+        "open": "13:15",
+        "close": "19:00"
+      }
+    },
+    "hoursText": [
+      "Monday: 8:00 AM – 8:30 PM",
+      "Tuesday: 8:00 AM – 8:30 PM",
+      "Wednesday: 8:00 AM – 8:30 PM",
+      "Thursday: 8:00 AM – 8:30 PM",
+      "Friday: 8:00 AM – 10:00 PM",
+      "Saturday: 1:15 – 7:00 PM",
+      "Sunday: 1:15 – 7:00 PM"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Sun Prairie YMCA",
+    "placeId": "ChIJWUbS8OhXBogRNeMh7jahrWQ",
+    "address": "1470 Don Simon Dr, Sun Prairie, WI 53590, USA",
+    "phone": "(608) 837-8221",
+    "website": "https://www.ymcadane.org/locations/sun-prairie",
+    "coordinates": {
+      "lat": 43.160967,
+      "lng": -89.26304100000002
+    },
+    "rating": 4.5,
+    "totalRatings": 124,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "09:00",
+        "close": "17:00"
+      },
+      "monday": {
+        "open": "05:00",
+        "close": "21:00"
+      },
+      "tuesday": {
+        "open": "05:00",
+        "close": "21:00"
+      },
+      "wednesday": {
+        "open": "05:00",
+        "close": "21:00"
+      },
+      "thursday": {
+        "open": "05:00",
+        "close": "21:00"
+      },
+      "friday": {
+        "open": "05:00",
+        "close": "21:00"
+      },
+      "saturday": {
+        "open": "06:00",
+        "close": "17:00"
+      }
+    },
+    "hoursText": [
+      "Monday: 5:00 AM – 9:00 PM",
+      "Tuesday: 5:00 AM – 9:00 PM",
+      "Wednesday: 5:00 AM – 9:00 PM",
+      "Thursday: 5:00 AM – 9:00 PM",
+      "Friday: 5:00 AM – 9:00 PM",
+      "Saturday: 6:00 AM – 5:00 PM",
+      "Sunday: 9:00 AM – 5:00 PM"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Miss Pole - Madison",
+    "placeId": "ChIJBX1_EgCvB4gRgbU7JraZs-A",
+    "address": "7475 Mineral Point Rd, Madison, WI 53717, USA",
+    "phone": "(608) 836-7653",
+    "website": "http://www.misspole.com/",
+    "coordinates": {
+      "lat": 43.0579227,
+      "lng": -89.5129437
+    },
+    "rating": 4.8,
+    "totalRatings": 33,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "09:00",
+        "close": "17:00"
+      },
+      "monday": {
+        "open": "16:30",
+        "close": "21:00"
+      },
+      "tuesday": {
+        "open": "16:30",
+        "close": "21:00"
+      },
+      "wednesday": {
+        "open": "16:30",
+        "close": "21:00"
+      },
+      "thursday": {
+        "open": "16:30",
+        "close": "21:00"
+      },
+      "friday": {
+        "open": "09:00",
+        "close": "17:00"
+      },
+      "saturday": {
+        "open": "09:00",
+        "close": "17:00"
+      }
+    },
+    "hoursText": [
+      "Monday: 4:30 – 9:00 PM",
+      "Tuesday: 4:30 – 9:00 PM",
+      "Wednesday: 4:30 – 9:00 PM",
+      "Thursday: 4:30 – 9:00 PM",
+      "Friday: 9:00 AM – 5:00 PM",
+      "Saturday: 9:00 AM – 5:00 PM",
+      "Sunday: 9:00 AM – 5:00 PM"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Fitness Solutions",
+    "placeId": "ChIJNXAE5l2sB4gR5GdZ4isR4fM",
+    "address": "Lakepoint Commons, 2701 University Ave A, Madison, WI 53705, USA",
+    "phone": "(608) 561-1372",
+    "website": "http://madisonfitnesssolutions.com/",
+    "coordinates": {
+      "lat": 43.072807,
+      "lng": -89.434124
+    },
+    "rating": 5,
+    "totalRatings": 13,
+    "businessStatus": "OPERATIONAL",
+    "hours": null,
+    "hoursText": null,
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Princeton Club Xpress McFarland",
+    "placeId": "ChIJZ5obhyBOBogRDeDsg0UYeMU",
+    "address": "5720 US-51, McFarland, WI 53558, USA",
+    "phone": "(608) 838-1072",
+    "website": "https://www.princetonclub.net/",
+    "coordinates": {
+      "lat": 43.0154572,
+      "lng": -89.302405
+    },
+    "rating": 4.8,
+    "totalRatings": 39,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    },
+    "hoursText": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Badger Gymnastics Academy",
+    "placeId": "ChIJZcWiaUWuB4gRDO4Uxua1InA",
+    "address": "6901 Schroeder Rd, Madison, WI 53711, USA",
+    "phone": "(608) 271-1885",
+    "website": "http://www.badgergymnastics.com/",
+    "coordinates": {
+      "lat": 43.0460418,
+      "lng": -89.5013202
+    },
+    "rating": 4.5,
+    "totalRatings": 31,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "monday": {
+        "open": "09:00",
+        "close": "19:00"
+      },
+      "tuesday": {
+        "open": "09:00",
+        "close": "19:00"
+      },
+      "wednesday": {
+        "open": "09:00",
+        "close": "19:00"
+      },
+      "thursday": {
+        "open": "09:00",
+        "close": "19:00"
+      },
+      "friday": {
+        "open": "15:30",
+        "close": "21:00"
+      },
+      "saturday": {
+        "open": "08:30",
+        "close": "12:30"
+      }
+    },
+    "hoursText": [
+      "Monday: 9:00 AM – 7:00 PM",
+      "Tuesday: 9:00 AM – 7:00 PM",
+      "Wednesday: 9:00 AM – 7:00 PM",
+      "Thursday: 9:00 AM – 7:00 PM",
+      "Friday: 9:00 AM – 12:00 PM, 3:30 – 9:00 PM",
+      "Saturday: 8:30 AM – 12:30 PM",
+      "Sunday: Closed"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Princeton Club Xpress Monona",
+    "placeId": "ChIJbdPgENRTBogRh7xBDemepDY",
+    "address": "5413 Monona Dr, Monona, WI 53716, USA",
+    "phone": "(608) 663-2639",
+    "website": "https://www.princetonclub.net/xpress-monona/",
+    "coordinates": {
+      "lat": 43.0605392,
+      "lng": -89.32649230000001
+    },
+    "rating": 4.3,
+    "totalRatings": 52,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    },
+    "hoursText": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Phitness Plus",
+    "placeId": "ChIJQbatfLRSBogRSa59kRL_oyg",
+    "address": "501 E Badger Rd, Madison, WI 53713, USA",
+    "phone": "(608) 957-4153",
+    "website": "http://www.phitnessplus.com/",
+    "coordinates": {
+      "lat": 43.0379241,
+      "lng": -89.37751709999999
+    },
+    "rating": 3,
+    "totalRatings": 2,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "09:00",
+        "close": "22:00"
+      },
+      "monday": {
+        "open": "09:00",
+        "close": "22:00"
+      },
+      "tuesday": {
+        "open": "09:00",
+        "close": "22:00"
+      },
+      "wednesday": {
+        "open": "09:00",
+        "close": "22:00"
+      },
+      "thursday": {
+        "open": "09:00",
+        "close": "22:00"
+      },
+      "friday": {
+        "open": "09:00",
+        "close": "22:00"
+      },
+      "saturday": {
+        "open": "09:00",
+        "close": "22:00"
+      }
+    },
+    "hoursText": [
+      "Monday: 9:00 AM – 10:00 PM",
+      "Tuesday: 9:00 AM – 10:00 PM",
+      "Wednesday: 9:00 AM – 10:00 PM",
+      "Thursday: 9:00 AM – 10:00 PM",
+      "Friday: 9:00 AM – 10:00 PM",
+      "Saturday: 9:00 AM – 10:00 PM",
+      "Sunday: 9:00 AM – 10:00 PM"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Anytime Fitness",
+    "placeId": "ChIJ2W8fn5IAB4gR3Y2zYh_XOw0",
+    "address": "604 E Main St, Waunakee, WI 53597, USA",
+    "phone": "(608) 849-8998",
+    "website": "https://www.anytimefitness.com/locations/waunakee-wisconsin-691/?utm_source=google&utm_medium=organic-businesslisting&utm_campaign=gbp-listing&utm_content=691",
+    "coordinates": {
+      "lat": 43.1913167,
+      "lng": -89.4461347
+    },
+    "rating": 4.7,
+    "totalRatings": 202,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    },
+    "hoursText": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "The Combine",
+    "placeId": "ChIJA4z9K62oB4gRswSoPBYNKzk",
+    "address": "7551 Hubbard Ave, Middleton, WI 53562, USA",
+    "phone": "(773) 368-0677",
+    "website": "http://www.combinestrength.com/",
+    "coordinates": {
+      "lat": 43.0953781,
+      "lng": -89.51244179999999
+    },
+    "rating": 5,
+    "totalRatings": 6,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "monday": {
+        "open": "05:30",
+        "close": "19:30"
+      },
+      "tuesday": {
+        "open": "05:30",
+        "close": "19:30"
+      },
+      "wednesday": {
+        "open": "05:30",
+        "close": "19:30"
+      },
+      "thursday": {
+        "open": "05:30",
+        "close": "19:30"
+      },
+      "friday": {
+        "open": "05:30",
+        "close": "19:30"
+      },
+      "saturday": {
+        "open": "07:00",
+        "close": "13:00"
+      }
+    },
+    "hoursText": [
+      "Monday: 5:30 AM – 7:30 PM",
+      "Tuesday: 5:30 AM – 7:30 PM",
+      "Wednesday: 5:30 AM – 7:30 PM",
+      "Thursday: 5:30 AM – 7:30 PM",
+      "Friday: 5:30 AM – 7:30 PM",
+      "Saturday: 7:00 AM – 1:00 PM",
+      "Sunday: Closed"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Forest Coaching and Studios",
+    "placeId": "ChIJ5zrukzmpB4gRQayfqtsQdrc",
+    "address": "555 W Washington Ave, Madison, WI 53703, USA",
+    "phone": "(608) 301-5506",
+    "website": "http://www.forestcoachingandstudios.com/",
+    "coordinates": {
+      "lat": 43.0687502,
+      "lng": -89.39193739999999
+    },
+    "rating": 5,
+    "totalRatings": 49,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "13:00",
+        "close": "17:00"
+      },
+      "monday": {
+        "open": "13:00",
+        "close": "19:30"
+      },
+      "tuesday": {
+        "open": "07:00",
+        "close": "19:30"
+      },
+      "wednesday": {
+        "open": "07:00",
+        "close": "19:30"
+      },
+      "thursday": {
+        "open": "07:00",
+        "close": "19:30"
+      },
+      "friday": {
+        "open": "07:00",
+        "close": "19:30"
+      },
+      "saturday": {
+        "open": "08:00",
+        "close": "13:00"
+      }
+    },
+    "hoursText": [
+      "Monday: 1:00 – 7:30 PM",
+      "Tuesday: 7:00 AM – 7:30 PM",
+      "Wednesday: 7:00 AM – 7:30 PM",
+      "Thursday: 7:00 AM – 7:30 PM",
+      "Friday: 7:00 AM – 7:30 PM",
+      "Saturday: 8:00 AM – 1:00 PM",
+      "Sunday: 1:00 – 5:00 PM"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Capital Fitness",
+    "placeId": "ChIJ28EbpTBTBogRC9Je45EamWU",
+    "address": "425 W Washington Ave #2703, Madison, WI 53703, USA",
+    "phone": "(608) 251-1245",
+    "website": "http://www.capitalfitness.net/",
+    "coordinates": {
+      "lat": 43.0705317,
+      "lng": -89.38955279999999
+    },
+    "rating": 4.1,
+    "totalRatings": 32,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "09:00",
+        "close": "21:00"
+      },
+      "monday": {
+        "open": "06:00",
+        "close": "21:00"
+      },
+      "tuesday": {
+        "open": "06:00",
+        "close": "21:00"
+      },
+      "wednesday": {
+        "open": "06:00",
+        "close": "21:00"
+      },
+      "thursday": {
+        "open": "06:00",
+        "close": "21:00"
+      },
+      "friday": {
+        "open": "06:00",
+        "close": "21:00"
+      },
+      "saturday": {
+        "open": "09:00",
+        "close": "21:00"
+      }
+    },
+    "hoursText": [
+      "Monday: 6:00 AM – 9:00 PM",
+      "Tuesday: 6:00 AM – 9:00 PM",
+      "Wednesday: 6:00 AM – 9:00 PM",
+      "Thursday: 6:00 AM – 9:00 PM",
+      "Friday: 6:00 AM – 9:00 PM",
+      "Saturday: 9:00 AM – 9:00 PM",
+      "Sunday: 9:00 AM – 9:00 PM"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Pilates Central",
+    "placeId": "ChIJF6kpPDhTBogR6xf6ShYWquM",
+    "address": "1 E Main St, Madison, WI 53703, USA",
+    "phone": "(608) 285-2890",
+    "website": "http://pilatescentralmadison.com/",
+    "coordinates": {
+      "lat": 43.07392429999999,
+      "lng": -89.38266279999999
+    },
+    "rating": 5,
+    "totalRatings": 8,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "09:30",
+        "close": "15:30"
+      },
+      "tuesday": {
+        "open": "09:00",
+        "close": "17:00"
+      },
+      "wednesday": {
+        "open": "09:00",
+        "close": "18:30"
+      },
+      "thursday": {
+        "open": "08:00",
+        "close": "18:30"
+      },
+      "saturday": {
+        "open": "09:30",
+        "close": "15:30"
+      }
+    },
+    "hoursText": [
+      "Monday: Closed",
+      "Tuesday: 9:00 AM – 5:00 PM",
+      "Wednesday: 9:00 AM – 6:30 PM",
+      "Thursday: 8:00 AM – 6:30 PM",
+      "Friday: Closed",
+      "Saturday: 9:30 AM – 3:30 PM",
+      "Sunday: 9:30 AM – 3:30 PM"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "SPRING - Pilates for Life",
+    "placeId": "ChIJeRJVkuesB4gRoOmglNxoPdY",
+    "address": "710 Harrison St, Madison, WI 53711, USA",
+    "phone": "(608) 709-1775",
+    "website": "http://springpilates.life/",
+    "coordinates": {
+      "lat": 43.0647916,
+      "lng": -89.4179621
+    },
+    "rating": 5,
+    "totalRatings": 24,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "12:00",
+        "close": "17:00"
+      },
+      "monday": {
+        "open": "07:30",
+        "close": "18:30"
+      },
+      "tuesday": {
+        "open": "07:30",
+        "close": "18:30"
+      },
+      "wednesday": {
+        "open": "07:30",
+        "close": "19:30"
+      },
+      "thursday": {
+        "open": "07:30",
+        "close": "18:30"
+      },
+      "friday": {
+        "open": "07:30",
+        "close": "16:00"
+      },
+      "saturday": {
+        "open": "09:00",
+        "close": "12:00"
+      }
+    },
+    "hoursText": [
+      "Monday: 7:30 AM – 6:30 PM",
+      "Tuesday: 7:30 AM – 6:30 PM",
+      "Wednesday: 7:30 AM – 7:30 PM",
+      "Thursday: 7:30 AM – 6:30 PM",
+      "Friday: 7:30 AM – 4:00 PM",
+      "Saturday: 9:00 AM – 12:00 PM",
+      "Sunday: 9:00 – 10:00 AM, 12:00 – 5:00 PM"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "The Yoga Sangha",
+    "placeId": "ChIJa8lXZkBTBogRtJT5A8WA7Eo",
+    "address": "15 N Butler St, Madison, WI 53703, USA",
+    "phone": "(608) 251-1245",
+    "website": "https://www.capitalfitness.net/yoga-sangha",
+    "coordinates": {
+      "lat": 43.0772152,
+      "lng": -89.3814991
+    },
+    "rating": 5,
+    "totalRatings": 2,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "06:00",
+        "close": "21:00"
+      },
+      "monday": {
+        "open": "06:00",
+        "close": "21:00"
+      },
+      "tuesday": {
+        "open": "06:00",
+        "close": "21:00"
+      },
+      "wednesday": {
+        "open": "06:00",
+        "close": "21:00"
+      },
+      "thursday": {
+        "open": "06:00",
+        "close": "21:00"
+      },
+      "friday": {
+        "open": "06:00",
+        "close": "21:00"
+      },
+      "saturday": {
+        "open": "06:00",
+        "close": "21:00"
+      }
+    },
+    "hoursText": [
+      "Monday: 6:00 AM – 9:00 PM",
+      "Tuesday: 6:00 AM – 9:00 PM",
+      "Wednesday: 6:00 AM – 9:00 PM",
+      "Thursday: 6:00 AM – 9:00 PM",
+      "Friday: 6:00 AM – 9:00 PM",
+      "Saturday: 6:00 AM – 9:00 PM",
+      "Sunday: 6:00 AM – 9:00 PM"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Purple Door Pilates",
+    "placeId": "ChIJafKgB12sB4gRb0tLaI2knuE",
+    "address": "807 E Johnson St, Madison, WI 53703, USA",
+    "phone": "(608) 571-4741",
+    "website": "http://www.purpledoorpilatesmadison.com/",
+    "coordinates": {
+      "lat": 43.0833023,
+      "lng": -89.3773085
+    },
+    "rating": 4.9,
+    "totalRatings": 42,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "10:30",
+        "close": "11:30"
+      },
+      "monday": {
+        "open": "09:15",
+        "close": "19:00"
+      },
+      "tuesday": {
+        "open": "07:45",
+        "close": "19:00"
+      },
+      "wednesday": {
+        "open": "08:45",
+        "close": "19:30"
+      },
+      "thursday": {
+        "open": "08:45",
+        "close": "19:30"
+      },
+      "friday": {
+        "open": "08:00",
+        "close": "16:30"
+      },
+      "saturday": {
+        "open": "09:45",
+        "close": "11:15"
+      }
+    },
+    "hoursText": [
+      "Monday: 9:15 AM – 7:00 PM",
+      "Tuesday: 7:45 AM – 7:00 PM",
+      "Wednesday: 8:45 AM – 7:30 PM",
+      "Thursday: 8:45 AM – 7:30 PM",
+      "Friday: 8:00 AM – 4:30 PM",
+      "Saturday: 9:45 – 11:15 AM",
+      "Sunday: 10:30 – 11:30 AM"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "barre3",
+    "placeId": "ChIJcQYSwfOsB4gR-6O_O_uBjWY",
+    "address": "2560 University Ave, Madison, WI 53705, USA",
+    "phone": "(608) 467-9788",
+    "website": "https://online.barre3.com/studio-locations/madison",
+    "coordinates": {
+      "lat": 43.0726035,
+      "lng": -89.4301108
+    },
+    "rating": 5,
+    "totalRatings": 179,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "06:00",
+        "close": "20:30"
+      },
+      "monday": {
+        "open": "06:00",
+        "close": "20:30"
+      },
+      "tuesday": {
+        "open": "06:00",
+        "close": "20:30"
+      },
+      "wednesday": {
+        "open": "06:00",
+        "close": "20:30"
+      },
+      "thursday": {
+        "open": "06:00",
+        "close": "20:30"
+      },
+      "friday": {
+        "open": "06:00",
+        "close": "20:30"
+      },
+      "saturday": {
+        "open": "06:00",
+        "close": "20:30"
+      }
+    },
+    "hoursText": [
+      "Monday: 6:00 AM – 8:30 PM",
+      "Tuesday: 6:00 AM – 8:30 PM",
+      "Wednesday: 6:00 AM – 8:30 PM",
+      "Thursday: 6:00 AM – 8:30 PM",
+      "Friday: 6:00 AM – 8:30 PM",
+      "Saturday: 6:00 AM – 8:30 PM",
+      "Sunday: 6:00 AM – 8:30 PM"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Anytime Fitness",
+    "placeId": "ChIJdygY8YZTBogRaC4_HVDoMlQ",
+    "address": "2045 Atwood Ave, Madison, WI 53704, USA",
+    "phone": "(608) 286-1050",
+    "website": "https://www.anytimefitness.com/locations/madison-wisconsin-4442/?utm_source=google&utm_medium=organic-businesslisting&utm_campaign=gbp-listing&utm_content=4442",
+    "coordinates": {
+      "lat": 43.0920824,
+      "lng": -89.3539245
+    },
+    "rating": 4.7,
+    "totalRatings": 241,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    },
+    "hoursText": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Anytime Fitness",
+    "placeId": "ChIJFZ_9grOtB4gR4C-3YNn_Jgk",
+    "address": "515 S Midvale Blvd, Madison, WI 53711, USA",
+    "phone": "(608) 231-4447",
+    "website": "https://www.anytimefitness.com/locations/madison-wisconsin-2425/?utm_source=google&utm_medium=organic-businesslisting&utm_campaign=gbp-listing&utm_content=2425",
+    "coordinates": {
+      "lat": 43.0546736,
+      "lng": -89.4502108
+    },
+    "rating": 4.6,
+    "totalRatings": 215,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    },
+    "hoursText": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Great State Fitness",
+    "placeId": "ChIJDSoHyL9SBogRK4dGAmDBsHs",
+    "address": "2500 Rimrock Rd #104, Fitchburg, WI 53713, USA",
+    "phone": "(608) 338-8016",
+    "website": null,
+    "coordinates": {
+      "lat": 43.0354408,
+      "lng": -89.3804093
+    },
+    "rating": 5,
+    "totalRatings": 13,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    },
+    "hoursText": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Orangetheory Fitness",
+    "placeId": "ChIJkQY-mGutB4gRU_s7uR5oYL0",
+    "address": "2501 W Beltline Hwy #105, Madison, WI 53713, USA",
+    "phone": "(608) 709-8099",
+    "website": "https://www.orangetheory.com/en-us/locations/madison-wisconsin-0341?utm_medium=seo&utm_source=gg&utm_term=corporate&utm_campaign=soci",
+    "coordinates": {
+      "lat": 43.0344827,
+      "lng": -89.42108909999999
+    },
+    "rating": 4.8,
+    "totalRatings": 165,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "08:00",
+        "close": "12:30"
+      },
+      "monday": {
+        "open": "05:00",
+        "close": "19:30"
+      },
+      "tuesday": {
+        "open": "05:00",
+        "close": "19:30"
+      },
+      "wednesday": {
+        "open": "05:00",
+        "close": "19:30"
+      },
+      "thursday": {
+        "open": "05:00",
+        "close": "19:30"
+      },
+      "friday": {
+        "open": "05:00",
+        "close": "18:30"
+      },
+      "saturday": {
+        "open": "07:00",
+        "close": "11:30"
+      }
+    },
+    "hoursText": [
+      "Monday: 5:00 AM – 7:30 PM",
+      "Tuesday: 5:00 AM – 7:30 PM",
+      "Wednesday: 5:00 AM – 7:30 PM",
+      "Thursday: 5:00 AM – 7:30 PM",
+      "Friday: 5:00 AM – 6:30 PM",
+      "Saturday: 7:00 – 11:30 AM",
+      "Sunday: 8:00 AM – 12:30 PM"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Get Fit in 30! Fitness Boot Camp",
+    "placeId": "ChIJ3TjT44hUBogRHlDs-9UWppw",
+    "address": "607 N Sherman Ave, Madison, WI 53704, USA",
+    "phone": "(920) 723-7839",
+    "website": null,
+    "coordinates": {
+      "lat": 43.1077387,
+      "lng": -89.36370989999999
+    },
+    "rating": null,
+    "totalRatings": 0,
+    "businessStatus": "OPERATIONAL",
+    "hours": null,
+    "hoursText": null,
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Unifinium LTD",
+    "placeId": "ChIJ_____zusB4gRkQ7J_LWxJ_I",
+    "address": "101 S Rock Rd, Madison, WI 53705, USA",
+    "phone": "(608) 233-8334",
+    "website": null,
+    "coordinates": {
+      "lat": 43.067104,
+      "lng": -89.47321819999999
+    },
+    "rating": null,
+    "totalRatings": 0,
+    "businessStatus": "OPERATIONAL",
+    "hours": null,
+    "hoursText": null,
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Carbon World Health",
+    "placeId": "ChIJ6ecxIyqsB4gRqijZW_tfXE4",
+    "address": "340 S Whitney Way #100, Madison, WI 53705, USA",
+    "phone": "(608) 709-8089",
+    "website": "https://www.carbonworldhealth.com/",
+    "coordinates": {
+      "lat": 43.06142879999999,
+      "lng": -89.47292209999999
+    },
+    "rating": 4.8,
+    "totalRatings": 76,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "monday": {
+        "open": "06:00",
+        "close": "20:00"
+      },
+      "tuesday": {
+        "open": "06:00",
+        "close": "20:00"
+      },
+      "wednesday": {
+        "open": "06:00",
+        "close": "20:00"
+      },
+      "thursday": {
+        "open": "06:00",
+        "close": "20:00"
+      },
+      "friday": {
+        "open": "06:00",
+        "close": "18:00"
+      },
+      "saturday": {
+        "open": "07:00",
+        "close": "13:00"
+      }
+    },
+    "hoursText": [
+      "Monday: 6:00 AM – 8:00 PM",
+      "Tuesday: 6:00 AM – 8:00 PM",
+      "Wednesday: 6:00 AM – 8:00 PM",
+      "Thursday: 6:00 AM – 8:00 PM",
+      "Friday: 6:00 AM – 6:00 PM",
+      "Saturday: 7:00 AM – 1:00 PM",
+      "Sunday: Closed"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Sanctuary Jiu-Jitsu",
+    "placeId": "ChIJHxDH2IFTBogR0rqolHrKVDc",
+    "address": "46 N Bryan St, Madison, WI 53714, USA",
+    "phone": "(608) 852-7405",
+    "website": "https://bjjmadison.com/",
+    "coordinates": {
+      "lat": 43.1009603,
+      "lng": -89.3344075
+    },
+    "rating": 5,
+    "totalRatings": 119,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "10:30",
+        "close": "12:00"
+      },
+      "monday": {
+        "open": "17:00",
+        "close": "20:00"
+      },
+      "tuesday": {
+        "open": "17:30",
+        "close": "19:30"
+      },
+      "wednesday": {
+        "open": "17:00",
+        "close": "20:00"
+      },
+      "thursday": {
+        "open": "16:45",
+        "close": "19:30"
+      },
+      "friday": {
+        "open": "17:00",
+        "close": "20:00"
+      },
+      "saturday": {
+        "open": "09:00",
+        "close": "12:00"
+      }
+    },
+    "hoursText": [
+      "Monday: 6:30 – 7:30 AM, 12:00 – 1:00 PM, 5:00 – 8:00 PM",
+      "Tuesday: 10:00 AM – 12:00 PM, 5:30 – 7:30 PM",
+      "Wednesday: 6:30 – 7:30 AM, 12:00 – 1:00 PM, 5:00 – 8:00 PM",
+      "Thursday: 10:00 AM – 12:00 PM, 4:45 – 7:30 PM",
+      "Friday: 6:30 – 7:30 AM, 12:00 – 1:00 PM, 5:00 – 8:00 PM",
+      "Saturday: 9:00 AM – 12:00 PM",
+      "Sunday: 10:30 AM – 12:00 PM"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Jules Pilates Studio",
+    "placeId": "ChIJHXRsvYiuB4gRkSeEjdJGrq4",
+    "address": "5419 Monona Dr, Monona, WI 53714, USA",
+    "phone": "(608) 239-5989",
+    "website": "https://www.julespilates.com/",
+    "coordinates": {
+      "lat": 43.0832896,
+      "lng": -89.3237887
+    },
+    "rating": 5,
+    "totalRatings": 7,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "monday": {
+        "open": "07:00",
+        "close": "20:00"
+      },
+      "tuesday": {
+        "open": "07:00",
+        "close": "20:00"
+      },
+      "wednesday": {
+        "open": "07:00",
+        "close": "20:00"
+      },
+      "thursday": {
+        "open": "07:00",
+        "close": "20:00"
+      },
+      "friday": {
+        "open": "07:00",
+        "close": "20:00"
+      }
+    },
+    "hoursText": [
+      "Monday: 7:00 AM – 8:00 PM",
+      "Tuesday: 7:00 AM – 8:00 PM",
+      "Wednesday: 7:00 AM – 8:00 PM",
+      "Thursday: 7:00 AM – 8:00 PM",
+      "Friday: 7:00 AM – 8:00 PM",
+      "Saturday: Closed",
+      "Sunday: Closed"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  },
+  {
+    "name": "Anytime Fitness",
+    "placeId": "ChIJnX3O9Z2yB4gR0r8f2QIoQ3U",
+    "address": "2980 Cahill Main, Fitchburg, WI 53711, USA",
+    "phone": "(608) 298-9898",
+    "website": "https://www.anytimefitness.com/locations/fitchburg-wisconsin-3025/?utm_source=google&utm_medium=organic-businesslisting&utm_campaign=gbp-listing&utm_content=3025",
+    "coordinates": {
+      "lat": 43.0179214,
+      "lng": -89.42321009999999
+    },
+    "rating": 4.7,
+    "totalRatings": 180,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "sunday": {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    },
+    "hoursText": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ],
+    "amenities": [],
+    "classes": [],
+    "equipment": [],
+    "monthlyPrice": null
+  }
+]
