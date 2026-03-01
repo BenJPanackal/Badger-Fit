@@ -83,7 +83,11 @@
         </div>
         <div class="field-group" style="margin-bottom:1rem">
             <label class="field-label">Your Madison address</label>
-            <input type="text" name="location" placeholder="225 Park Street">
+                <input type="text" id="locationInput" name="location" placeholder="225 Park Street" autocomplete="off">
+                <input type="hidden" name="lat" id="latInput">
+                <input type="hidden" name="lng" id="lngInput">
+                <input type="hidden" name="formatted_address" id="formattedInput">
+                <p id="addressError" style="color:var(--accent);font-size:0.78rem;margin-top:0.4rem;display:none;">⚠️ Please select an address from the dropdown.</p>
         </div>
         <div class="field-group" style="margin-bottom:1rem">
             <label class="field-label">Max distance</label>
@@ -204,6 +208,7 @@
     <!-- Button to go to output page -->
     <button class="submit-btn">Find My Badger Gym →</button>
 </form>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7kVzLuB_DdC0Fezbwtyom_sLSjQJgL8k&libraries=places&callback=initAutocomplete" async defer></script>
 <script src="survey.js"></script>
 
 <footer style="text-align:center;padding:1.5rem;background:#111;border-top:1px solid #2a2a2a;color:#444;font-size:0.85rem;margin-top:3rem;">

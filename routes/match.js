@@ -28,7 +28,7 @@ router.post('/', async (req, res) => {
       };
     } else if (preferences.location && preferences.location.trim() !== '') {
       try {
-        preferences.coords = await getCoordinates(preferences.location + ', Madison, WI');
+        preferences.coords = await getCoordinates(preferences.location);
       } catch (e) {
         console.warn('Geocoding failed:', e.message);
       }
