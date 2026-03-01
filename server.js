@@ -1,4 +1,4 @@
-// BadgerFit - server.js
+// configure BadgerFit website
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
@@ -9,7 +9,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Serve all your HTML/CSS/JS files statically from the project root
+// Serve all HTML/CSS/JS files statically from the project root
 app.use(express.static(path.join(__dirname)));
 
 // Routes
@@ -47,7 +47,7 @@ app.get('/api/gym-photo', (req, res) => {
   ];
   res.redirect(fallback);
 });
-
+// start BadgerFit and send message to terminal
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`✅ BadgerFit server running at http://localhost:${PORT}`);
