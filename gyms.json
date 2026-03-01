@@ -43,13 +43,13 @@
       }
     },
     "hoursText": [
-      "Monday: 10:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-      "Tuesday: 10:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-      "Wednesday: 10:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-      "Thursday: 10:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-      "Friday: 10:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-      "Saturday: 10:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-      "Sunday: 11:00\u202fAM\u2009\u2013\u20096:00\u202fPM"
+      "Monday: 10:00 AM – 8:00 PM",
+      "Tuesday: 10:00 AM – 8:00 PM",
+      "Wednesday: 10:00 AM – 8:00 PM",
+      "Thursday: 10:00 AM – 8:00 PM",
+      "Friday: 10:00 AM – 8:00 PM",
+      "Saturday: 10:00 AM – 8:00 PM",
+      "Sunday: 11:00 AM – 6:00 PM"
     ],
     "amenities": [],
     "classes": [],
@@ -100,13 +100,13 @@
       }
     },
     "hoursText": [
-      "Monday: 5:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-      "Tuesday: 5:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-      "Wednesday: 5:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-      "Thursday: 5:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-      "Friday: 5:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-      "Saturday: 6:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-      "Sunday: 6:00\u202fAM\u2009\u2013\u20099:00\u202fPM"
+      "Monday: 5:00 AM – 10:00 PM",
+      "Tuesday: 5:00 AM – 10:00 PM",
+      "Wednesday: 5:00 AM – 10:00 PM",
+      "Thursday: 5:00 AM – 10:00 PM",
+      "Friday: 5:00 AM – 9:00 PM",
+      "Saturday: 6:00 AM – 9:00 PM",
+      "Sunday: 6:00 AM – 9:00 PM"
     ],
     "amenities": [
       "sauna",
@@ -357,12 +357,12 @@
       }
     },
     "hoursText": [
-      "Monday: 6:00\u202fAM\u2009\u2013\u20095:45\u202fPM",
-      "Tuesday: 6:00\u202fAM\u2009\u2013\u20095:45\u202fPM",
-      "Wednesday: 6:00\u202fAM\u2009\u2013\u20095:45\u202fPM",
-      "Thursday: 6:00\u202fAM\u2009\u2013\u20095:45\u202fPM",
-      "Friday: 6:00\u202fAM\u2009\u2013\u20094:30\u202fPM",
-      "Saturday: 8:00\u2009\u2013\u200910:00\u202fAM",
+      "Monday: 6:00 AM – 5:45 PM",
+      "Tuesday: 6:00 AM – 5:45 PM",
+      "Wednesday: 6:00 AM – 5:45 PM",
+      "Thursday: 6:00 AM – 5:45 PM",
+      "Friday: 6:00 AM – 4:30 PM",
+      "Saturday: 8:00 – 10:00 AM",
       "Sunday: Closed"
     ],
     "amenities": [
@@ -488,13 +488,13 @@
       }
     },
     "hoursText": [
-      "Monday: 5:00\u202fAM\u2009\u2013\u200911:00\u202fPM",
-      "Tuesday: 5:00\u202fAM\u2009\u2013\u200911:00\u202fPM",
-      "Wednesday: 5:00\u202fAM\u2009\u2013\u200911:00\u202fPM",
-      "Thursday: 5:00\u202fAM\u2009\u2013\u200911:00\u202fPM",
-      "Friday: 5:00\u202fAM\u2009\u2013\u200911:00\u202fPM",
-      "Saturday: 5:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-      "Sunday: 5:00\u202fAM\u2009\u2013\u20098:00\u202fPM"
+      "Monday: 5:00 AM – 11:00 PM",
+      "Tuesday: 5:00 AM – 11:00 PM",
+      "Wednesday: 5:00 AM – 11:00 PM",
+      "Thursday: 5:00 AM – 11:00 PM",
+      "Friday: 5:00 AM – 11:00 PM",
+      "Saturday: 5:00 AM – 8:00 PM",
+      "Sunday: 5:00 AM – 8:00 PM"
     ],
     "amenities": [
       "sauna",
@@ -641,13 +641,13 @@
       }
     },
     "hoursText": [
-      "Monday: 5:00\u202fAM\u2009\u2013\u200911:00\u202fPM",
-      "Tuesday: 5:00\u202fAM\u2009\u2013\u200911:00\u202fPM",
-      "Wednesday: 5:00\u202fAM\u2009\u2013\u200911:00\u202fPM",
-      "Thursday: 5:00\u202fAM\u2009\u2013\u200911:00\u202fPM",
-      "Friday: 5:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-      "Saturday: 5:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-      "Sunday: 5:00\u202fAM\u2009\u2013\u20099:00\u202fPM"
+      "Monday: 5:00 AM – 11:00 PM",
+      "Tuesday: 5:00 AM – 11:00 PM",
+      "Wednesday: 5:00 AM – 11:00 PM",
+      "Thursday: 5:00 AM – 11:00 PM",
+      "Friday: 5:00 AM – 10:00 PM",
+      "Saturday: 5:00 AM – 9:00 PM",
+      "Sunday: 5:00 AM – 9:00 PM"
     ],
     "amenities": [
       "locker-room",
@@ -709,13 +709,13 @@
       }
     },
     "hoursText": [
-      "Monday: 5:30\u202fAM\u2009\u2013\u20099:30\u202fPM",
-      "Tuesday: 5:30\u202fAM\u2009\u2013\u20099:30\u202fPM",
-      "Wednesday: 5:30\u202fAM\u2009\u2013\u20099:30\u202fPM",
-      "Thursday: 5:30\u202fAM\u2009\u2013\u20099:30\u202fPM",
-      "Friday: 5:30\u202fAM\u2009\u2013\u20099:30\u202fPM",
-      "Saturday: 7:00\u202fAM\u2009\u2013\u20096:00\u202fPM",
-      "Sunday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM"
+      "Monday: 5:30 AM – 9:30 PM",
+      "Tuesday: 5:30 AM – 9:30 PM",
+      "Wednesday: 5:30 AM – 9:30 PM",
+      "Thursday: 5:30 AM – 9:30 PM",
+      "Friday: 5:30 AM – 9:30 PM",
+      "Saturday: 7:00 AM – 6:00 PM",
+      "Sunday: 9:00 AM – 5:00 PM"
     ],
     "amenities": [
       "locker-room",
@@ -780,13 +780,13 @@
       }
     },
     "hoursText": [
-      "Monday: 5:30\u202fAM\u2009\u2013\u20099:30\u202fPM",
-      "Tuesday: 5:30\u202fAM\u2009\u2013\u20099:30\u202fPM",
-      "Wednesday: 5:30\u202fAM\u2009\u2013\u20099:30\u202fPM",
-      "Thursday: 5:30\u202fAM\u2009\u2013\u20099:30\u202fPM",
-      "Friday: 5:30\u202fAM\u2009\u2013\u20099:30\u202fPM",
-      "Saturday: 8:00\u202fAM\u2009\u2013\u20096:00\u202fPM",
-      "Sunday: 10:00\u202fAM\u2009\u2013\u20096:00\u202fPM"
+      "Monday: 5:30 AM – 9:30 PM",
+      "Tuesday: 5:30 AM – 9:30 PM",
+      "Wednesday: 5:30 AM – 9:30 PM",
+      "Thursday: 5:30 AM – 9:30 PM",
+      "Friday: 5:30 AM – 9:30 PM",
+      "Saturday: 8:00 AM – 6:00 PM",
+      "Sunday: 10:00 AM – 6:00 PM"
     ],
     "amenities": [
       "locker-room",
@@ -891,12 +891,12 @@
       }
     },
     "hoursText": [
-      "Monday: 5:00\u202fAM\u2009\u2013\u20097:00\u202fPM",
-      "Tuesday: 5:00\u202fAM\u2009\u2013\u20097:00\u202fPM",
-      "Wednesday: 5:00\u202fAM\u2009\u2013\u20097:00\u202fPM",
-      "Thursday: 5:00\u202fAM\u2009\u2013\u20097:00\u202fPM",
-      "Friday: 5:00\u202fAM\u2009\u2013\u20096:00\u202fPM",
-      "Saturday: 8:00\u2009\u2013\u200910:00\u202fAM",
+      "Monday: 5:00 AM – 7:00 PM",
+      "Tuesday: 5:00 AM – 7:00 PM",
+      "Wednesday: 5:00 AM – 7:00 PM",
+      "Thursday: 5:00 AM – 7:00 PM",
+      "Friday: 5:00 AM – 6:00 PM",
+      "Saturday: 8:00 – 10:00 AM",
       "Sunday: Closed"
     ],
     "amenities": [
@@ -954,11 +954,11 @@
       }
     },
     "hoursText": [
-      "Monday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
-      "Tuesday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
-      "Wednesday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
-      "Thursday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
-      "Friday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
+      "Monday: 9:00 AM – 5:00 PM",
+      "Tuesday: 9:00 AM – 5:00 PM",
+      "Wednesday: 9:00 AM – 5:00 PM",
+      "Thursday: 9:00 AM – 5:00 PM",
+      "Friday: 9:00 AM – 5:00 PM",
       "Saturday: Closed",
       "Sunday: Closed"
     ],
@@ -1002,9 +1002,9 @@
       "Tuesday: Open 24 hours",
       "Wednesday: Open 24 hours",
       "Thursday: Open 24 hours",
-      "Friday: 12:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-      "Saturday: 7:00\u202fAM\u2009\u2013\u20097:00\u202fPM",
-      "Sunday: 7:00\u202fAM\u2009\u2013\u200912:00\u202fAM"
+      "Friday: 12:00 AM – 10:00 PM",
+      "Saturday: 7:00 AM – 7:00 PM",
+      "Sunday: 7:00 AM – 12:00 AM"
     ],
     "amenities": [
       "locker-room",
@@ -1063,12 +1063,12 @@
       }
     },
     "hoursText": [
-      "Monday: 9:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-      "Tuesday: 9:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-      "Wednesday: 8:30\u202fAM\u2009\u2013\u20098:00\u202fPM",
-      "Thursday: 9:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-      "Friday: 9:00\u202fAM\u2009\u2013\u20097:00\u202fPM",
-      "Saturday: 8:30\u202fAM\u2009\u2013\u20092:00\u202fPM",
+      "Monday: 9:00 AM – 8:00 PM",
+      "Tuesday: 9:00 AM – 8:00 PM",
+      "Wednesday: 8:30 AM – 8:00 PM",
+      "Thursday: 9:00 AM – 8:00 PM",
+      "Friday: 9:00 AM – 7:00 PM",
+      "Saturday: 8:30 AM – 2:00 PM",
       "Sunday: Closed"
     ],
     "amenities": [],
@@ -1238,12 +1238,12 @@
       }
     },
     "hoursText": [
-      "Monday: 9:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-      "Tuesday: 9:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-      "Wednesday: 9:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-      "Thursday: 9:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-      "Friday: 9:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-      "Saturday: 9:00\u202fAM\u2009\u2013\u20091:00\u202fPM",
+      "Monday: 9:00 AM – 8:00 PM",
+      "Tuesday: 9:00 AM – 8:00 PM",
+      "Wednesday: 9:00 AM – 8:00 PM",
+      "Thursday: 9:00 AM – 8:00 PM",
+      "Friday: 9:00 AM – 8:00 PM",
+      "Saturday: 9:00 AM – 1:00 PM",
       "Sunday: Closed"
     ],
     "amenities": [
@@ -1298,13 +1298,13 @@
       }
     },
     "hoursText": [
-      "Monday: 5:30\u2009\u2013\u20098:00\u202fPM",
-      "Tuesday: 5:30\u2009\u2013\u20098:00\u202fPM",
-      "Wednesday: 5:30\u2009\u2013\u20098:00\u202fPM",
-      "Thursday: 5:30\u2009\u2013\u20098:00\u202fPM",
+      "Monday: 5:30 – 8:00 PM",
+      "Tuesday: 5:30 – 8:00 PM",
+      "Wednesday: 5:30 – 8:00 PM",
+      "Thursday: 5:30 – 8:00 PM",
       "Friday: Closed",
-      "Saturday: 8:30\u2009\u2013\u200911:00\u202fAM",
-      "Sunday: 9:30\u202fAM\u2009\u2013\u200912:00\u202fPM"
+      "Saturday: 8:30 – 11:00 AM",
+      "Sunday: 9:30 AM – 12:00 PM"
     ],
     "amenities": [],
     "classes": [
@@ -1361,13 +1361,13 @@
       }
     },
     "hoursText": [
-      "Monday: 5:30\u2009\u2013\u20096:00\u202fAM, 8:00\u2009\u2013\u200910:30\u202fAM, 4:00\u2009\u2013\u20097:15\u202fPM",
-      "Tuesday: 5:30\u2009\u2013\u20096:00\u202fAM, 8:00\u2009\u2013\u200910:30\u202fAM, 4:00\u2009\u2013\u20097:00\u202fPM",
-      "Wednesday: 5:30\u2009\u2013\u20096:00\u202fAM, 8:00\u2009\u2013\u200910:30\u202fAM, 4:00\u2009\u2013\u20097:45\u202fPM",
-      "Thursday: 5:30\u2009\u2013\u20096:00\u202fAM, 8:00\u2009\u2013\u200910:30\u202fAM, 4:00\u2009\u2013\u20097:00\u202fPM",
-      "Friday: 5:30\u2009\u2013\u20096:00\u202fAM, 8:00\u202fAM\u2009\u2013\u200912:00\u202fPM, 4:00\u2009\u2013\u20095:30\u202fPM",
-      "Saturday: 6:30\u2009\u2013\u200910:30\u202fAM, 3:00\u2009\u2013\u20094:00\u202fPM",
-      "Sunday: 8:00\u2009\u2013\u200911:00\u202fAM, 4:00\u2009\u2013\u20097:30\u202fPM"
+      "Monday: 5:30 – 6:00 AM, 8:00 – 10:30 AM, 4:00 – 7:15 PM",
+      "Tuesday: 5:30 – 6:00 AM, 8:00 – 10:30 AM, 4:00 – 7:00 PM",
+      "Wednesday: 5:30 – 6:00 AM, 8:00 – 10:30 AM, 4:00 – 7:45 PM",
+      "Thursday: 5:30 – 6:00 AM, 8:00 – 10:30 AM, 4:00 – 7:00 PM",
+      "Friday: 5:30 – 6:00 AM, 8:00 AM – 12:00 PM, 4:00 – 5:30 PM",
+      "Saturday: 6:30 – 10:30 AM, 3:00 – 4:00 PM",
+      "Sunday: 8:00 – 11:00 AM, 4:00 – 7:30 PM"
     ],
     "amenities": [
       "locker-room",
@@ -1466,12 +1466,12 @@
       }
     },
     "hoursText": [
-      "Monday: 5:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-      "Tuesday: 5:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-      "Wednesday: 5:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-      "Thursday: 5:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-      "Friday: 5:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-      "Saturday: 6:00\u202fAM\u2009\u2013\u20093:00\u202fPM",
+      "Monday: 5:00 AM – 10:00 PM",
+      "Tuesday: 5:00 AM – 10:00 PM",
+      "Wednesday: 5:00 AM – 10:00 PM",
+      "Thursday: 5:00 AM – 10:00 PM",
+      "Friday: 5:00 AM – 10:00 PM",
+      "Saturday: 6:00 AM – 3:00 PM",
       "Sunday: Closed"
     ],
     "amenities": [
@@ -1534,13 +1534,13 @@
       }
     },
     "hoursText": [
-      "Monday: 5:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-      "Tuesday: 5:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-      "Wednesday: 5:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-      "Thursday: 5:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-      "Friday: 5:00\u202fAM\u2009\u2013\u20097:00\u202fPM",
-      "Saturday: 6:30\u202fAM\u2009\u2013\u20097:00\u202fPM",
-      "Sunday: 6:30\u202fAM\u2009\u2013\u20097:00\u202fPM"
+      "Monday: 5:00 AM – 9:00 PM",
+      "Tuesday: 5:00 AM – 9:00 PM",
+      "Wednesday: 5:00 AM – 9:00 PM",
+      "Thursday: 5:00 AM – 9:00 PM",
+      "Friday: 5:00 AM – 7:00 PM",
+      "Saturday: 6:30 AM – 7:00 PM",
+      "Sunday: 6:30 AM – 7:00 PM"
     ],
     "amenities": [
       "locker-room",
@@ -1604,13 +1604,13 @@
       }
     },
     "hoursText": [
-      "Monday: 5:30\u202fAM\u2009\u2013\u20098:30\u202fPM",
-      "Tuesday: 5:30\u202fAM\u2009\u2013\u20098:30\u202fPM",
-      "Wednesday: 5:30\u202fAM\u2009\u2013\u20098:30\u202fPM",
-      "Thursday: 5:30\u202fAM\u2009\u2013\u20098:30\u202fPM",
-      "Friday: 5:30\u202fAM\u2009\u2013\u20098:30\u202fPM",
-      "Saturday: 7:00\u202fAM\u2009\u2013\u20092:00\u202fPM",
-      "Sunday: 8:30\u202fAM\u2009\u2013\u20091:30\u202fPM"
+      "Monday: 5:30 AM – 8:30 PM",
+      "Tuesday: 5:30 AM – 8:30 PM",
+      "Wednesday: 5:30 AM – 8:30 PM",
+      "Thursday: 5:30 AM – 8:30 PM",
+      "Friday: 5:30 AM – 8:30 PM",
+      "Saturday: 7:00 AM – 2:00 PM",
+      "Sunday: 8:30 AM – 1:30 PM"
     ],
     "amenities": [
       "locker-room",
@@ -1669,13 +1669,13 @@
       }
     },
     "hoursText": [
-      "Monday: 5:00\u202fAM\u2009\u2013\u200911:00\u202fPM",
-      "Tuesday: 5:00\u202fAM\u2009\u2013\u200911:00\u202fPM",
-      "Wednesday: 5:00\u202fAM\u2009\u2013\u200911:00\u202fPM",
-      "Thursday: 5:00\u202fAM\u2009\u2013\u200911:00\u202fPM",
-      "Friday: 5:00\u202fAM\u2009\u2013\u200911:00\u202fPM",
-      "Saturday: 5:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-      "Sunday: 5:00\u202fAM\u2009\u2013\u20098:00\u202fPM"
+      "Monday: 5:00 AM – 11:00 PM",
+      "Tuesday: 5:00 AM – 11:00 PM",
+      "Wednesday: 5:00 AM – 11:00 PM",
+      "Thursday: 5:00 AM – 11:00 PM",
+      "Friday: 5:00 AM – 11:00 PM",
+      "Saturday: 5:00 AM – 8:00 PM",
+      "Sunday: 5:00 AM – 8:00 PM"
     ],
     "amenities": [
       "pool",
@@ -1755,13 +1755,13 @@
       }
     },
     "hoursText": [
-      "Monday: 9:30\u202fAM\u2009\u2013\u200912:00\u202fPM, 4:15\u2009\u2013\u20099:00\u202fPM",
-      "Tuesday: 9:00\u2009\u2013\u200910:00\u202fAM, 4:15\u2009\u2013\u20099:00\u202fPM",
-      "Wednesday: 5:30\u2009\u2013\u20098:00\u202fPM",
-      "Thursday: 9:00\u2009\u2013\u200910:00\u202fAM, 4:15\u2009\u2013\u20098:00\u202fPM",
-      "Friday: 9:30\u2009\u2013\u200910:30\u202fAM, 12:00\u2009\u2013\u20091:30\u202fPM, 4:00\u2009\u2013\u20096:30\u202fPM",
-      "Saturday: 8:00\u202fAM\u2009\u2013\u200912:00\u202fPM",
-      "Sunday: 8:30\u2009\u2013\u200911:15\u202fAM, 4:00\u2009\u2013\u20098:00\u202fPM"
+      "Monday: 9:30 AM – 12:00 PM, 4:15 – 9:00 PM",
+      "Tuesday: 9:00 – 10:00 AM, 4:15 – 9:00 PM",
+      "Wednesday: 5:30 – 8:00 PM",
+      "Thursday: 9:00 – 10:00 AM, 4:15 – 8:00 PM",
+      "Friday: 9:30 – 10:30 AM, 12:00 – 1:30 PM, 4:00 – 6:30 PM",
+      "Saturday: 8:00 AM – 12:00 PM",
+      "Sunday: 8:30 – 11:15 AM, 4:00 – 8:00 PM"
     ],
     "amenities": [
       "locker-room",
@@ -1886,13 +1886,13 @@
       }
     },
     "hoursText": [
-      "Monday: 8:00\u202fAM\u2009\u2013\u20098:30\u202fPM",
-      "Tuesday: 8:00\u202fAM\u2009\u2013\u20098:30\u202fPM",
-      "Wednesday: 8:00\u202fAM\u2009\u2013\u20098:30\u202fPM",
-      "Thursday: 8:00\u202fAM\u2009\u2013\u20098:30\u202fPM",
-      "Friday: 8:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-      "Saturday: 1:15\u2009\u2013\u20097:00\u202fPM",
-      "Sunday: 1:15\u2009\u2013\u20097:00\u202fPM"
+      "Monday: 8:00 AM – 8:30 PM",
+      "Tuesday: 8:00 AM – 8:30 PM",
+      "Wednesday: 8:00 AM – 8:30 PM",
+      "Thursday: 8:00 AM – 8:30 PM",
+      "Friday: 8:00 AM – 10:00 PM",
+      "Saturday: 1:15 – 7:00 PM",
+      "Sunday: 1:15 – 7:00 PM"
     ],
     "amenities": [],
     "classes": [
@@ -1947,13 +1947,13 @@
       }
     },
     "hoursText": [
-      "Monday: 5:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-      "Tuesday: 5:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-      "Wednesday: 5:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-      "Thursday: 5:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-      "Friday: 5:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-      "Saturday: 6:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
-      "Sunday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM"
+      "Monday: 5:00 AM – 9:00 PM",
+      "Tuesday: 5:00 AM – 9:00 PM",
+      "Wednesday: 5:00 AM – 9:00 PM",
+      "Thursday: 5:00 AM – 9:00 PM",
+      "Friday: 5:00 AM – 9:00 PM",
+      "Saturday: 6:00 AM – 5:00 PM",
+      "Sunday: 9:00 AM – 5:00 PM"
     ],
     "amenities": [
       "pool",
@@ -2023,13 +2023,13 @@
       }
     },
     "hoursText": [
-      "Monday: 4:30\u2009\u2013\u20099:00\u202fPM",
-      "Tuesday: 4:30\u2009\u2013\u20099:00\u202fPM",
-      "Wednesday: 4:30\u2009\u2013\u20099:00\u202fPM",
-      "Thursday: 4:30\u2009\u2013\u20099:00\u202fPM",
-      "Friday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
-      "Saturday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
-      "Sunday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM"
+      "Monday: 4:30 – 9:00 PM",
+      "Tuesday: 4:30 – 9:00 PM",
+      "Wednesday: 4:30 – 9:00 PM",
+      "Thursday: 4:30 – 9:00 PM",
+      "Friday: 9:00 AM – 5:00 PM",
+      "Saturday: 9:00 AM – 5:00 PM",
+      "Sunday: 9:00 AM – 5:00 PM"
     ],
     "amenities": [
       "locker-room"
@@ -2162,12 +2162,12 @@
       }
     },
     "hoursText": [
-      "Monday: 9:00\u202fAM\u2009\u2013\u20097:00\u202fPM",
-      "Tuesday: 9:00\u202fAM\u2009\u2013\u20097:00\u202fPM",
-      "Wednesday: 9:00\u202fAM\u2009\u2013\u20097:00\u202fPM",
-      "Thursday: 9:00\u202fAM\u2009\u2013\u20097:00\u202fPM",
-      "Friday: 9:00\u202fAM\u2009\u2013\u200912:00\u202fPM, 3:30\u2009\u2013\u20099:00\u202fPM",
-      "Saturday: 8:30\u202fAM\u2009\u2013\u200912:30\u202fPM",
+      "Monday: 9:00 AM – 7:00 PM",
+      "Tuesday: 9:00 AM – 7:00 PM",
+      "Wednesday: 9:00 AM – 7:00 PM",
+      "Thursday: 9:00 AM – 7:00 PM",
+      "Friday: 9:00 AM – 12:00 PM, 3:30 – 9:00 PM",
+      "Saturday: 8:30 AM – 12:30 PM",
       "Sunday: Closed"
     ],
     "amenities": [],
@@ -2272,13 +2272,13 @@
       }
     },
     "hoursText": [
-      "Monday: 9:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-      "Tuesday: 9:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-      "Wednesday: 9:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-      "Thursday: 9:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-      "Friday: 9:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-      "Saturday: 9:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-      "Sunday: 9:00\u202fAM\u2009\u2013\u200910:00\u202fPM"
+      "Monday: 9:00 AM – 10:00 PM",
+      "Tuesday: 9:00 AM – 10:00 PM",
+      "Wednesday: 9:00 AM – 10:00 PM",
+      "Thursday: 9:00 AM – 10:00 PM",
+      "Friday: 9:00 AM – 10:00 PM",
+      "Saturday: 9:00 AM – 10:00 PM",
+      "Sunday: 9:00 AM – 10:00 PM"
     ],
     "amenities": [
       "locker-room",
@@ -2377,12 +2377,12 @@
       }
     },
     "hoursText": [
-      "Monday: 5:30\u202fAM\u2009\u2013\u20097:30\u202fPM",
-      "Tuesday: 5:30\u202fAM\u2009\u2013\u20097:30\u202fPM",
-      "Wednesday: 5:30\u202fAM\u2009\u2013\u20097:30\u202fPM",
-      "Thursday: 5:30\u202fAM\u2009\u2013\u20097:30\u202fPM",
-      "Friday: 5:30\u202fAM\u2009\u2013\u20097:30\u202fPM",
-      "Saturday: 7:00\u202fAM\u2009\u2013\u20091:00\u202fPM",
+      "Monday: 5:30 AM – 7:30 PM",
+      "Tuesday: 5:30 AM – 7:30 PM",
+      "Wednesday: 5:30 AM – 7:30 PM",
+      "Thursday: 5:30 AM – 7:30 PM",
+      "Friday: 5:30 AM – 7:30 PM",
+      "Saturday: 7:00 AM – 1:00 PM",
       "Sunday: Closed"
     ],
     "amenities": [
@@ -2447,13 +2447,13 @@
       }
     },
     "hoursText": [
-      "Monday: 1:00\u2009\u2013\u20097:30\u202fPM",
-      "Tuesday: 7:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
-      "Wednesday: 7:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
-      "Thursday: 7:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
-      "Friday: 7:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
-      "Saturday: 8:00\u202fAM\u2009\u2013\u20091:00\u202fPM",
-      "Sunday: 1:00\u2009\u2013\u20095:00\u202fPM"
+      "Monday: 1:00 – 7:30 PM",
+      "Tuesday: 7:00 AM – 7:30 PM",
+      "Wednesday: 7:00 AM – 7:30 PM",
+      "Thursday: 7:00 AM – 7:30 PM",
+      "Friday: 7:00 AM – 7:30 PM",
+      "Saturday: 8:00 AM – 1:00 PM",
+      "Sunday: 1:00 – 5:00 PM"
     ],
     "amenities": [
       "personal-training",
@@ -2515,13 +2515,13 @@
       }
     },
     "hoursText": [
-      "Monday: 6:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-      "Tuesday: 6:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-      "Wednesday: 6:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-      "Thursday: 6:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-      "Friday: 6:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-      "Saturday: 9:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-      "Sunday: 9:00\u202fAM\u2009\u2013\u20099:00\u202fPM"
+      "Monday: 6:00 AM – 9:00 PM",
+      "Tuesday: 6:00 AM – 9:00 PM",
+      "Wednesday: 6:00 AM – 9:00 PM",
+      "Thursday: 6:00 AM – 9:00 PM",
+      "Friday: 6:00 AM – 9:00 PM",
+      "Saturday: 9:00 AM – 9:00 PM",
+      "Sunday: 9:00 AM – 9:00 PM"
     ],
     "amenities": [
       "sauna",
@@ -2582,12 +2582,12 @@
     },
     "hoursText": [
       "Monday: Closed",
-      "Tuesday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
-      "Wednesday: 9:00\u202fAM\u2009\u2013\u20096:30\u202fPM",
-      "Thursday: 8:00\u202fAM\u2009\u2013\u20096:30\u202fPM",
+      "Tuesday: 9:00 AM – 5:00 PM",
+      "Wednesday: 9:00 AM – 6:30 PM",
+      "Thursday: 8:00 AM – 6:30 PM",
       "Friday: Closed",
-      "Saturday: 9:30\u202fAM\u2009\u2013\u20093:30\u202fPM",
-      "Sunday: 9:30\u202fAM\u2009\u2013\u20093:30\u202fPM"
+      "Saturday: 9:30 AM – 3:30 PM",
+      "Sunday: 9:30 AM – 3:30 PM"
     ],
     "amenities": [
       "locker-room"
@@ -2645,13 +2645,13 @@
       }
     },
     "hoursText": [
-      "Monday: 7:30\u202fAM\u2009\u2013\u20096:30\u202fPM",
-      "Tuesday: 7:30\u202fAM\u2009\u2013\u20096:30\u202fPM",
-      "Wednesday: 7:30\u202fAM\u2009\u2013\u20097:30\u202fPM",
-      "Thursday: 7:30\u202fAM\u2009\u2013\u20096:30\u202fPM",
-      "Friday: 7:30\u202fAM\u2009\u2013\u20094:00\u202fPM",
-      "Saturday: 9:00\u202fAM\u2009\u2013\u200912:00\u202fPM",
-      "Sunday: 9:00\u2009\u2013\u200910:00\u202fAM, 12:00\u2009\u2013\u20095:00\u202fPM"
+      "Monday: 7:30 AM – 6:30 PM",
+      "Tuesday: 7:30 AM – 6:30 PM",
+      "Wednesday: 7:30 AM – 7:30 PM",
+      "Thursday: 7:30 AM – 6:30 PM",
+      "Friday: 7:30 AM – 4:00 PM",
+      "Saturday: 9:00 AM – 12:00 PM",
+      "Sunday: 9:00 – 10:00 AM, 12:00 – 5:00 PM"
     ],
     "amenities": [
       "locker-room"
@@ -2709,13 +2709,13 @@
       }
     },
     "hoursText": [
-      "Monday: 6:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-      "Tuesday: 6:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-      "Wednesday: 6:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-      "Thursday: 6:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-      "Friday: 6:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-      "Saturday: 6:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-      "Sunday: 6:00\u202fAM\u2009\u2013\u20099:00\u202fPM"
+      "Monday: 6:00 AM – 9:00 PM",
+      "Tuesday: 6:00 AM – 9:00 PM",
+      "Wednesday: 6:00 AM – 9:00 PM",
+      "Thursday: 6:00 AM – 9:00 PM",
+      "Friday: 6:00 AM – 9:00 PM",
+      "Saturday: 6:00 AM – 9:00 PM",
+      "Sunday: 6:00 AM – 9:00 PM"
     ],
     "amenities": [
       "locker-room",
@@ -2771,13 +2771,13 @@
       }
     },
     "hoursText": [
-      "Monday: 9:15\u202fAM\u2009\u2013\u20097:00\u202fPM",
-      "Tuesday: 7:45\u202fAM\u2009\u2013\u20097:00\u202fPM",
-      "Wednesday: 8:45\u202fAM\u2009\u2013\u20097:30\u202fPM",
-      "Thursday: 8:45\u202fAM\u2009\u2013\u20097:30\u202fPM",
-      "Friday: 8:00\u202fAM\u2009\u2013\u20094:30\u202fPM",
-      "Saturday: 9:45\u2009\u2013\u200911:15\u202fAM",
-      "Sunday: 10:30\u2009\u2013\u200911:30\u202fAM"
+      "Monday: 9:15 AM – 7:00 PM",
+      "Tuesday: 7:45 AM – 7:00 PM",
+      "Wednesday: 8:45 AM – 7:30 PM",
+      "Thursday: 8:45 AM – 7:30 PM",
+      "Friday: 8:00 AM – 4:30 PM",
+      "Saturday: 9:45 – 11:15 AM",
+      "Sunday: 10:30 – 11:30 AM"
     ],
     "amenities": [
       "locker-room"
@@ -2835,13 +2835,13 @@
       }
     },
     "hoursText": [
-      "Monday: 6:00\u202fAM\u2009\u2013\u20098:30\u202fPM",
-      "Tuesday: 6:00\u202fAM\u2009\u2013\u20098:30\u202fPM",
-      "Wednesday: 6:00\u202fAM\u2009\u2013\u20098:30\u202fPM",
-      "Thursday: 6:00\u202fAM\u2009\u2013\u20098:30\u202fPM",
-      "Friday: 6:00\u202fAM\u2009\u2013\u20098:30\u202fPM",
-      "Saturday: 6:00\u202fAM\u2009\u2013\u20098:30\u202fPM",
-      "Sunday: 6:00\u202fAM\u2009\u2013\u20098:30\u202fPM"
+      "Monday: 6:00 AM – 8:30 PM",
+      "Tuesday: 6:00 AM – 8:30 PM",
+      "Wednesday: 6:00 AM – 8:30 PM",
+      "Thursday: 6:00 AM – 8:30 PM",
+      "Friday: 6:00 AM – 8:30 PM",
+      "Saturday: 6:00 AM – 8:30 PM",
+      "Sunday: 6:00 AM – 8:30 PM"
     ],
     "amenities": [
       "locker-room",
@@ -3036,13 +3036,13 @@
       }
     },
     "hoursText": [
-      "Monday: 5:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
-      "Tuesday: 5:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
-      "Wednesday: 5:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
-      "Thursday: 5:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
-      "Friday: 5:00\u202fAM\u2009\u2013\u20096:30\u202fPM",
-      "Saturday: 7:00\u2009\u2013\u200911:30\u202fAM",
-      "Sunday: 8:00\u202fAM\u2009\u2013\u200912:30\u202fPM"
+      "Monday: 5:00 AM – 7:30 PM",
+      "Tuesday: 5:00 AM – 7:30 PM",
+      "Wednesday: 5:00 AM – 7:30 PM",
+      "Thursday: 5:00 AM – 7:30 PM",
+      "Friday: 5:00 AM – 6:30 PM",
+      "Saturday: 7:00 – 11:30 AM",
+      "Sunday: 8:00 AM – 12:30 PM"
     ],
     "amenities": [
       "locker-room",
@@ -3149,12 +3149,12 @@
       }
     },
     "hoursText": [
-      "Monday: 6:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-      "Tuesday: 6:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-      "Wednesday: 6:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-      "Thursday: 6:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-      "Friday: 6:00\u202fAM\u2009\u2013\u20096:00\u202fPM",
-      "Saturday: 7:00\u202fAM\u2009\u2013\u20091:00\u202fPM",
+      "Monday: 6:00 AM – 8:00 PM",
+      "Tuesday: 6:00 AM – 8:00 PM",
+      "Wednesday: 6:00 AM – 8:00 PM",
+      "Thursday: 6:00 AM – 8:00 PM",
+      "Friday: 6:00 AM – 6:00 PM",
+      "Saturday: 7:00 AM – 1:00 PM",
       "Sunday: Closed"
     ],
     "amenities": [
@@ -3220,13 +3220,13 @@
       }
     },
     "hoursText": [
-      "Monday: 6:30\u2009\u2013\u20097:30\u202fAM, 12:00\u2009\u2013\u20091:00\u202fPM, 5:00\u2009\u2013\u20098:00\u202fPM",
-      "Tuesday: 10:00\u202fAM\u2009\u2013\u200912:00\u202fPM, 5:30\u2009\u2013\u20097:30\u202fPM",
-      "Wednesday: 6:30\u2009\u2013\u20097:30\u202fAM, 12:00\u2009\u2013\u20091:00\u202fPM, 5:00\u2009\u2013\u20098:00\u202fPM",
-      "Thursday: 10:00\u202fAM\u2009\u2013\u200912:00\u202fPM, 4:45\u2009\u2013\u20097:30\u202fPM",
-      "Friday: 6:30\u2009\u2013\u20097:30\u202fAM, 12:00\u2009\u2013\u20091:00\u202fPM, 5:00\u2009\u2013\u20098:00\u202fPM",
-      "Saturday: 9:00\u202fAM\u2009\u2013\u200912:00\u202fPM",
-      "Sunday: 10:30\u202fAM\u2009\u2013\u200912:00\u202fPM"
+      "Monday: 6:30 – 7:30 AM, 12:00 – 1:00 PM, 5:00 – 8:00 PM",
+      "Tuesday: 10:00 AM – 12:00 PM, 5:30 – 7:30 PM",
+      "Wednesday: 6:30 – 7:30 AM, 12:00 – 1:00 PM, 5:00 – 8:00 PM",
+      "Thursday: 10:00 AM – 12:00 PM, 4:45 – 7:30 PM",
+      "Friday: 6:30 – 7:30 AM, 12:00 – 1:00 PM, 5:00 – 8:00 PM",
+      "Saturday: 9:00 AM – 12:00 PM",
+      "Sunday: 10:30 AM – 12:00 PM"
     ],
     "amenities": [
       "locker-room",
@@ -3282,11 +3282,11 @@
       }
     },
     "hoursText": [
-      "Monday: 7:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-      "Tuesday: 7:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-      "Wednesday: 7:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-      "Thursday: 7:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-      "Friday: 7:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
+      "Monday: 7:00 AM – 8:00 PM",
+      "Tuesday: 7:00 AM – 8:00 PM",
+      "Wednesday: 7:00 AM – 8:00 PM",
+      "Thursday: 7:00 AM – 8:00 PM",
+      "Friday: 7:00 AM – 8:00 PM",
       "Saturday: Closed",
       "Sunday: Closed"
     ],
@@ -3345,13 +3345,13 @@
   },
   {
     "name": "Nicholas Recreation Center (The Nick)",
-    "placeId": "ChIJNick797WDayton",
-    "address": "797 W. Dayton St., Madison, WI 53715, USA",
+    "placeId": "ChIJVwWRiV2tB4gR9XGmBeLtCcA",
+    "address": "797 W Dayton St, Madison, WI 53706, USA",
     "phone": "(608) 262-9000",
     "website": "https://recwell.wisc.edu/locations/nick/",
     "coordinates": {
-      "lat": 43.0721,
-      "lng": -89.4042
+      "lat": 43.0707317,
+      "lng": -89.3989429
     },
     "rating": 4.7,
     "totalRatings": 850,
@@ -3387,13 +3387,13 @@
       }
     },
     "hoursText": [
-      "Monday: 5:45 AM \u2013 11:00 PM",
-      "Tuesday: 5:45 AM \u2013 11:00 PM",
-      "Wednesday: 5:45 AM \u2013 11:00 PM",
-      "Thursday: 5:45 AM \u2013 11:00 PM",
-      "Friday: 5:45 AM \u2013 10:00 PM",
-      "Saturday: 8:00 AM \u2013 9:00 PM",
-      "Sunday: 10:00 AM \u2013 9:00 PM"
+      "Monday: 5:45 AM – 11:00 PM",
+      "Tuesday: 5:45 AM – 11:00 PM",
+      "Wednesday: 5:45 AM – 11:00 PM",
+      "Thursday: 5:45 AM – 11:00 PM",
+      "Friday: 5:45 AM – 10:00 PM",
+      "Saturday: 8:00 AM – 9:00 PM",
+      "Sunday: 10:00 AM – 9:00 PM"
     ],
     "amenities": [
       "pool",
@@ -3424,13 +3424,13 @@
   },
   {
     "name": "Bakke Recreation & Wellbeing Center",
-    "placeId": "ChIJBakke1976ObservatoryDr",
-    "address": "1976 Observatory Dr., Madison, WI 53706, USA",
+    "placeId": "ChIJn3TdfOitB4gRyLAwaaRCm7k",
+    "address": "1976 Observatory Dr, Madison, WI 53706, USA",
     "phone": "(608) 262-9000",
     "website": "https://recwell.wisc.edu/locations/bakke/",
     "coordinates": {
-      "lat": 43.0774,
-      "lng": -89.4144
+      "lat": 43.07675,
+      "lng": -89.4201054
     },
     "rating": 4.8,
     "totalRatings": 620,
@@ -3466,13 +3466,13 @@
       }
     },
     "hoursText": [
-      "Monday: 5:45 AM \u2013 11:00 PM",
-      "Tuesday: 5:45 AM \u2013 11:00 PM",
-      "Wednesday: 5:45 AM \u2013 11:00 PM",
-      "Thursday: 5:45 AM \u2013 11:00 PM",
-      "Friday: 5:45 AM \u2013 10:00 PM",
-      "Saturday: 8:00 AM \u2013 9:00 PM",
-      "Sunday: 10:00 AM \u2013 9:00 PM"
+      "Monday: 5:45 AM – 11:00 PM",
+      "Tuesday: 5:45 AM – 11:00 PM",
+      "Wednesday: 5:45 AM – 11:00 PM",
+      "Thursday: 5:45 AM – 11:00 PM",
+      "Friday: 5:45 AM – 10:00 PM",
+      "Saturday: 8:00 AM – 9:00 PM",
+      "Sunday: 10:00 AM – 9:00 PM"
     ],
     "amenities": [
       "pool",
