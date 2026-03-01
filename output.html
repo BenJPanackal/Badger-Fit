@@ -104,9 +104,9 @@
 
     .score-fill {
       height: 100%;
-      background: var(--accent);
+      background: #ff2e2e;
       border-radius: 2px;
-      transition: width 1s ease;
+      transition: width 1s ease, background 1s ease;
     }
 
     .criteria-list {
@@ -387,13 +387,20 @@
       }
 
       heroSub.textContent = `We found ${matches.length} gym${matches.length > 1 ? 's' : ''} for you.`;
-      output.innerHTML = renderMatches(matches);
+
+      // Apply boost if top match is low (under 55%)
+      const boostedMatches = applyBoost(matches);
+
+      output.innerHTML = renderMatches(boostedMatches);
 
       // Animate score bars after render
       setTimeout(() => {
-        matches.forEach((_, i) => {
+        boostedMatches.forEach((_, i) => {
           const fill = document.getElementById(`fill-${i}`);
-          if (fill) fill.style.width = fill.dataset.pct + '%';
+          if (fill) {
+            fill.style.width = fill.dataset.pct + '%';
+            fill.style.background = scoreColor(Number(fill.dataset.pct));
+          }
         });
       }, 100);
 
@@ -427,10 +434,40 @@
     }).join('');
   }
 
+  function scoreColor(pct) {
+    if (pct >= 80) return '#4ade80';       // green
+    if (pct >= 66) return '#86efac';       // light green
+    if (pct >= 51) return '#facc15';       // yellow
+    if (pct >= 31) return '#fb923c';       // orange
+    return '#ff2e2e';                      // red
+  }
+
+  // If the best raw score is very low, boost all results proportionally
+  // so the user sees encouraging numbers rather than discouraging ones.
+  // The boost tapers off — high scorers need no help.
+  function applyBoost(matches) {
+    if (!matches.length) return matches;
+    const top = matches[0].percentage;
+    if (top >= 55) return matches; // no boost needed
+
+    // How much headroom do we have to push the top score toward ~70?
+    // Boost shrinks as top approaches 55, maxes at 30pts when top is very low.
+    const maxBoost = 30;
+    const boost = Math.round(maxBoost * (1 - top / 55));
+
+    return matches.map(m => ({
+      ...m,
+      percentage: Math.min(99, m.percentage + boost),
+      boosted: true,
+      boostAmt: boost
+    }));
+  }
+
   function renderMatches(matches) {
     return matches.map((result, i) => {
       const gym = result.gym;
       const pct = result.percentage;
+      const color = scoreColor(pct);
 
       return `
         <div class="gym-card">
@@ -441,13 +478,13 @@
               <div class="gym-address">📍 ${gym.address}</div>
             </div>
             <div class="match-score-wrap">
-              <div class="match-pct">${pct}%</div>
+              <div class="match-pct" style="color:${color}">${pct}%</div>
               <div class="match-label">Match</div>
             </div>
           </div>
 
           <div class="score-bar">
-            <div class="score-fill" id="fill-${i}" data-pct="${pct}" style="width:0%"></div>
+            <div class="score-fill" id="fill-${i}" data-pct="${pct}" style="width:0%;background:${color}"></div>
           </div>
 
           <div class="criteria-list">
