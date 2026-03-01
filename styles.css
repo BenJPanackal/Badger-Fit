@@ -355,6 +355,29 @@ a {
   line-height: 1.6;
 }
 
+Amenity tags · CSS
+Copy
+
+/* ===========================
+   AMENITY / EQUIPMENT TAGS
+=========================== */
+.amenity-tag {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  background: #f0f0f0;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #444;
+  border: 1px solid #ddd;
+}
+
+.amenity-tag.equipment {
+  background: #fff0f0;
+  border-color: #f5c0c0;
+  color: var(--red);
+}
+
 /* ===========================
    FOOTER
 =========================== */

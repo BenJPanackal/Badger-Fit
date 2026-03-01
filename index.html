@@ -5,6 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>BadgerFit</title>
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* ── Tab search bar ── */
+      .search-tabs {
+        display: flex;
+        justify-content: center;
+        gap: 0;
+        margin-bottom: 0;
+      }
+
+      .search-tab {
+        padding: 0.45rem 1.3rem;
+        background: rgba(255,255,255,0.18);
+        color: rgba(255,255,255,0.65);
+        border: none;
+        border-radius: 8px 8px 0 0;
+        font-size: 0.88rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s, color 0.2s;
+        letter-spacing: 0.02em;
+      }
+
+      .search-tab.active {
+        background: #fff;
+        color: #1a1a1a;
+      }
+
+      .search-panel { display: none; }
+      .search-panel.active {
+      display: flex;
+      justify-content: center;
+      }
+
+      .search-panel.active .search-bar {
+        border-radius: 0 var(--radius) var(--radius) var(--radius);
+      }
+
+      /* ── Autocomplete dropdown ── */
+      .autocomplete-wrap {
+        position: relative;
+        flex: 1;
+      }
+
+      .autocomplete-wrap input {
+        width: 100%;
+        padding: 0.85rem 1.2rem;
+        border: none;
+        border-radius: var(--radius) 0 0 var(--radius);
+        font-size: 1rem;
+        font-family: inherit;
+      }
+
+      /* Override search-bar input styles since input is now inside autocomplete-wrap */
+      .search-bar {
+        border-radius: 0 var(--radius) var(--radius) var(--radius);
+        gap: 0;
+      }
+
+      .search-bar input {
+        border-radius: var(--radius) 0 0 var(--radius);
+      }
+
+      .ac-dropdown {
+        position: absolute;
+        top: calc(100% + 4px);
+        left: 0;
+        right: 0;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        z-index: 999;
+        max-height: 240px;
+        overflow-y: auto;
+        display: none;
+      }
+
+      .ac-dropdown.open { display: block; }
+
+      .ac-item {
+        padding: 0.65rem 1rem;
+        font-size: 0.92rem;
+        color: #1a1a1a;
+        cursor: pointer;
+        border-bottom: 1px solid #f0f0f0;
+        transition: background 0.1s;
+        text-align: left;
+      }
+
+      .ac-item:last-child { border-bottom: none; }
+      .ac-item:hover, .ac-item.highlighted { background: #fff0f0; color: #c1121f; }
+
+      .ac-item mark {
+        background: none;
+        color: #c1121f;
+        font-weight: 700;
+      }
+    </style>
 </head>
 <body>
 
@@ -13,7 +111,7 @@
     <a href="index.html" class="logo">🦡 BadgerFit</a>
     <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="gyms.html">Gyms in Madison</a></li>
+        <li><a href="Gyms.html">Gyms in Madison</a></li>
         <li><a href="map.html">🗺️ Map</a></li>
         <li><a href="about.html">About</a></li>
     </ul>
@@ -24,9 +122,43 @@
     <div class="hero-content">
         <h1>Find Your Gym in Madison</h1>
         <p>Built for Badgers. Find gyms near campus, downtown, and beyond.</p>
-        <div class="search-bar">
-            <input type="text" placeholder="Search by name or neighborhood..." />
-            <button>Search</button>
+
+        <!-- TABS -->
+        <div class="search-tabs">
+            <button class="search-tab active" onclick="switchTab('name', this)">By Name</button>
+            <button class="search-tab" onclick="switchTab('location', this)">By Location</button>
+        </div>
+
+        <!-- BY NAME PANEL -->
+        <div class="search-panel active" id="panel-name">
+            <div class="search-bar">
+                <div class="autocomplete-wrap">
+                    <input
+                        type="text"
+                        id="searchName"
+                        placeholder="e.g. Planet Fitness, YMCA..."
+                        autocomplete="off"
+                    />
+                    <div class="ac-dropdown" id="ac-name"></div>
+                </div>
+                <button onclick="submitSearch('name')">Search</button>
+            </div>
+        </div>
+
+        <!-- BY LOCATION PANEL -->
+        <div class="search-panel" id="panel-location">
+            <div class="search-bar">
+                <div class="autocomplete-wrap">
+                    <input
+                        type="text"
+                        id="searchLocation"
+                        placeholder="e.g. Middleton, Downtown, Fitchburg..."
+                        autocomplete="off"
+                    />
+                    <div class="ac-dropdown" id="ac-location"></div>
+                </div>
+                <button onclick="submitSearch('location')">Search</button>
+            </div>
         </div>
     </div>
 </section>
@@ -52,6 +184,147 @@
     <p>© 2025 BadgerFit · Madison, WI · CheeseHacks Hackathon</p>
 </footer>
 
-<script src="script.js"></script>
+<script>
+  // ── Tab switching ─────────────────────────────────────────────────────────────
+  function switchTab(tab, btn) {
+    document.querySelectorAll('.search-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.search-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('panel-' + tab).classList.add('active');
+  }
+
+  // ── Submit search → results.html ──────────────────────────────────────────────
+  function submitSearch(type) {
+    if (type === 'name') {
+      const val = document.getElementById('searchName').value.trim();
+      if (!val) return;
+      window.location.href = `results.html?search=${encodeURIComponent(val)}`;
+    } else {
+      const val = document.getElementById('searchLocation').value.trim();
+      if (!val) return;
+      window.location.href = `results.html?neighborhood=${encodeURIComponent(val)}`;
+    }
+  }
+
+  // ── Autocomplete engine ───────────────────────────────────────────────────────
+  function buildAutocomplete(inputId, dropdownId, getSuggestions, onSelect) {
+    const input    = document.getElementById(inputId);
+    const dropdown = document.getElementById(dropdownId);
+    let highlighted = -1;
+
+    function highlight(idx) {
+      const items = dropdown.querySelectorAll('.ac-item');
+      items.forEach((el, i) => el.classList.toggle('highlighted', i === idx));
+      highlighted = idx;
+    }
+
+    function showSuggestions(suggestions) {
+      if (!suggestions.length) {
+        dropdown.classList.remove('open');
+        return;
+      }
+      const q = input.value.trim();
+      dropdown.innerHTML = suggestions.map(s => {
+        // Bold the matching part
+        const re    = new RegExp(`(${q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+        const label = s.replace(re, '<mark>$1</mark>');
+        return `<div class="ac-item" onclick="selectItem('${s.replace(/'/g, "\\'")}', '${inputId}', '${dropdownId}')">${label}</div>`;
+      }).join('');
+      dropdown.classList.add('open');
+      highlighted = -1;
+    }
+
+    input.addEventListener('input', () => {
+      const val = input.value.trim();
+      if (!val) { dropdown.classList.remove('open'); return; }
+      showSuggestions(getSuggestions(val));
+    });
+
+    input.addEventListener('keydown', e => {
+      const items = dropdown.querySelectorAll('.ac-item');
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        highlight(Math.min(highlighted + 1, items.length - 1));
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        highlight(Math.max(highlighted - 1, 0));
+      } else if (e.key === 'Enter') {
+        if (highlighted >= 0 && items[highlighted]) {
+          items[highlighted].click();
+        } else {
+          dropdown.classList.remove('open');
+          onSelect();
+        }
+      } else if (e.key === 'Escape') {
+        dropdown.classList.remove('open');
+      }
+    });
+
+    // Close if clicking outside
+    document.addEventListener('click', e => {
+      if (!input.contains(e.target) && !dropdown.contains(e.target)) {
+        dropdown.classList.remove('open');
+      }
+    });
+  }
+
+  function selectItem(value, inputId, dropdownId) {
+    document.getElementById(inputId).value = value;
+    document.getElementById(dropdownId).classList.remove('open');
+    // Auto-submit on selection
+    if (inputId === 'searchName')     submitSearch('name');
+    if (inputId === 'searchLocation') submitSearch('location');
+  }
+
+  // ── Load gyms.json and wire up autocomplete ───────────────────────────────────
+  let gymNames    = [];
+  let gymAreas    = [];
+
+async function initAutocomplete() {
+    try {
+      const res  = await fetch('http://localhost:3000/api/gyms');
+      const gyms = await res.json();
+
+      // Unique gym names (deduplicated)
+      gymNames = [...new Set(gyms.map(g => g.name))].sort();
+
+      // Build location suggestions from full addresses:
+      // include city names AND full street addresses
+      const areaSet = new Set();
+      gyms.forEach(g => {
+        const parts = (g.address || '').split(',');
+        // City (e.g. "Madison", "Middleton")
+        if (parts.length >= 3) areaSet.add(parts[parts.length - 3].trim());
+        // Full street address (e.g. "301 E Campus Mall")
+        if (parts.length >= 1) areaSet.add(parts[0].trim());
+      });
+      gymAreas = [...areaSet].sort();
+
+    } catch (err) {
+      console.warn('Could not load gyms for autocomplete:', err.message);
+    }
+
+    // Name autocomplete — matches gym names
+    buildAutocomplete(
+      'searchName', 'ac-name',
+      (q) => gymNames
+        .filter(n => n.toLowerCase().includes(q.toLowerCase()))
+        .slice(0, 8),
+      () => submitSearch('name')
+    );
+
+    // Location autocomplete — matches city/area names
+    buildAutocomplete(
+      'searchLocation', 'ac-location',
+      (q) => gymAreas
+        .filter(a => a.toLowerCase().includes(q.toLowerCase()))
+        .slice(0, 8),
+      () => submitSearch('location')
+    );
+  }
+
+  initAutocomplete();
+</script>
+
 </body>
 </html>
