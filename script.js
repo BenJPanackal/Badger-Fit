@@ -4,7 +4,7 @@ let allGyms = [];
 // Fetch gyms from backend and render on page load
 async function loadGyms() {
   try { // try to get gyms list
-    const res = await fetch('http://localhost:3000/api/gyms');
+    const res = await fetch('/api/gyms');
     if (!res.ok) throw new Error('Server error');
     allGyms = await res.json();
     renderGyms(allGyms); // load gyms to screen
