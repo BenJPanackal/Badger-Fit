@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gym Map · BadgerFit</title>
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <style>
+    #map {
+      width: 100%;
+      height: calc(100vh - 60px);
+    }
+
+    /* Custom popup styling */
+    .gym-popup {
+      font-family: 'Segoe UI', sans-serif;
+      min-width: 220px;
+    }
+
+    .gym-popup img {
+      width: 100%;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+    }
+
+    .gym-popup h3 {
+      font-size: 1rem;
+      font-weight: bold;
+      margin-bottom: 0.25rem;
+      color: #1a1a1a;
+    }
+
+    .gym-popup .popup-price {
+      font-size: 0.85rem;
+      color: #555;
+      margin-bottom: 0.2rem;
+    }
+
+    .gym-popup .popup-hours {
+      font-size: 0.85rem;
+      color: #555;
+      margin-bottom: 0.5rem;
+    }
+
+    .gym-popup .popup-amenities {
+      font-size: 0.8rem;
+      color: #777;
+      margin-bottom: 0.75rem;
+    }
+
+    .popup-buttons {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+
+    .popup-btn {
+      display: inline-block;
+      padding: 0.4rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-directions {
+      background: #c1121f;
+      color: white;
+    }
+
+    .btn-walk {
+      background: #f0f0f0;
+      color: #333;
+    }
+
+    .btn-bike {
+      background: #f0f0f0;
+      color: #333;
+    }
+
+    /* Map filter pills */
+    .map-filters {
+      position: absolute;
+      top: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0.5rem;
+    }
+
+    .map-pill {
+      padding: 0.4rem 1rem;
+      border: 2px solid #1a1a1a;
+      border-radius: 999px;
+      background: white;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    .map-pill:hover, .map-pill.active {
+      background: #c1121f;
+      border-color: #c1121f;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="index.html" class="logo">🦡 BadgerFit</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="gyms.html">Gyms in Madison</a></li>
+    <li><a href="map.html">🗺️ Map</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+</nav>
+
+<!-- FILTER PILLS -->
+<div class="map-filters">
+  <button class="map-pill active" onclick="filterMap('all', this)">All Gyms</button>
+  <button class="map-pill" onclick="filterMap('campus', this)">Near Campus</button>
+  <button class="map-pill" onclick="filterMap('cheap', this)">Under $20</button>
+  <button class="map-pill" onclick="filterMap('classes', this)">Has Classes</button>
+  <button class="map-pill" onclick="filterMap('open247', this)">24/7</button>
+</div>
+
+<!-- MAP -->
+<div id="map"></div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+  // ===========================
+  //  Gym Data with coordinates
+  // ===========================
+  const gyms = [
+    {
+      name: "Nick Recreation Center",
+      lat: 43.0756,
+      lng: -89.4070,
+      location: "campus",
+      price: 0,
+      priceLabel: "Free with student ID",
+      hours: "Mon–Fri 6am–11pm · Sat–Sun 8am–10pm",
+      classes: true,
+      open247: false,
+      amenities: ["🏊 Pool", "🚿 Showers", "♿ Accessible"],
+      image: "https://recwell.wisc.edu/wp-content/uploads/sites/1075/2023/04/MZBakkeExterior8-900x600.jpg",
+      address: "1440 Monroe St, Madison, WI 53711",
+      website: "https://recwell.wisc.edu/locations/nick/"
+    },
+    {
+      name: "Bakke Recreation Center",
+      lat: 43.0731,
+      lng: -89.4134,
+      location: "campus",
+      price: 0,
+      priceLabel: "Free with student ID",
+      hours: "Mon–Fri 6am–11pm · Sat–Sun 8am–10pm",
+      classes: true,
+      open247: false,
+      amenities: ["🏊 Pool", "🚿 Showers", "🧗 Climbing Wall"],
+      image: "https://recwell.wisc.edu/wp-content/uploads/sites/1075/2023/04/MZBakkeExterior8-900x600.jpg",
+      address: "621 W Dayton St, Madison, WI 53706",
+      website: "https://recwell.wisc.edu/locations/bakke/"
+    },
+    {
+      name: "Planet Fitness",
+      lat: 43.0642,
+      lng: -89.3852,
+      location: "eastside",
+      price: 10,
+      priceLabel: "$10/mo",
+      hours: "Mon–Fri 5am–12am · Sat–Sun 7am–10pm",
+      classes: false,
+      open247: false,
+      amenities: ["🚿 Showers", "🅿️ Parking"],
+      image: "https://recwell.wisc.edu/wp-content/uploads/sites/1075/2023/04/MZBakkeExterior8-900x600.jpg",
+      address: "2244 E Springs Dr, Madison, WI 53704",
+      website: "https://www.planetfitness.com"
+    },
+    {
+      name: "Anytime Fitness",
+      lat: 43.0731,
+      lng: -89.4890,
+      location: "westside",
+      price: 35,
+      priceLabel: "$35/mo",
+      hours: "Open 24/7",
+      classes: false,
+      open247: true,
+      amenities: ["🚿 Showers", "🅿️ Parking", "🕐 24/7"],
+      image: "https://recwell.wisc.edu/wp-content/uploads/sites/1075/2023/04/MZBakkeExterior8-900x600.jpg",
+      address: "7609 Donna Dr, Madison, WI 53719",
+      website: "https://www.anytimefitness.com"
+    },
+    {
+      name: "YMCA of Madison",
+      lat: 43.0731,
+      lng: -89.3900,
+      location: "downtown",
+      price: 40,
+      priceLabel: "$40/mo",
+      hours: "Mon–Fri 5am–10pm · Sat–Sun 7am–8pm",
+      classes: true,
+      open247: false,
+      amenities: ["🏊 Pool", "🚿 Showers", "🅿️ Parking"],
+      image: "https://recwell.wisc.edu/wp-content/uploads/sites/1075/2023/04/MZBakkeExterior8-900x600.jpg",
+      address: "357 W Main St, Madison, WI 53703",
+      website: "https://www.ymcadane.org"
+    },
+    {
+      name: "Goodman Community Center",
+      lat: 43.0820,
+      lng: -89.3650,
+      location: "eastside",
+      price: 15,
+      priceLabel: "$15/mo",
+      hours: "Mon–Fri 6am–9pm · Sat 8am–6pm",
+      classes: true,
+      open247: false,
+      amenities: ["🚿 Showers", "♿ Accessible"],
+      image: "https://recwell.wisc.edu/wp-content/uploads/sites/1075/2023/04/MZBakkeExterior8-900x600.jpg",
+      address: "149 Waubesa St, Madison, WI 53704",
+      website: "https://goodmancenter.org"
+    },
+    {
+      name: "LA Fitness",
+      lat: 43.0550,
+      lng: -89.4950,
+      location: "westside",
+      price: 30,
+      priceLabel: "$30/mo",
+      hours: "Mon–Fri 5am–11pm · Sat–Sun 7am–8pm",
+      classes: true,
+      open247: false,
+      amenities: ["🏊 Pool", "🚿 Showers", "🅿️ Parking"],
+      image: "https://recwell.wisc.edu/wp-content/uploads/sites/1075/2023/04/MZBakkeExterior8-900x600.jpg",
+      address: "7007 W Towne Way, Madison, WI 53719",
+      website: "https://www.lafitness.com"
+    },
+    {
+      name: "EōS Fitness",
+      lat: 43.0600,
+      lng: -89.5000,
+      location: "westside",
+      price: 20,
+      priceLabel: "$20/mo",
+      hours: "Open 24/7",
+      classes: true,
+      open247: true,
+      amenities: ["🚿 Showers", "🅿️ Parking", "🕐 24/7", "🧖 Sauna"],
+      image: "https://recwell.wisc.edu/wp-content/uploads/sites/1075/2023/04/MZBakkeExterior8-900x600.jpg",
+      address: "West Towne Mall Area, Madison, WI 53719",
+      website: "#"
+    },
+    {
+      name: "CrossFit Madison",
+      lat: 43.0890,
+      lng: -89.3750,
+      location: "downtown",
+      price: 120,
+      priceLabel: "$120/mo",
+      hours: "Mon–Fri 5:30am–7pm · Sat 8am–12pm",
+      classes: true,
+      open247: false,
+      amenities: ["🏋️ CrossFit Rig", "🚿 Showers"],
+      image: "https://recwell.wisc.edu/wp-content/uploads/sites/1075/2023/04/MZBakkeExterior8-900x600.jpg",
+      address: "Madison, WI 53703",
+      website: "#"
+    },
+    {
+      name: "Madison Strength & Conditioning",
+      lat: 43.0750,
+      lng: -89.3600,
+      location: "eastside",
+      price: 55,
+      priceLabel: "$55/mo",
+      hours: "Mon–Fri 5am–9pm · Sat 8am–2pm",
+      classes: true,
+      open247: false,
+      amenities: ["🏋️ Squat Racks", "🚿 Showers", "🅿️ Parking"],
+      image: "https://recwell.wisc.edu/wp-content/uploads/sites/1075/2023/04/MZBakkeExterior8-900x600.jpg",
+      address: "East Madison, WI 53704",
+      website: "#"
+    }
+  ];
+
+  // ===========================
+  //  Initialize Map
+  // ===========================
+  const map = L.map('map').setView([43.0731, -89.4012], 13);
+
+  // Map tiles (free OpenStreetMap)
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors'
+  }).addTo(map);
+
+  // Custom red marker icon
+  const redIcon = L.divIcon({
+    className: '',
+    html: `<div style="
+      width: 16px;
+      height: 16px;
+      background: #c1121f;
+      border: 3px solid white;
+      border-radius: 50%;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    "></div>`,
+    iconSize: [16, 16],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -12]
+  });
+
+  // Store markers for filtering
+  let markers = [];
+
+  // Build directions URL for Google Maps
+  function directionsUrl(address, mode) {
+    const modes = { drive: 'driving', walk: 'walking', bike: 'bicycling' };
+    const travelMode = modes[mode] || 'driving';
+    return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address)}&travelmode=${travelMode}`;
+  }
+
+  // Add markers
+  gyms.forEach(gym => {
+    const marker = L.marker([gym.lat, gym.lng], { icon: redIcon });
+
+    const popupContent = `
+      <div class="gym-popup">
+        <img src="${gym.image}" alt="${gym.name}" onerror="this.style.display='none'"/>
+        <h3>${gym.name}</h3>
+        <p class="popup-price">💰 ${gym.priceLabel}</p>
+        <p class="popup-hours">🕐 ${gym.hours}</p>
+        <p class="popup-amenities">${gym.amenities.join(' · ')}</p>
+        <div class="popup-buttons">
+          <a href="${directionsUrl(gym.address, 'drive')}" target="_blank" class="popup-btn btn-directions">🚗 Directions</a>
+          <a href="${directionsUrl(gym.address, 'walk')}" target="_blank" class="popup-btn btn-walk">🚶 Walk</a>
+          <a href="${directionsUrl(gym.address, 'bike')}" target="_blank" class="popup-btn btn-bike">🚲 Bike</a>
+        </div>
+      </div>
+    `;
+
+    marker.bindPopup(popupContent, { maxWidth: 260 });
+
+    // Store gym data on marker for filtering
+    marker.gymData = gym;
+    marker.addTo(map);
+    markers.push(marker);
+  });
+
+  // ===========================
+  //  Filter function
+  // ===========================
+  function filterMap(filter, btn) {
+    // Update active pill
+    document.querySelectorAll('.map-pill').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+
+    markers.forEach(marker => {
+      const gym = marker.gymData;
+      let show = false;
+
+      if (filter === 'all') show = true;
+      else if (filter === 'campus') show = gym.location === 'campus';
+      else if (filter === 'cheap') show = gym.price <= 20;
+      else if (filter === 'classes') show = gym.classes;
+      else if (filter === 'open247') show = gym.open247;
+
+      if (show) {
+        marker.addTo(map);
+      } else {
+        marker.remove();
+      }
+    });
+  }
+</script>
+
+</body>
+</html>

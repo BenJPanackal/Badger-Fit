@@ -314,3 +314,15 @@ select option {
   background-image: none !important;
   background: #0a0a0a !important;
 }
+body {
+    padding-top: 0 !important;
+}
+
+.navbar {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 100 !important;
+    width: 100% !important;
+    align-self: stretch !important;
+    margin-top: 0 !important;
+}

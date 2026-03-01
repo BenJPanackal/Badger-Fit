@@ -17,6 +17,8 @@ app.use('/api/match', require('./routes/match'));
 app.use('/api/gyms',  require('./routes/gyms'));
 
 const PORT = 3000;
+
+
 app.listen(PORT, () => {
   console.log(`✅ BadgerFit server running at http://localhost:${PORT}`);
 });
