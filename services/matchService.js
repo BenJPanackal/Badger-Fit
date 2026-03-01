@@ -153,7 +153,7 @@ function scoreGyms(gyms, prefs) {
     .map(gym => scoreGym(gym, prefs))
     .filter(r => r.percentage > 0)
     .sort((a, b) => b.percentage - a.percentage)
-    .slice(0, 3);
+    .slice(0, 6);
 }
 
 module.exports = { scoreGyms };
