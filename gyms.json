@@ -3342,5 +3342,166 @@
       "squat-racks"
     ],
     "monthlyPrice": 45
+  },
+  {
+    "name": "Nicholas Recreation Center (The Nick)",
+    "placeId": "ChIJNick797WDayton",
+    "address": "797 W. Dayton St., Madison, WI 53715, USA",
+    "phone": "(608) 262-9000",
+    "website": "https://recwell.wisc.edu/locations/nick/",
+    "coordinates": {
+      "lat": 43.0721,
+      "lng": -89.4042
+    },
+    "rating": 4.7,
+    "totalRatings": 850,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "monday": {
+        "open": "05:45",
+        "close": "23:00"
+      },
+      "tuesday": {
+        "open": "05:45",
+        "close": "23:00"
+      },
+      "wednesday": {
+        "open": "05:45",
+        "close": "23:00"
+      },
+      "thursday": {
+        "open": "05:45",
+        "close": "23:00"
+      },
+      "friday": {
+        "open": "05:45",
+        "close": "22:00"
+      },
+      "saturday": {
+        "open": "08:00",
+        "close": "21:00"
+      },
+      "sunday": {
+        "open": "10:00",
+        "close": "21:00"
+      }
+    },
+    "hoursText": [
+      "Monday: 5:45 AM \u2013 11:00 PM",
+      "Tuesday: 5:45 AM \u2013 11:00 PM",
+      "Wednesday: 5:45 AM \u2013 11:00 PM",
+      "Thursday: 5:45 AM \u2013 11:00 PM",
+      "Friday: 5:45 AM \u2013 10:00 PM",
+      "Saturday: 8:00 AM \u2013 9:00 PM",
+      "Sunday: 10:00 AM \u2013 9:00 PM"
+    ],
+    "amenities": [
+      "pool",
+      "locker-room",
+      "showers",
+      "classes",
+      "personal-training",
+      "basketball",
+      "racquet"
+    ],
+    "classes": [
+      "group-fitness",
+      "indoor-cycling",
+      "yoga",
+      "pilates",
+      "HIIT",
+      "small-group-training"
+    ],
+    "equipment": [
+      "free-weights",
+      "machines",
+      "cardio",
+      "squat-racks",
+      "stretching",
+      "turf"
+    ],
+    "monthlyPrice": 0
+  },
+  {
+    "name": "Bakke Recreation & Wellbeing Center",
+    "placeId": "ChIJBakke1976ObservatoryDr",
+    "address": "1976 Observatory Dr., Madison, WI 53706, USA",
+    "phone": "(608) 262-9000",
+    "website": "https://recwell.wisc.edu/locations/bakke/",
+    "coordinates": {
+      "lat": 43.0774,
+      "lng": -89.4144
+    },
+    "rating": 4.8,
+    "totalRatings": 620,
+    "businessStatus": "OPERATIONAL",
+    "hours": {
+      "monday": {
+        "open": "05:45",
+        "close": "23:00"
+      },
+      "tuesday": {
+        "open": "05:45",
+        "close": "23:00"
+      },
+      "wednesday": {
+        "open": "05:45",
+        "close": "23:00"
+      },
+      "thursday": {
+        "open": "05:45",
+        "close": "23:00"
+      },
+      "friday": {
+        "open": "05:45",
+        "close": "22:00"
+      },
+      "saturday": {
+        "open": "08:00",
+        "close": "21:00"
+      },
+      "sunday": {
+        "open": "10:00",
+        "close": "21:00"
+      }
+    },
+    "hoursText": [
+      "Monday: 5:45 AM \u2013 11:00 PM",
+      "Tuesday: 5:45 AM \u2013 11:00 PM",
+      "Wednesday: 5:45 AM \u2013 11:00 PM",
+      "Thursday: 5:45 AM \u2013 11:00 PM",
+      "Friday: 5:45 AM \u2013 10:00 PM",
+      "Saturday: 8:00 AM \u2013 9:00 PM",
+      "Sunday: 10:00 AM \u2013 9:00 PM"
+    ],
+    "amenities": [
+      "pool",
+      "locker-room",
+      "showers",
+      "classes",
+      "personal-training",
+      "basketball",
+      "sauna",
+      "wifi"
+    ],
+    "classes": [
+      "group-fitness",
+      "indoor-cycling",
+      "yoga",
+      "climbing",
+      "HIIT",
+      "meditation",
+      "small-group-training"
+    ],
+    "equipment": [
+      "free-weights",
+      "machines",
+      "cardio",
+      "squat-racks",
+      "stretching",
+      "turf",
+      "crossfit"
+    ],
+    "monthlyPrice": 0
   }
 ]
