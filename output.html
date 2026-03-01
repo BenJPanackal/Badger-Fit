@@ -7,6 +7,38 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="survey.css"/>
   <style>
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: #111;
+      border-bottom: 1px solid #2a2a2a;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      color: var(--accent);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+    .nav-links a {
+      color: #f0f0f0;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
     .results-wrapper {
       width: 100%;
       max-width: 680px;
@@ -332,6 +364,15 @@
   </style>
 </head>
 <body>
+
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">🦡 BadgerFit</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="Gyms.html">Gyms in Madison</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+</nav>
 
 <div class="hero">
   <p class="hero-eyebrow">Your Results</p>
