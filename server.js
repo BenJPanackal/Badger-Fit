@@ -16,17 +16,15 @@ app.use(express.static(path.join(__dirname)));
 app.use('/api/match', require('./routes/match'));
 app.use('/api/gyms',  require('./routes/gyms'));
 
+// Expose Maps API key to frontend safely
+app.get('/api/maps-key', (req, res) => {
+  res.json({ key: process.env.GOOGLE_PLACES_KEY });
+});
+
 const PORT = 3000;
-
-
 app.listen(PORT, () => {
   console.log(`✅ BadgerFit server running at http://localhost:${PORT}`);
 });
-
-
-
-
-
 
 
 

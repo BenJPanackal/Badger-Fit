@@ -28,7 +28,8 @@ body {
     margin-bottom: 3rem;
 }
 
-.survey-hero h1 {
+.survey-hero h1,
+.hero h1 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: clamp(4rem, 12vw, 9rem) !important;
     color: var(--accent) !important;
@@ -306,23 +307,54 @@ select option {
 }
 
 .navbar {
-    width: 100% !important;
-    align-self: stretch !important;
-}
-
-.survey-hero {
-  background-image: none !important;
-  background: #0a0a0a !important;
-}
-body {
-    padding-top: 0 !important;
-}
-
-.navbar {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 1rem 2rem !important;
+    background: #111 !important;
+    border-bottom: 1px solid #2a2a2a !important;
     position: sticky !important;
     top: 0 !important;
     z-index: 100 !important;
     width: 100% !important;
     align-self: stretch !important;
     margin-top: 0 !important;
+    box-sizing: border-box !important;
+}
+
+.navbar .nav-links {
+    list-style: none !important;
+    display: flex !important;
+    gap: 2rem !important;
+}
+
+.navbar .nav-links a {
+    color: #f0f0f0 !important;
+    text-decoration: none !important;
+    font-size: 0.9rem !important;
+    font-weight: 500 !important;
+    transition: color 0.2s !important;
+}
+
+.navbar .nav-links a:hover {
+    color: var(--accent) !important;
+}
+
+.navbar .logo {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    font-size: 1.4rem !important;
+    font-weight: bold !important;
+    color: var(--accent) !important;
+    text-decoration: none !important;
+    letter-spacing: normal !important;
+    font-style: normal !important;
+}
+
+.survey-hero {
+  background-image: none !important;
+  background: #0a0a0a !important;
+}
+
+body {
+    padding-top: 0 !important;
 }
