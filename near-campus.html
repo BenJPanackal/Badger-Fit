@@ -24,8 +24,11 @@
     @media (max-width: 900px) { .gym-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 560px) { .gym-grid { grid-template-columns: 1fr; } }
 
-    .gym-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; transition: border-color 0.2s, transform 0.15s; }
+    .gym-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 0; display: flex; flex-direction: column; overflow: hidden; transition: border-color 0.2s, transform 0.15s; }
     .gym-card:hover { border-color: rgba(255,46,46,0.35); transform: translateY(-2px); }
+    .gym-card-body { padding: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; flex: 1; }
+    .gym-image { width: 100%; height: 160px; object-fit: cover; display: block; background: var(--border); }
+    .gym-image-placeholder { width: 100%; height: 160px; display: flex; align-items: center; justify-content: center; font-size: 2rem; background: linear-gradient(135deg, #1a1a1a, #2a2a2a); }
     .gym-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.35rem; letter-spacing: 0.04em; color: #f0f0f0; line-height: 1.1; }
     .gym-address { font-size: 0.78rem; color: #666; }
     .gym-meta { display: flex; flex-wrap: wrap; gap: 0.4rem 0.85rem; font-size: 0.8rem; color: #666; }
@@ -153,6 +156,8 @@
     const panelId = `info-${idx}`;
     return `
       <div class="gym-card">
+        ${gym.placeId ? `<img class="gym-image" src="/api/gym-photo?placeId=${encodeURIComponent(gym.placeId)}" alt="${gym.name}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" /><div class="gym-image-placeholder" style="display:none">🏋️</div>` : `<div class="gym-image-placeholder">🏋️</div>`}
+        <div class="gym-card-body">
         <div class="gym-name">${gym.name}</div>
         <div class="gym-address">📍 ${gym.address}</div>
         <div class="gym-meta">
@@ -191,6 +196,7 @@
             <div class="info-section-label">🕐 Hours</div>
             ${formatHours(gym.hoursText)}
           </div>
+        </div>
         </div>
       </div>`;
   }
