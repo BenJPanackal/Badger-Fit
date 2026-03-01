@@ -5,31 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gym Finder</title>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css"/>
     <link rel="stylesheet" href="survey.css">
-
-
 </head>
 <body>
 
-    <nav class="navbar">
-        <a href="index.html" class="logo">🦡 BadgerFit</a>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="gyms.html">Gyms in Madison</a></li>
-            <li><a href="map.html">🗺️ Map</a></li>
-            <li><a href="about.html">About</a></li>
-        </ul>
-    </nav>
-    <div class="survey-hero">
-        <p class="hero-eyebrow">Find Your Madison Gym</p>
-        <h1>BadgerFit</h1>
-        <p class="hero-sub">Tell us what matters to you — we'll find the perfect fit.</p>
-    </div>
+<div class="hero">
+    <p class="hero-eyebrow">Find Your Madison Gym</p>
+    <h1>BadgerFit</h1>
+    <p class="hero-sub">Tell us what matters to you — we'll find the perfect fit.</p>
+</div>
 
-    <div class="progress-track">
-        <div class="progress-fill" id="progressFill"></div>
-    </div>
+<div class="progress-track">
+    <div class="progress-fill" id="progressFill"></div>
+</div>
 
 <form class="survey-form" id="surveyForm" action="output.html"  method="GET">
 
@@ -85,21 +73,8 @@
             </div>
         </div>
         <div class="field-group" style="margin-bottom:1rem">
-        <label class="field-label">Your Madison address</label>
-        <input
-            type="text"
-            id="locationInput"
-            name="location"
-            placeholder="225 Park Street"
-            autocomplete="off"
-        />
-        <!-- Hidden fields that store verified data from Google -->
-        <input type="hidden" name="lat" id="latInput" />
-        <input type="hidden" name="lng" id="lngInput" />
-        <input type="hidden" name="formatted_address" id="formattedInput" />
-        <p id="addressError" style="color:var(--accent);font-size:0.78rem;margin-top:0.4rem;display:none;">
-            ⚠️ Please select an address from the dropdown.
-        </p>
+            <label class="field-label">Your Madison address</label>
+            <input type="text" name="location" placeholder="225 Park Street">
         </div>
         <div class="field-group" style="margin-bottom:1rem">
             <label class="field-label">Max distance</label>
@@ -220,10 +195,10 @@
     <!-- Button to go to output page -->
     <button class="submit-btn">Find My Badger Gym →</button>
 </form>
-<script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7kVzLuB_DdC0Fezbwtyom_sLSjQJgL8k&libraries=places&callback=initAutocomplete"
-    async defer>
-    </script>
-    <script src="survey.js"></script>
+<script src="survey.js"></script>
+
+<footer style="text-align:center;padding:1.5rem;background:#111;border-top:1px solid #2a2a2a;color:#444;font-size:0.85rem;margin-top:3rem;">
+    <p>© 2025 BadgerFit · Madison, WI · CheeseHacks Hackathon</p>
+</footer>
 </body>
 </html>
