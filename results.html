@@ -521,7 +521,7 @@
       : `Gyms near <span>"${query}"</span>`;
 
     try {
-      const res  = await fetch('http://localhost:3000/api/gyms');
+      const res  = await fetch('/api/gyms');
       if (!res.ok) throw new Error('Server error');
       const gyms = await res.json();
 
