@@ -112,35 +112,3 @@ document.getElementById('surveyForm').addEventListener('submit', (e) => {
 
 window.initAutocomplete = initAutocomplete;
 
-
-// ── Form validation on submit ─────────────────────────────────────────────────
-
-document.getElementById('surveyForm').addEventListener('submit', (e) => {
-  const input    = document.getElementById('locationInput');
-  const errorMsg = document.getElementById('addressError');
-
-  // Block submission if address field is empty
-  if (input.value.trim() === '') {
-    e.preventDefault();
-    errorMsg.textContent = '⚠️ Please enter and select your address from the dropdown.';
-    errorMsg.style.display = 'block';
-    input.style.borderColor = 'var(--accent)';
-    input.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    input.focus();
-    return;
-  }
-
-  // Block submission if user typed but didn't pick from dropdown
-  if (!addressVerified) {
-    e.preventDefault();
-    errorMsg.textContent = '⚠️ Please select an address from the dropdown suggestions.';
-    errorMsg.style.display = 'block';
-    input.style.borderColor = 'var(--accent)';
-    input.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    input.focus();
-    return;
-  }
-
-  errorMsg.style.display = 'none';
-  input.style.borderColor = '';
-});
